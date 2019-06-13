@@ -52,6 +52,10 @@ namespace QuanLyNhaKho
                     else if (chucnang == 3)
                     {
                         // Bán hàng
+                        Hide();
+                        BanHang bh = new BanHang();
+                        bh.ShowDialog();
+                        this.Close();
                     }
                     else
                     {

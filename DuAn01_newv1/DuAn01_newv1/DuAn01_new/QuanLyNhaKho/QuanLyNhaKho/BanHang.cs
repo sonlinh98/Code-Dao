@@ -155,6 +155,10 @@ namespace QuanLyNhaKho
         {
             this.Close();
 
+            Hide();
+            DangNhap dn = new DangNhap();
+            dn.ShowDialog();
+            this.Close();
         }
         private void ClearDataHoaDonBanHang()
         {
