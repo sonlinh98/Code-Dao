@@ -487,6 +487,64 @@ namespace QuanLyNhaKho
         #endregion
 
 
+        #region Phần hóa đơn
+
+        public DataTable LayMaHoaDonCuoiCung()
+        {
+            string cmdText = "  SELECT TOP 1 * FROM dbo.Phieumua ORDER BY MaPM DESC";
+            DataTable dataTable = Layer01.GetDataTable(cmdText);
+            return dataTable;
+        }
+        public DataTable LayMaKHCuoiCung()
+        {
+            string cmdText = "  SELECT TOP 1 * FROM dbo.Phieumua ORDER BY MaPM DESC";
+            DataTable dataTable = Layer01.GetDataTable(cmdText);
+            return dataTable;
+        }
+
+        public void ThanhToanVaThemHoaDonBanHang(string MaHD, string MaNV,  DateTime Ngaymua, string Ghichu,double Tongtien, string TenKH, string Diachi, string sdt, string email, List<ChiTietHangHoaDAO> DanhSachHangBan)
+        {
+            // Thêm thông tin khách hàng
+            string maKHGoc = LayMaKHCuoiCung().Rows[0][0].ToString();// lấy ô đầu tiên của bảng kết quả trả về
+            string kyTuDau = maKHGoc.Substring(0, 2);
+            int soCanTang = Convert.ToInt32(maKHGoc.Substring(2)) + 1;
+
+            string maKH = "";
+            if (soCanTang >= 0 && soCanTang < 10)
+                maKH = kyTuDau + "0000" + soCanTang;
+            if (soCanTang >= 10 && soCanTang < 100)
+                maKH = kyTuDau + "000" + soCanTang;
+            if (soCanTang >= 100 && soCanTang < 1000)
+                maKH = kyTuDau + "00" + soCanTang;
+            if (soCanTang >= 1000 && soCanTang < 10000)
+                maKH = kyTuDau + "0" + soCanTang;
+            if (soCanTang >= 10000 && soCanTang < 100000)
+                maKH = kyTuDau + soCanTang;
+            if (soCanTang >= 100000)
+                maKH = "Không thể tăng hơn nữa!";
+
+            string cmdKH = "INSERT INTO dbo.Khachhang (MaKH, TenKH, Diachi, Sdt, Email) VALUES  ('" + maKH + "',N'" + TenKH + "',N'" + Diachi + "','" + sdt + "','" + email + "')";
+            Layer01.ExecuteNonQuery(cmdKH);
+
+
+            // Thêm thông tin chung về phiếu mua
+            string cmdText = "INSERT INTO dbo.Phieumua ( MaPM , MaKH , MaNV , Ngaymua , Thanhtoan , Ghichu  ) VALUES  ('"+MaHD+"','"+maKH+"','"+MaNV+"','"+Ngaymua+"','"+Tongtien+"',N'"+Ghichu+"')";
+            Layer01.ExecuteNonQuery(cmdText);
+
+
+            // Thêm Danh sách hàng mua và cập nhật số lượng trong kho
+            foreach (ChiTietHangHoaDAO item in DanhSachHangBan)
+            {
+                string cmdText1 = "INSERT INTO dbo.CTPhieumua ( MaPM, MaHH, Soluong, Giavon ) VALUES ('"+MaHD+"','"+item.MaHH+"','"+item.SoLuong+"','"+item.DonGia+"')";
+                Layer01.ExecuteNonQuery(cmdText1);
+                string cmdText2 = "	UPDATE dbo.Hanghoa SET Soluong = Soluong-" + int.Parse(item.SoLuong) + " WHERE MaHH = '" + item.MaHH + "'";
+                Layer01.ExecuteNonQuery(cmdText2);
+            }
+        }
+
+        #endregion
+
+
         //#region Hàng hóa
 
         //public DataTable TimKiemBangHangHoa(string tenhh, string tennk, string tendm)

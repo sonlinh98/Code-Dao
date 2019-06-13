@@ -128,9 +128,6 @@
     <Compile Include="NhomHang.Designer.cs">
       <DependentUpon>NhomHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="NoFocusCueButton.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuanLyKhoHang.cs">

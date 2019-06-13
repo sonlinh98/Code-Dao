@@ -179,6 +179,8 @@ namespace QuanLyNhaKho
             MessageBox.Show("Thêm phiếu nhập hàng thàng công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+
+
         private void txtMaHH_Validating(object sender, CancelEventArgs e)
         {
             ChiTietHangHoaDAO chiTietMotSanPham = layer02.LayThongTinMotHangHoaNhapTheoMa(txtMaHH.Text);
@@ -186,6 +188,8 @@ namespace QuanLyNhaKho
             // Tính giá xuất
             txtGiaXuat.Text = (int.Parse(chiTietMotSanPham.DonGia) + int.Parse(chiTietMotSanPham.DonGia) * 0.1).ToString();
         }
+
+
 
         private void dgvDanhSachHangXuat_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -197,6 +201,11 @@ namespace QuanLyNhaKho
             if (dialogResult == DialogResult.Yes)
             {
                 string maHangXoa = dgvDanhSachHangXuat.Rows[rowindex].Cells[0].Value.ToString();
+
+                // cập nhật lại tổng tiền của hóa đơn
+                TongTien -= double.Parse(dgvDanhSachHangXuat.Rows[rowindex].Cells[5].Value.ToString());
+                txtTongTien.Text = TongTien.ToString();
+
                 // Xóa bỏ hàng hóa đó trong danh sách mua
                 int viTriXoa = -1;
                 for (int i = 0; i < DanhSachHangHoaXuat.Count; i++)

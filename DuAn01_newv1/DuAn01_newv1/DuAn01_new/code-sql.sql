@@ -457,6 +457,54 @@ SELECT * FROM dbo.CTPhieuxuat
 SELECT * FROM dbo.Hanghoa
 
 
+SELECT * FROM dbo.Khachhang
+
+INSERT INTO dbo.Khachhang 
+        ( MaKH, TenKH, Diachi, Sdt, Email )
+VALUES  ( 'KH00001', -- MaKH - varchar(10)
+          N'trọng sơn', -- TenKH - nvarchar(50)
+          N'hà nội', -- Diachi - nvarchar(100)
+          '01293847', -- Sdt - varchar(15)
+          'aghs@gmail.com'  -- Email - varchar(30)
+          )
+
+INSERT INTO dbo.Phieumua
+        ( MaPM ,
+          MaKH ,
+          MaNV ,
+          Ngaymua ,
+          Thanhtoan ,
+          Ghichu
+        )
+VALUES  ( 'PM00001' , -- MaPM - varchar(10)
+          'KH00001' , -- MaKH - varchar(10)
+          'NV00000003' , -- MaNV - varchar(10)
+          GETDATE() , -- Ngaymua - date
+          '500000' , -- Thanhtoan - varchar(20)
+          N'Đã thanh toán'  -- Ghichu - nvarchar(100)
+        )
+
+		SELECT * FROM dbo.Phieumua
+		SELECT * FROM dbo.Hanghoa
+		SELECT * FROM dbo.CTPhieumua
+		SELECT * FROM dbo.Khachhang
+
+		INSERT INTO dbo.CTPhieumua
+		        ( MaPM, MaHH, Soluong, Giavon )
+		VALUES  ( 'PM00001', -- MaPM - varchar(10)
+		          'HH00001', -- MaHH - varchar(10)
+		          '2', -- Soluong - varchar(20)
+		          '250000'  -- Giavon - varchar(20)
+		          )
+				  		INSERT INTO dbo.CTPhieumua
+		        ( MaPM, MaHH, Soluong, Giavon )
+		VALUES  ( 'PM00001', -- MaPM - varchar(10)
+		          'HH00003', -- MaHH - varchar(10)
+		          '2', -- Soluong - varchar(20)
+		          '250000'  -- Giavon - varchar(20)
+		          )
+
+
 
 
 
