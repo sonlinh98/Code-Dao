@@ -75,6 +75,7 @@
             // 
             this.dgvHanghoa.AllowUserToAddRows = false;
             this.dgvHanghoa.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvHanghoa.BackgroundColor = System.Drawing.Color.LightGray;
             this.dgvHanghoa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHanghoa.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,

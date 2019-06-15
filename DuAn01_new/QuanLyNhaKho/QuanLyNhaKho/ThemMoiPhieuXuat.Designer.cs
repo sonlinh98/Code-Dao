@@ -67,7 +67,7 @@
             this.btnHuy.Location = new System.Drawing.Point(517, 533);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(87, 32);
-            this.btnHuy.TabIndex = 7;
+            this.btnHuy.TabIndex = 1;
             this.btnHuy.Text = "Hủy bỏ";
             this.btnHuy.UseVisualStyleBackColor = true;
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
@@ -77,7 +77,7 @@
             this.btnLuu.Location = new System.Drawing.Point(379, 533);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(86, 32);
-            this.btnLuu.TabIndex = 8;
+            this.btnLuu.TabIndex = 0;
             this.btnLuu.Text = "Lưu lại";
             this.btnLuu.UseVisualStyleBackColor = true;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
@@ -113,7 +113,7 @@
             this.cboNhaCungCap.Location = new System.Drawing.Point(157, 150);
             this.cboNhaCungCap.Name = "cboNhaCungCap";
             this.cboNhaCungCap.Size = new System.Drawing.Size(158, 24);
-            this.cboNhaCungCap.TabIndex = 3;
+            this.cboNhaCungCap.TabIndex = 4;
             // 
             // cboKho
             // 
@@ -129,12 +129,13 @@
             this.dtpNgayXuat.Location = new System.Drawing.Point(157, 56);
             this.dtpNgayXuat.Name = "dtpNgayXuat";
             this.dtpNgayXuat.Size = new System.Drawing.Size(158, 22);
-            this.dtpNgayXuat.TabIndex = 2;
+            this.dtpNgayXuat.TabIndex = 1;
             // 
             // txtTongTien
             // 
             this.txtTongTien.Location = new System.Drawing.Point(572, 142);
             this.txtTongTien.Name = "txtTongTien";
+            this.txtTongTien.ReadOnly = true;
             this.txtTongTien.Size = new System.Drawing.Size(176, 22);
             this.txtTongTien.TabIndex = 1;
             // 
@@ -143,7 +144,7 @@
             this.txtNhanVien.Location = new System.Drawing.Point(572, 108);
             this.txtNhanVien.Name = "txtNhanVien";
             this.txtNhanVien.Size = new System.Drawing.Size(176, 22);
-            this.txtNhanVien.TabIndex = 1;
+            this.txtNhanVien.TabIndex = 6;
             // 
             // txtGhiChu
             // 
@@ -151,21 +152,21 @@
             this.txtGhiChu.Multiline = true;
             this.txtGhiChu.Name = "txtGhiChu";
             this.txtGhiChu.Size = new System.Drawing.Size(340, 77);
-            this.txtGhiChu.TabIndex = 1;
+            this.txtGhiChu.TabIndex = 5;
             // 
             // txtNguoiNhanHang
             // 
             this.txtNguoiNhanHang.Location = new System.Drawing.Point(157, 84);
             this.txtNguoiNhanHang.Name = "txtNguoiNhanHang";
             this.txtNguoiNhanHang.Size = new System.Drawing.Size(158, 22);
-            this.txtNguoiNhanHang.TabIndex = 1;
+            this.txtNguoiNhanHang.TabIndex = 2;
             // 
             // txtSoPhieuXuat
             // 
             this.txtSoPhieuXuat.Location = new System.Drawing.Point(157, 31);
             this.txtSoPhieuXuat.Name = "txtSoPhieuXuat";
             this.txtSoPhieuXuat.Size = new System.Drawing.Size(158, 22);
-            this.txtSoPhieuXuat.TabIndex = 1;
+            this.txtSoPhieuXuat.TabIndex = 0;
             // 
             // label8
             // 
@@ -310,7 +311,7 @@
             this.txtGiaXuat.Location = new System.Drawing.Point(648, 35);
             this.txtGiaXuat.Name = "txtGiaXuat";
             this.txtGiaXuat.Size = new System.Drawing.Size(100, 22);
-            this.txtGiaXuat.TabIndex = 1;
+            this.txtGiaXuat.TabIndex = 2;
             this.txtGiaXuat.Text = "0";
             // 
             // txtSoLuongXuat
@@ -325,7 +326,7 @@
             this.txtMaHH.Location = new System.Drawing.Point(115, 37);
             this.txtMaHH.Name = "txtMaHH";
             this.txtMaHH.Size = new System.Drawing.Size(176, 22);
-            this.txtMaHH.TabIndex = 1;
+            this.txtMaHH.TabIndex = 0;
             this.txtMaHH.Validating += new System.ComponentModel.CancelEventHandler(this.txtMaHH_Validating);
             // 
             // label12
@@ -340,6 +341,7 @@
             // 
             // ThemMoiPhieuXuat
             // 
+            this.AcceptButton = this.btnLuu;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(974, 612);

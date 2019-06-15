@@ -148,6 +148,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvChiTietPhieuXuat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvChiTietPhieuXuat.BackgroundColor = System.Drawing.Color.LightGray;
             this.dgvChiTietPhieuXuat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvChiTietPhieuXuat.Location = new System.Drawing.Point(7, 22);
             this.dgvChiTietPhieuXuat.Name = "dgvChiTietPhieuXuat";
@@ -174,6 +175,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDanhSachPhieuXuat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDanhSachPhieuXuat.BackgroundColor = System.Drawing.Color.LightGray;
             this.dgvDanhSachPhieuXuat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDanhSachPhieuXuat.Location = new System.Drawing.Point(6, 21);
             this.dgvDanhSachPhieuXuat.Name = "dgvDanhSachPhieuXuat";

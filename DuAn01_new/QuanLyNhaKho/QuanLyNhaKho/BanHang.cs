@@ -72,43 +72,130 @@ namespace QuanLyNhaKho
 
         private void btnThemMatHang_Click(object sender, EventArgs e)
         {
-            // Xóa bỏ danh sách hàng hóa cũ
-            dgvDanhSachHangMua.DataSource = null;
 
-            // Cập nhật danh sách mới
-            ChiTietHangHoaDAO chiTietMotSanPham = layer02.LayThongTinMotHangHoaNhapTheoMa(txtMaHH.Text);
+            if (txtMaHH.Text.Equals(""))
+            {
+                MessageBox.Show("Mã hàng hóa không được để trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtMaHH.Focus();
+            }
+            else
+            {
+                int sl;
+                bool isNumericSL = int.TryParse(txtSoLuongMua.Text, out sl);
+                if (txtSoLuongMua.Text.Equals(""))
+                {
+                    MessageBox.Show("Số lượng nhập không được để trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtSoLuongMua.Focus();
+                }
+                else if (!isNumericSL)
+                {
+                    MessageBox.Show("Số lượng nhập phải là chữ số", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtSoLuongMua.Focus();
+                }
+                else if (sl <= 0)
+                {
+                    MessageBox.Show("Số lượng nhập phải lớn hơn 0", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtSoLuongMua.Focus();
+                }
+                else
+                {
+                    int giaBan;
+                    bool isNumericgiaBan = int.TryParse(txtGiaBan.Text, out giaBan);
+                    if (txtGiaBan.Text.Equals(""))
+                    {
+                        MessageBox.Show("Giá nhập không được để trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        txtGiaBan.Focus();
+                    }
+                    else if (!isNumericgiaBan)
+                    {
+                        MessageBox.Show("Giá nhập phải là chữ số", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        txtGiaBan.Focus();
+                    }
+                    else if (giaBan <= 0)
+                    {
+                        MessageBox.Show("Giá nhập phải lớn hơn 0", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        txtGiaBan.Focus();
+                    }
+                    else
+                    {
+                        // Xóa bỏ danh sách hàng hóa cũ
+                        dgvDanhSachHangMua.DataSource = null;
+
+                        //MessageBox.Show(txtMaHangHoa.Text);
+
+                        // Cập nhật danh sách mới
+                        ChiTietHangHoaDAO chiTietMotSanPham = layer02.LayThongTinMotHangHoaNhapTheoMa(txtMaHH.Text);
+                        //MessageBox.Show(chiTietMotSanPham.MaHH);
+
+                        if (chiTietMotSanPham.MaHH == null)
+                        {
+                            MessageBox.Show("Mã hàng hóa không đúng. Vui lòng kiểm tra lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            txtMaHH.Focus();
+
+                        }
+                        else
+                        {
+                            // Kiểm tra xem mã hàng hóa đó đã có trong danh sách hàng nhập chưa
+                            if (isCheckHHinDanhSachHangBan(DanhSachHangBan, txtMaHH.Text))// trường hợp có
+                            {
+                                MessageBox.Show("Mã hàng hóa đã có trong danh sách nhập. Nếu muốn sửa thông tin mặt hàng này thì hãy xóa mặt hàng này và thêm lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                dgvDanhSachHangMua.DataSource = DanhSachHangBan;
+
+                                dgvDanhSachHangMua.Columns["MaHH"].HeaderText = "Mã hàng hóa";
+                                dgvDanhSachHangMua.Columns["TenHH"].HeaderText = "Tên hàng hóa";
+                                dgvDanhSachHangMua.Columns["DVT"].HeaderText = "DVT";
+                                dgvDanhSachHangMua.Columns["SoLuong"].HeaderText = "Số lượng";
+                                dgvDanhSachHangMua.Columns["DonGia"].HeaderText = "Giá nhập";
+                                dgvDanhSachHangMua.Columns["ThanhTien"].HeaderText = "Thành tiền";
+                            }
+                            else
+                            {
+                                // Lấy dữ liệu số lượng nhập, giá nhập, thành tiền vào danh sách
+                                chiTietMotSanPham.DonGia = txtGiaBan.Text;
+                                chiTietMotSanPham.SoLuong = txtSoLuongMua.Text;
+                                chiTietMotSanPham.ThanhTien = (int.Parse(txtGiaBan.Text) * int.Parse(txtSoLuongMua.Text)).ToString();
+
+                                DanhSachHangBan.Add(chiTietMotSanPham);
+
+                                dgvDanhSachHangMua.DataSource = DanhSachHangBan;
+
+                                dgvDanhSachHangMua.Columns["MaHH"].HeaderText = "Mã hàng hóa";
+                                dgvDanhSachHangMua.Columns["TenHH"].HeaderText = "Tên hàng hóa";
+                                dgvDanhSachHangMua.Columns["DVT"].HeaderText = "DVT";
+                                dgvDanhSachHangMua.Columns["SoLuong"].HeaderText = "Số lượng";
+                                dgvDanhSachHangMua.Columns["DonGia"].HeaderText = "Giá nhập";
+                                dgvDanhSachHangMua.Columns["ThanhTien"].HeaderText = "Thành tiền";
+
+                                // Tính tổng tiền mỗi khi thêm sản phẩm
+                                TongTien += int.Parse(txtSoLuongMua.Text) * int.Parse(txtGiaBan.Text);
+                                txtTongTien.Text = TongTien.ToString();
+
+                                // xóa bỏ số lượng
+                                txtSoLuongMua.Text = ""; ;
+                            }
+
+                        }
+                    }
+                }
+            }
 
 
-            // Lấy dữ liệu số lượng nhập, giá nhập, thành tiền vào danh sách
-            chiTietMotSanPham.DonGia = txtGiaBan.Text;
-            chiTietMotSanPham.SoLuong = txtSoLuongMua.Text;
-            chiTietMotSanPham.ThanhTien = (int.Parse(txtGiaBan.Text) * int.Parse(txtSoLuongMua.Text)).ToString();
-
-            DanhSachHangBan.Add(chiTietMotSanPham);
-
-            dgvDanhSachHangMua.DataSource = DanhSachHangBan;
-
-            dgvDanhSachHangMua.Columns["MaHH"].HeaderText = "Mã hàng hóa";
-            dgvDanhSachHangMua.Columns["TenHH"].HeaderText = "Tên hàng hóa";
-            dgvDanhSachHangMua.Columns["DVT"].HeaderText = "DVT";
-            dgvDanhSachHangMua.Columns["SoLuong"].HeaderText = "Số lượng";
-            dgvDanhSachHangMua.Columns["DonGia"].HeaderText = "Giá nhập";
-            dgvDanhSachHangMua.Columns["ThanhTien"].HeaderText = "Thành tiền";
-
-            // Tính tổng tiền mỗi khi thêm sản phẩm
-            TongTien += int.Parse(txtSoLuongMua.Text) * int.Parse(txtGiaBan.Text);
-            txtTongTien.Text = TongTien.ToString();
-
-            // xóa bỏ số lượng
-            txtSoLuongMua.Text = "";
         }
 
         private void txtMaHH_Validating(object sender, CancelEventArgs e)
         {
             ChiTietHangHoaDAO chiTietMotSanPham = layer02.LayThongTinMotHangHoaNhapTheoMa(txtMaHH.Text);
 
-            // Tính giá xuất
-            txtGiaBan.Text = (int.Parse(chiTietMotSanPham.DonGia) + int.Parse(chiTietMotSanPham.DonGia) * 0.1).ToString();
+            if (chiTietMotSanPham.MaHH == null)
+            {
+                MessageBox.Show("Mã hàng hóa không đúng. Vui lòng kiểm tra lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtMaHH.Focus();
+            }
+            else
+            {
+                // Tính giá xuất
+                txtGiaBan.Text = (int.Parse(chiTietMotSanPham.DonGia) + int.Parse(chiTietMotSanPham.DonGia) * 0.1).ToString();
+            }
         }
 
         private void dgvDanhSachHangMua_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -189,12 +276,71 @@ namespace QuanLyNhaKho
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            layer02.ThanhToanVaThemHoaDonBanHang(txtMaHD.Text, "NV00000001", dtpNgayMua.Value, txtGhiChu.Text, double.Parse(txtTongTien.Text),txtTenKH.Text, txtDiaChi.Text, txtSDT.Text, txtEmail.Text, DanhSachHangBan);
+            if (txtGhiChu.Text.Equals(""))
+            {
+                MessageBox.Show("Ghi chú không được để trống.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtGhiChu.Focus();
+            }
+            else
+            {
+                if (txtTenKH.Text.Equals(""))
+                {
+                    MessageBox.Show("Tên Khách hàng không được để trống.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtTenKH.Focus();
+                }
+                else
+                {
+
+                    if (txtDiaChi.Text.Equals(""))
+                    {
+                        MessageBox.Show("Địac chỉ không được để trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        txtDiaChi.Focus();
+                    }
+                    else
+                    {
+
+                        if (txtSDT.Text.Equals(""))
+                        {
+                            MessageBox.Show("Số điện thoại không được để trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            txtSDT.Focus();
+                        }
+                        else
+                        {
+                            if (txtEmail.Text.Equals(""))
+                            {
+                                MessageBox.Show("Email không được để trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                txtEmail.Focus();
+                            }
+                            else
+                            {
+                                layer02.ThanhToanVaThemHoaDonBanHang(txtMaHD.Text, "NV00000001", dtpNgayMua.Value, txtGhiChu.Text, double.Parse(txtTongTien.Text), txtTenKH.Text, txtDiaChi.Text, txtSDT.Text, txtEmail.Text, DanhSachHangBan);
+
+                                MessageBox.Show("Thanh toán và tạo hóa đơn thàng công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                ClearDataHoaDonBanHang();
+
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
 
 
-            MessageBox.Show("Thanh toán và tạo hóa đơn thàng công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        private bool isCheckHHinDanhSachHangBan(List<ChiTietHangHoaDAO> danhSachHH, string maHangKiemTra)
+        {
 
-            ClearDataHoaDonBanHang();
+            foreach (ChiTietHangHoaDAO item in danhSachHH)
+            {
+                if (item.MaHH.Equals(maHangKiemTra))
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
+
 }

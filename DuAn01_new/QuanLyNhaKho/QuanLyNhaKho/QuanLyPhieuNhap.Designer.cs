@@ -75,7 +75,7 @@
             // 
             // txtTimKiem
             // 
-            this.txtTimKiem.Location = new System.Drawing.Point(642, 16);
+            this.txtTimKiem.Location = new System.Drawing.Point(639, 16);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(206, 22);
             this.txtTimKiem.TabIndex = 2;
@@ -147,6 +147,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDanhSachPhieuNhap.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDanhSachPhieuNhap.BackgroundColor = System.Drawing.Color.LightGray;
             this.dgvDanhSachPhieuNhap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDanhSachPhieuNhap.Location = new System.Drawing.Point(7, 22);
             this.dgvDanhSachPhieuNhap.Name = "dgvDanhSachPhieuNhap";
@@ -174,6 +175,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvChiTietPhieuNhap.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvChiTietPhieuNhap.BackgroundColor = System.Drawing.Color.LightGray;
             this.dgvChiTietPhieuNhap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvChiTietPhieuNhap.Location = new System.Drawing.Point(7, 22);
             this.dgvChiTietPhieuNhap.Name = "dgvChiTietPhieuNhap";

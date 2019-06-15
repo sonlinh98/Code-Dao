@@ -53,12 +53,12 @@
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnThanhToan = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txtSDT = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtSDT = new System.Windows.Forms.TextBox();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachHangMua)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -104,8 +104,11 @@
             // 
             this.txtTongTien.Location = new System.Drawing.Point(324, 543);
             this.txtTongTien.Name = "txtTongTien";
+            this.txtTongTien.ReadOnly = true;
             this.txtTongTien.Size = new System.Drawing.Size(176, 22);
             this.txtTongTien.TabIndex = 5;
+            this.txtTongTien.Text = "0";
+            this.txtTongTien.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtNhanVien
             // 
@@ -169,6 +172,7 @@
             // 
             this.dgvDanhSachHangMua.AllowUserToAddRows = false;
             this.dgvDanhSachHangMua.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDanhSachHangMua.BackgroundColor = System.Drawing.Color.LightGray;
             this.dgvDanhSachHangMua.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDanhSachHangMua.Location = new System.Drawing.Point(7, 72);
             this.dgvDanhSachHangMua.Name = "dgvDanhSachHangMua";
@@ -182,9 +186,11 @@
             // 
             this.txtGiaBan.Location = new System.Drawing.Point(648, 35);
             this.txtGiaBan.Name = "txtGiaBan";
+            this.txtGiaBan.ReadOnly = true;
             this.txtGiaBan.Size = new System.Drawing.Size(100, 22);
             this.txtGiaBan.TabIndex = 2;
             this.txtGiaBan.Text = "0";
+            this.txtGiaBan.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtSoLuongMua
             // 
@@ -192,6 +198,7 @@
             this.txtSoLuongMua.Name = "txtSoLuongMua";
             this.txtSoLuongMua.Size = new System.Drawing.Size(100, 22);
             this.txtSoLuongMua.TabIndex = 1;
+            this.txtSoLuongMua.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtMaHD
             // 
@@ -299,6 +306,45 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin bán hàng";
             // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(709, 130);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(158, 22);
+            this.txtEmail.TabIndex = 7;
+            // 
+            // txtSDT
+            // 
+            this.txtSDT.Location = new System.Drawing.Point(709, 97);
+            this.txtSDT.Name = "txtSDT";
+            this.txtSDT.Size = new System.Drawing.Size(158, 22);
+            this.txtSDT.TabIndex = 6;
+            // 
+            // txtDiaChi
+            // 
+            this.txtDiaChi.Location = new System.Drawing.Point(709, 61);
+            this.txtDiaChi.Name = "txtDiaChi";
+            this.txtDiaChi.Size = new System.Drawing.Size(158, 22);
+            this.txtDiaChi.TabIndex = 5;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(591, 133);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(45, 16);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "Email:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(591, 97);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(89, 16);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Số điện thoại:";
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnThemMatHang);
@@ -316,47 +362,9 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chi tiết đơn hàng";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(591, 97);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(89, 16);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Số điện thoại:";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(591, 133);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(45, 16);
-            this.label13.TabIndex = 0;
-            this.label13.Text = "Email:";
-            // 
-            // txtSDT
-            // 
-            this.txtSDT.Location = new System.Drawing.Point(709, 97);
-            this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(158, 22);
-            this.txtSDT.TabIndex = 6;
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(709, 130);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(158, 22);
-            this.txtEmail.TabIndex = 7;
-            // 
-            // txtDiaChi
-            // 
-            this.txtDiaChi.Location = new System.Drawing.Point(709, 61);
-            this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(158, 22);
-            this.txtDiaChi.TabIndex = 5;
-            // 
             // BanHang
             // 
+            this.AcceptButton = this.btnThanhToan;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(978, 587);

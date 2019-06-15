@@ -107,6 +107,7 @@
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(100, 22);
             this.txtSoLuong.TabIndex = 1;
+            this.txtSoLuong.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtMaHangHoa
             // 
@@ -160,6 +161,7 @@
             this.txtGiaNhap.Name = "txtGiaNhap";
             this.txtGiaNhap.Size = new System.Drawing.Size(100, 22);
             this.txtGiaNhap.TabIndex = 2;
+            this.txtGiaNhap.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // cboNhaCungCap
             // 
@@ -189,8 +191,10 @@
             // 
             this.txtTongTien.Location = new System.Drawing.Point(572, 142);
             this.txtTongTien.Name = "txtTongTien";
+            this.txtTongTien.ReadOnly = true;
             this.txtTongTien.Size = new System.Drawing.Size(192, 22);
             this.txtTongTien.TabIndex = 7;
+            this.txtTongTien.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtMaNV
             // 
@@ -350,6 +354,7 @@
             // 
             // ThemMoiPhieuNhap
             // 
+            this.AcceptButton = this.btnLuu;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(974, 571);
