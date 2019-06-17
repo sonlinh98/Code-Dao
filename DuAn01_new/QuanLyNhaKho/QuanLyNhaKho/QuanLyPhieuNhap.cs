@@ -14,15 +14,19 @@ namespace QuanLyNhaKho
     public partial class QuanLyPhieuNhap : Form
     {
         BLLayer02 layer02 = new BLLayer02();
-        public QuanLyPhieuNhap()
+        private NhanVienDAO NVDangNhap = new NhanVienDAO();
+        public QuanLyPhieuNhap(NhanVienDAO nhanviendangnhap)
         {
             InitializeComponent();
+            NVDangNhap = nhanviendangnhap;
         }
 
         private void btnLapPhieuNhap_Click(object sender, EventArgs e)
         {
-            ThemMoiPhieuNhap pnMoi = new ThemMoiPhieuNhap();
+            Hide();
+            ThemMoiPhieuNhap pnMoi = new ThemMoiPhieuNhap(NVDangNhap);
             pnMoi.ShowDialog();
+            this.Close();
         }
 
         private void QuanLyPhieuNhap_Load(object sender, EventArgs e)
@@ -53,7 +57,7 @@ namespace QuanLyNhaKho
         {
             dgvDanhSachPhieuNhap.DataSource = null;
             dgvDanhSachPhieuNhap.DataSource = layer02.LayThongTinDanhSachPhieuNhap();
-            dgvChiTietPhieuNhap.DataSource = null;
+            dgvDanhSachPhieuNhap.Columns["STT"].Width = 60;
         }
 
         private void btnTim_Click(object sender, EventArgs e)
@@ -87,7 +91,7 @@ namespace QuanLyNhaKho
         private void btnBack_Click(object sender, EventArgs e)
         {
             Hide();
-            QuanLyKhoHang qlKhoHang = new QuanLyKhoHang();
+            QuanLyKhoHang qlKhoHang = new QuanLyKhoHang(NVDangNhap);
             qlKhoHang.ShowDialog();
             this.Close();
         }

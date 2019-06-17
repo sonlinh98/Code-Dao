@@ -35,11 +35,11 @@
             this.btnTim = new System.Windows.Forms.Button();
             this.btnIn = new System.Windows.Forms.Button();
             this.btnLamMoi = new System.Windows.Forms.Button();
-            this.btnLapPhieuNhap = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvDanhSachPhieuNhap = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvChiTietPhieuNhap = new System.Windows.Forms.DataGridView();
+            this.btnLapPhieuNhap = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachPhieuNhap)).BeginInit();
@@ -56,8 +56,8 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnTim);
             this.panel1.Controls.Add(this.btnIn);
-            this.panel1.Controls.Add(this.btnLamMoi);
             this.panel1.Controls.Add(this.btnLapPhieuNhap);
+            this.panel1.Controls.Add(this.btnLamMoi);
             this.panel1.Location = new System.Drawing.Point(3, 13);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(967, 59);
@@ -85,7 +85,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(570, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 16);
+            this.label1.Size = new System.Drawing.Size(68, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "Tìm kiếm:";
             // 
@@ -118,16 +118,6 @@
             this.btnLamMoi.Text = "Làm mới";
             this.btnLamMoi.UseVisualStyleBackColor = true;
             this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
-            // 
-            // btnLapPhieuNhap
-            // 
-            this.btnLapPhieuNhap.Location = new System.Drawing.Point(94, 9);
-            this.btnLapPhieuNhap.Name = "btnLapPhieuNhap";
-            this.btnLapPhieuNhap.Size = new System.Drawing.Size(108, 37);
-            this.btnLapPhieuNhap.TabIndex = 0;
-            this.btnLapPhieuNhap.Text = "Lập phiếu nhập";
-            this.btnLapPhieuNhap.UseVisualStyleBackColor = true;
-            this.btnLapPhieuNhap.Click += new System.EventHandler(this.btnLapPhieuNhap_Click);
             // 
             // groupBox1
             // 
@@ -183,6 +173,16 @@
             this.dgvChiTietPhieuNhap.Size = new System.Drawing.Size(957, 185);
             this.dgvChiTietPhieuNhap.TabIndex = 0;
             // 
+            // btnLapPhieuNhap
+            // 
+            this.btnLapPhieuNhap.Location = new System.Drawing.Point(94, 9);
+            this.btnLapPhieuNhap.Name = "btnLapPhieuNhap";
+            this.btnLapPhieuNhap.Size = new System.Drawing.Size(108, 37);
+            this.btnLapPhieuNhap.TabIndex = 0;
+            this.btnLapPhieuNhap.Text = "Tạo phiếu";
+            this.btnLapPhieuNhap.UseVisualStyleBackColor = true;
+            this.btnLapPhieuNhap.Click += new System.EventHandler(this.btnLapPhieuNhap_Click);
+            // 
             // QuanLyPhieuNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -213,11 +213,11 @@
         private System.Windows.Forms.Button btnTim;
         private System.Windows.Forms.Button btnIn;
         private System.Windows.Forms.Button btnLamMoi;
-        private System.Windows.Forms.Button btnLapPhieuNhap;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dgvDanhSachPhieuNhap;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dgvChiTietPhieuNhap;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Button btnLapPhieuNhap;
     }
 }

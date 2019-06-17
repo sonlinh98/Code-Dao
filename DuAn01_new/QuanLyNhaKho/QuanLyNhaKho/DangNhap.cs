@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyNhaKho.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,7 @@ namespace QuanLyNhaKho
             InitializeComponent();
         }
         BLLayer02 layer02 = new BLLayer02();
+        private NhanVienDAO NhanVienDangNhap = new NhanVienDAO();
         private void btnDangnhap_Click(object sender, EventArgs e)
         {
             try
@@ -29,10 +31,15 @@ namespace QuanLyNhaKho
                 {
                     string MaNV = null;
                     int chucnang = layer02.ChucNangNguoiDung(txtID.Text.Trim(), txtPassword.Text.Trim());
+                    
                     if(layer02.GetMaNV(txtID.Text.Trim(), txtPassword.Text.Trim()) != null)
                     {
                         MaNV = layer02.GetMaNV(txtID.Text.Trim(), txtPassword.Text.Trim());
+                        NhanVienDangNhap.MaNV = MaNV;
+                        NhanVienDangNhap.TenNV = layer02.GetTenNV(txtID.Text.Trim(), txtPassword.Text.Trim());
+                        NhanVienDangNhap.PhanQuyen = chucnang.ToString();
                     }
+
                     if (chucnang == 1)
                     {
                         // Quản lý
@@ -44,7 +51,7 @@ namespace QuanLyNhaKho
                     else if (chucnang == 2)
                     {
                         // Kho hàng
-                        QuanLyKhoHang quanLyKho = new QuanLyKhoHang();
+                        QuanLyKhoHang quanLyKho = new QuanLyKhoHang(NhanVienDangNhap);
                         this.Hide();
                         quanLyKho.ShowDialog();
                         this.Close();
@@ -53,12 +60,13 @@ namespace QuanLyNhaKho
                     {
                         // Bán hàng
                         Hide();
-                        BanHang bh = new BanHang();
+                        BanHang bh = new BanHang(NhanVienDangNhap);
                         bh.ShowDialog();
                         this.Close();
                     }
                     else
                     {
+                        
                         throw new IDDoesnotExist();
                     }
                 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyNhaKho.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,15 +13,17 @@ namespace QuanLyNhaKho
 {
     public partial class QuanLyKhoHang : Form
     {
-        public QuanLyKhoHang()
+        private NhanVienDAO NVDangNhap = new NhanVienDAO();
+        public QuanLyKhoHang(NhanVienDAO nhanviendangnhap)
         {
             InitializeComponent();
+            NVDangNhap = nhanviendangnhap;
         }
 
         private void btnPhieunhap_Click(object sender, EventArgs e)
         {
             this.Hide();
-            QuanLyPhieuNhap qlPhieuNhap = new QuanLyPhieuNhap();
+            QuanLyPhieuNhap qlPhieuNhap = new QuanLyPhieuNhap(NVDangNhap);
             qlPhieuNhap.ShowDialog();
             this.Close();
         }
@@ -28,7 +31,7 @@ namespace QuanLyNhaKho
         private void btnPhieuxuat_Click(object sender, EventArgs e)
         {
            this.Hide();
-            QuanLyPhieuXuat qlPhieuXuat = new QuanLyPhieuXuat();
+           QuanLyPhieuXuat qlPhieuXuat = new QuanLyPhieuXuat(NVDangNhap);
             qlPhieuXuat.ShowDialog();
             this.Close();
         }
@@ -36,7 +39,7 @@ namespace QuanLyNhaKho
         private void btnKiemKe_Click(object sender, EventArgs e)
         {
             Hide();
-            HangHoa hanghoa = new HangHoa();
+            HangHoa hanghoa = new HangHoa(NVDangNhap);
             hanghoa.ShowDialog();
             this.Close();
         }

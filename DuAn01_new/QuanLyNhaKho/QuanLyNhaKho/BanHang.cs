@@ -16,16 +16,18 @@ namespace QuanLyNhaKho
         BLLayer02 layer02 = new BLLayer02();
         private List<ChiTietHangHoaDAO> DanhSachHangBan = new List<ChiTietHangHoaDAO>();
         private double TongTien = 0;
-        public BanHang()
+        private NhanVienDAO NhanVienDangNhap = new NhanVienDAO();
+        public BanHang(NhanVienDAO nhanviendangnhap)
         {
             InitializeComponent();
+            NhanVienDangNhap = nhanviendangnhap;
         }
 
         private void BanHang_Load(object sender, EventArgs e)
         {
             txtMaHD.Text = SinhMaSoHoaDonTuDong();
 
-            txtNhanVien.Text = "Đỗ Mạnh Quang";
+            txtNhanVien.Text = NhanVienDangNhap.TenNV;
 
 
             // Khởi tạo danh sách hàng xuất
@@ -313,7 +315,7 @@ namespace QuanLyNhaKho
                             }
                             else
                             {
-                                layer02.ThanhToanVaThemHoaDonBanHang(txtMaHD.Text, "NV00000001", dtpNgayMua.Value, txtGhiChu.Text, double.Parse(txtTongTien.Text), txtTenKH.Text, txtDiaChi.Text, txtSDT.Text, txtEmail.Text, DanhSachHangBan);
+                                layer02.ThanhToanVaThemHoaDonBanHang(txtMaHD.Text, NhanVienDangNhap.MaNV, dtpNgayMua.Value, txtGhiChu.Text, double.Parse(txtTongTien.Text), txtTenKH.Text, txtDiaChi.Text, txtSDT.Text, txtEmail.Text, DanhSachHangBan);
 
                                 MessageBox.Show("Thanh toán và tạo hóa đơn thàng công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -341,6 +343,7 @@ namespace QuanLyNhaKho
 
             return false;
         }
+
     }
 
 }

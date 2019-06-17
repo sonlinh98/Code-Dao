@@ -13,10 +13,11 @@ namespace QuanLyNhaKho
 {
     public partial class HangHoa : Form
     {
-        public HangHoa()
+        private NhanVienDAO NVDangNhap = new NhanVienDAO();
+        public HangHoa(NhanVienDAO nhanviendangnhap)
         {
             InitializeComponent();
-            
+            NVDangNhap = nhanviendangnhap;
            
         }
         BLLayer02 layer02 = new BLLayer02();
@@ -61,7 +62,7 @@ namespace QuanLyNhaKho
 
         private void btnQuaylai_Click(object sender, EventArgs e)
         {
-            QuanLyKhoHang quanLyKho = new QuanLyKhoHang();
+            QuanLyKhoHang quanLyKho = new QuanLyKhoHang(NVDangNhap);
             this.Hide();
             quanLyKho.ShowDialog();
             this.Close();

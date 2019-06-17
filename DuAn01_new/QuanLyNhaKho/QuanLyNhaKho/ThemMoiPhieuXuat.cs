@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,10 +18,12 @@ namespace QuanLyNhaKho
         List<ChiTietHangHoaDAO> DanhSachHangHoaXuat = new List<ChiTietHangHoaDAO>();
 
         private double TongTien = 0;
+        private NhanVienDAO NVDangNhap = new NhanVienDAO();
 
-        public ThemMoiPhieuXuat()
+        public ThemMoiPhieuXuat(NhanVienDAO nhanviendangnhap)
         {
             InitializeComponent();
+            NVDangNhap = nhanviendangnhap;
         }
 
         private void ThemMoiPhieuXuat_Load(object sender, EventArgs e)
@@ -54,7 +57,7 @@ namespace QuanLyNhaKho
             dgvDanhSachHangXuat.Columns["ThanhTien"].HeaderText = "Thành tiền";
 
 
-            txtNhanVien.Text = "Đỗ Mạnh Quang";
+            txtNhanVien.Text = NVDangNhap.TenNV;
 
         }
 
@@ -197,6 +200,9 @@ namespace QuanLyNhaKho
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
+            Hide();
+            QuanLyPhieuXuat qlpx = new QuanLyPhieuXuat(NVDangNhap);
+            qlpx.ShowDialog();
             this.Close();
         }
 
@@ -278,12 +284,23 @@ namespace QuanLyNhaKho
                         }
                         else
                         {
-                            //txtNhanVien.Text
-                            layer02.ThemPhieuNhapHangVaoBangPhieuXuat(txtSoPhieuXuat.Text, cboKho.SelectedValue.ToString(), "NV00000001", dtpNgayXuat.Value, txtNguoiNhanHang.Text, txtGhiChu.Text, double.Parse(txtTongTien.Text), DanhSachHangHoaXuat);
+                            try
+                            {
+                                 //txtNhanVien.Text
+                                layer02.ThemPhieuNhapHangVaoBangPhieuXuat(txtSoPhieuXuat.Text, cboKho.SelectedValue.ToString(), NVDangNhap.MaNV, dtpNgayXuat.Value, txtNguoiNhanHang.Text, txtGhiChu.Text, double.Parse(txtTongTien.Text), DanhSachHangHoaXuat);
 
-                            ClearDataThemMoiPhieuXuat();
+                                ClearDataThemMoiPhieuXuat();
 
-                            MessageBox.Show("Thêm phiếu nhập hàng thàng công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Thêm phiếu nhập hàng thàng công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            catch (SqlException)
+                            {
+                                MessageBox.Show("Lỗi trong quá trình thêm phiếu. Vui lòng đăng nhập lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                Hide();
+                                DangNhap dn = new DangNhap();
+                                dn.ShowDialog();
+                                this.Close();
+                            }
                         }
                     }
                 }

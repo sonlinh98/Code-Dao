@@ -42,6 +42,19 @@ namespace QuanLyNhaKho
             }
             return null;
         }
+
+        public string GetTenNV(string taikhoan, string matkhau)
+        {
+            string cmdText = "select TenNV from Nhanvien where Taikhoan = '" + taikhoan + "' and Matkhau = '" + matkhau + "'";
+            SqlDataReader dataReader = Layer01.GetExecuteReader(cmdText);
+            if (dataReader.Read())
+            {
+                CloseConnection();
+                return dataReader[0].ToString();
+            }
+            return null;
+        }
+
         public int ChucNangNguoiDung(string taikhoan, string matkhau)
         {
             string cmdText = "select Phanquyen from Nhanvien where Taikhoan = '" + taikhoan + "' and Matkhau = '" + matkhau + "'";
@@ -436,7 +449,7 @@ namespace QuanLyNhaKho
         public void ThemPhieuNhapHangVaoBangPhieuNhap(string MaPN, string MaNV, string MaNK, DateTime Ngaynhap, string NguoiGiaoHang, string GhiChu, double tongTien, List<ChiTietHangHoaDAO> DanhSachHangNhap)
         {
             // Thêm thông tin chung về phiếu nhập
-            string cmdText = "INSERT  INTO dbo.Phieunhap( MaPN , MaNV ,MaNK ,Ngaynhap ,Nguoigiaohang , Ghichu ,Tongtien) VALUES  ( '" + MaPN + "', '" + MaNV + "' , '" + MaNK + "' , '" + Ngaynhap + "' , '" + NguoiGiaoHang + "' ,'" + GhiChu + "' , " + tongTien + ")";
+            string cmdText = "INSERT  INTO dbo.Phieunhap( MaPN , MaNV ,MaNK ,Ngaynhap ,Nguoigiaohang , Ghichu ,Tongtien) VALUES  ( '" + MaPN + "', '" + MaNV + "' , '" + MaNK + "' , '" + Ngaynhap + "' , N'" + NguoiGiaoHang + "' ,N'" + GhiChu + "' , " + tongTien + ")";
             Layer01.ExecuteNonQuery(cmdText);
 
             // Thêm Danh sách hàng nhập và cập nhật số lượng

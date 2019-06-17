@@ -14,16 +14,19 @@ namespace QuanLyNhaKho
     public partial class QuanLyPhieuXuat : Form
     {
         BLLayer02 layer02 = new BLLayer02();
-
-        public QuanLyPhieuXuat()
+        private NhanVienDAO NVDangNhap = new NhanVienDAO();
+        public QuanLyPhieuXuat(NhanVienDAO nhanviendangnhap)
         {
             InitializeComponent();
+            NVDangNhap = nhanviendangnhap;
         }
 
         private void btnLapPhieuXuat_Click(object sender, EventArgs e)
         {
-            ThemMoiPhieuXuat pxMoi = new ThemMoiPhieuXuat();
+            Hide();
+            ThemMoiPhieuXuat pxMoi = new ThemMoiPhieuXuat(NVDangNhap);
             pxMoi.ShowDialog();
+            this.Close();
         }
 
         private void QuanLyPhieuXuat_Load(object sender, EventArgs e)
@@ -92,7 +95,7 @@ namespace QuanLyNhaKho
         private void btnBack_Click(object sender, EventArgs e)
         {
             Hide();
-            QuanLyKhoHang qlKhoHang = new QuanLyKhoHang();
+            QuanLyKhoHang qlKhoHang = new QuanLyKhoHang(NVDangNhap);
             qlKhoHang.ShowDialog();
             this.Close();
         }

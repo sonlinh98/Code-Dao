@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,11 +17,12 @@ namespace QuanLyNhaKho
         BLLayer02 layer02 = new BLLayer02();
         List<ChiTietHangHoaDAO> DanhSachHangHoaNhap = new List<ChiTietHangHoaDAO>();
         private double TongTien = 0;
+        private NhanVienDAO NVDangNhap = new NhanVienDAO();
 
-
-        public ThemMoiPhieuNhap()
+        public ThemMoiPhieuNhap(NhanVienDAO nhanviendangnhap)
         {
             InitializeComponent();
+            NVDangNhap = nhanviendangnhap;
         }
 
         private void ThemMoiPhieuNhap_Load(object sender, EventArgs e)
@@ -51,7 +53,7 @@ namespace QuanLyNhaKho
             dgvDanhSachHangMua.Columns["DonGia"].HeaderText = "Giá nhập";
             dgvDanhSachHangMua.Columns["ThanhTien"].HeaderText = "Thành tiền";
 
-            txtMaNV.Text = "Đỗ Mạnh Quang";
+            txtMaNV.Text = NVDangNhap.TenNV;
 
 
             // Sinh ngẫu nhiên số phiếu nhập
@@ -243,6 +245,9 @@ namespace QuanLyNhaKho
         private void btnHuy_Click(object sender, EventArgs e)
         {
             ResetThemMoiPhieuNhap();
+            Hide();
+            QuanLyPhieuNhap qlpn = new QuanLyPhieuNhap(NVDangNhap);
+            qlpn.ShowDialog();
             this.Close();
         }
 
@@ -277,12 +282,23 @@ namespace QuanLyNhaKho
                         else
                         {
 
-                            //txtMaNV.Text
-                            layer02.ThemPhieuNhapHangVaoBangPhieuNhap(txtSoPhieuNhap.Text, "NV00000001", cboKho.SelectedValue.ToString(), dtpNgayNhap.Value, txtNguoiGiaoHang.Text, txtGhiChu.Text, double.Parse(txtTongTien.Text), DanhSachHangHoaNhap);
+                            try
+                            {
+                                //txtMaNV.Text
+                                layer02.ThemPhieuNhapHangVaoBangPhieuNhap(txtSoPhieuNhap.Text, NVDangNhap.MaNV, cboKho.SelectedValue.ToString(), dtpNgayNhap.Value, txtNguoiGiaoHang.Text, txtGhiChu.Text, double.Parse(txtTongTien.Text), DanhSachHangHoaNhap);
 
-                            ResetThemMoiPhieuNhap();
+                                ResetThemMoiPhieuNhap();
 
-                            MessageBox.Show("Thêm phiếu nhập hàng thàng công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Thêm phiếu nhập hàng thàng công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            catch (SqlException)
+                            {
+                                MessageBox.Show("Lỗi trong quá trình thêm phiếu. Vui lòng đăng nhập lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                Hide();
+                                DangNhap dn = new DangNhap();
+                                dn.ShowDialog();
+                                this.Close();
+                            }
                         }
                     }
                 }

@@ -427,23 +427,6 @@ SELECT TOP 1
 FROM    dbo.Phieunhap
 ORDER BY MaPN DESC
 
-INSERT  INTO dbo.Phieunhap
-        ( MaPN ,
-          MaNV ,
-          MaNK ,
-          Ngaynhap ,
-          Nguoigiaohang ,
-          Ghichu ,
-          Tongtien
-        )
-VALUES  ( '' , -- MaPN - varchar(10)
-          '' , -- MaNV - varchar(10)
-          '' , -- MaNK - varchar(10)
-          GETDATE() , -- Ngaynhap - date
-          N'' , -- Nguoigiaohang - nvarchar(30)
-          N'' , -- Ghichu - nvarchar(100)
-          NULL  -- Tongtien - money
-        )
 
 		SELECT MaHH, TenHH, Dvt, Soluong, Giavon, Mota AS 'Thanhtien' FROM dbo.Hanghoa WHERE MaHH = '1'
 		

@@ -34,12 +34,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnTim = new System.Windows.Forms.Button();
             this.btnIn = new System.Windows.Forms.Button();
-            this.btnLamMoi = new System.Windows.Forms.Button();
             this.btnLapPhieuXuat = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvChiTietPhieuXuat = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvDanhSachPhieuXuat = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietPhieuXuat)).BeginInit();
@@ -56,7 +56,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnTim);
             this.panel1.Controls.Add(this.btnIn);
-            this.panel1.Controls.Add(this.btnLamMoi);
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.btnLapPhieuXuat);
             this.panel1.Location = new System.Drawing.Point(0, 12);
             this.panel1.Name = "panel1";
@@ -85,7 +85,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(530, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 16);
+            this.label1.Size = new System.Drawing.Size(68, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "Tìm kiếm:";
             // 
@@ -109,23 +109,13 @@
             this.btnIn.UseVisualStyleBackColor = true;
             this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
             // 
-            // btnLamMoi
-            // 
-            this.btnLamMoi.Location = new System.Drawing.Point(213, 9);
-            this.btnLamMoi.Name = "btnLamMoi";
-            this.btnLamMoi.Size = new System.Drawing.Size(108, 35);
-            this.btnLamMoi.TabIndex = 0;
-            this.btnLamMoi.Text = "Làm mới";
-            this.btnLamMoi.UseVisualStyleBackColor = true;
-            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
-            // 
             // btnLapPhieuXuat
             // 
             this.btnLapPhieuXuat.Location = new System.Drawing.Point(99, 9);
             this.btnLapPhieuXuat.Name = "btnLapPhieuXuat";
             this.btnLapPhieuXuat.Size = new System.Drawing.Size(108, 35);
             this.btnLapPhieuXuat.TabIndex = 0;
-            this.btnLapPhieuXuat.Text = "Lập phiếu xuất";
+            this.btnLapPhieuXuat.Text = "Tạo phiếu";
             this.btnLapPhieuXuat.UseVisualStyleBackColor = true;
             this.btnLapPhieuXuat.Click += new System.EventHandler(this.btnLapPhieuXuat_Click);
             // 
@@ -184,6 +174,16 @@
             this.dgvDanhSachPhieuXuat.TabIndex = 0;
             this.dgvDanhSachPhieuXuat.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSachPhieuXuat_CellClick);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(213, 9);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(108, 35);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Làm mới";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btnLamMoi_Click);
+            // 
             // QuanLyPhieuXuat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -213,12 +213,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnTim;
         private System.Windows.Forms.Button btnIn;
-        private System.Windows.Forms.Button btnLamMoi;
         private System.Windows.Forms.Button btnLapPhieuXuat;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dgvChiTietPhieuXuat;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dgvDanhSachPhieuXuat;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Button button1;
     }
 }
