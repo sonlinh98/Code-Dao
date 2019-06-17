@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -315,12 +316,22 @@ namespace QuanLyNhaKho
                             }
                             else
                             {
-                                layer02.ThanhToanVaThemHoaDonBanHang(txtMaHD.Text, NhanVienDangNhap.MaNV, dtpNgayMua.Value, txtGhiChu.Text, double.Parse(txtTongTien.Text), txtTenKH.Text, txtDiaChi.Text, txtSDT.Text, txtEmail.Text, DanhSachHangBan);
+                                try
+                                {
+                                    layer02.ThanhToanVaThemHoaDonBanHang(txtMaHD.Text, NhanVienDangNhap.MaNV, dtpNgayMua.Value, txtGhiChu.Text, double.Parse(txtTongTien.Text), txtTenKH.Text, txtDiaChi.Text, txtSDT.Text, txtEmail.Text, DanhSachHangBan);
 
-                                MessageBox.Show("Thanh toán và tạo hóa đơn thàng công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    MessageBox.Show("Thanh toán và tạo hóa đơn thàng công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                                ClearDataHoaDonBanHang();
-
+                                    ClearDataHoaDonBanHang();
+                                }
+                                catch (SqlException)
+                                {
+                                    MessageBox.Show("Lỗi trong quá trình tạo hóa đơn. Vui lòng đăng nhập lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    Hide();
+                                    DangNhap dn = new DangNhap();
+                                    dn.ShowDialog();
+                                    this.Close();
+                                }
                             }
                         }
                     }

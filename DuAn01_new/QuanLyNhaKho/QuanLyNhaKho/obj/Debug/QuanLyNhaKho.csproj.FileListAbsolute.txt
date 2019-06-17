@@ -149,3 +149,6 @@ D:\Github\Code-Dao\DuAn01_new\QuanLyNhaKho\QuanLyNhaKho\obj\Debug\QuanLyNhaKho.X
 D:\Github\Code-Dao\DuAn01_new\QuanLyNhaKho\QuanLyNhaKho\obj\Debug\QuanLyNhaKho.XtraReportTonKho.resources
 D:\Github\Code-Dao\DuAn01_new\QuanLyNhaKho\QuanLyNhaKho\obj\Debug\QuanLyNhaKho.csproj.GenerateResource.Cache
 D:\Github\Code-Dao\DuAn01_new\QuanLyNhaKho\QuanLyNhaKho\obj\Debug\QuanLyNhaKho.exe.licenses
+C:\Users\trongson\Desktop\Code-Dao\DuAn01_new\QuanLyNhaKho\QuanLyNhaKho\bin\Debug\QuanLyNhaKho.exe.config
+C:\Users\trongson\Desktop\Code-Dao\DuAn01_new\QuanLyNhaKho\QuanLyNhaKho\obj\Debug\QuanLyNhaKho.exe
+C:\Users\trongson\Desktop\Code-Dao\DuAn01_new\QuanLyNhaKho\QuanLyNhaKho\obj\Debug\QuanLyNhaKho.pdb
