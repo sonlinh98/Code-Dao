@@ -299,6 +299,80 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="icon\icons8-synchronize-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\icons8-plus-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\icons8-left-26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\icons8-save-close-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\icons8-synchronize-26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\icons8-print-26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\icons8-search-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\icons8-pay-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\bg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\icons8-close-window-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\icons8-edit-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\icons8-view-26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\icons8-view-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\nhapkho.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\xuatkho.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\kiemke.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\icons8-open-box-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\icons8-expired-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\icons8-about-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\icons8-warning-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\kh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\nhanvien.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\sanpham.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\nhakho.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\icons8-supplier-53.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

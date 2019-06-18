@@ -42,10 +42,10 @@
             this.txtSdt = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.btnSua = new System.Windows.Forms.Button();
-            this.btnXoa = new System.Windows.Forms.Button();
-            this.btnTimkiem = new System.Windows.Forms.Button();
-            this.btnQuaylai = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachKH)).BeginInit();
             this.SuspendLayout();
             // 
@@ -162,56 +162,72 @@
             this.txtEmail.Size = new System.Drawing.Size(197, 22);
             this.txtEmail.TabIndex = 1;
             // 
-            // btnSua
+            // button1
             // 
-            this.btnSua.Location = new System.Drawing.Point(116, 148);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(97, 36);
-            this.btnSua.TabIndex = 2;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.UseVisualStyleBackColor = true;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            this.button1.Image = global::QuanLyNhaKho.Properties.Resources.icons8_left_26;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(543, 140);
+            this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.button1.Size = new System.Drawing.Size(109, 42);
+            this.button1.TabIndex = 22;
+            this.button1.Text = "Quay Lại";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btnQuaylai_Click);
             // 
-            // btnXoa
+            // button2
             // 
-            this.btnXoa.Location = new System.Drawing.Point(275, 148);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(97, 36);
-            this.btnXoa.TabIndex = 2;
-            this.btnXoa.Text = "Xoá";
-            this.btnXoa.UseVisualStyleBackColor = true;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            this.button2.Image = global::QuanLyNhaKho.Properties.Resources.icons8_view_24;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(402, 140);
+            this.button2.Name = "button2";
+            this.button2.Padding = new System.Windows.Forms.Padding(10, 0, 4, 0);
+            this.button2.Size = new System.Drawing.Size(109, 42);
+            this.button2.TabIndex = 23;
+            this.button2.Text = "Tìm Kiếm";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.btnTimkiem_Click);
             // 
-            // btnTimkiem
+            // button3
             // 
-            this.btnTimkiem.Location = new System.Drawing.Point(431, 148);
-            this.btnTimkiem.Name = "btnTimkiem";
-            this.btnTimkiem.Size = new System.Drawing.Size(97, 36);
-            this.btnTimkiem.TabIndex = 2;
-            this.btnTimkiem.Text = "Tìm Kiếm";
-            this.btnTimkiem.UseVisualStyleBackColor = true;
-            this.btnTimkiem.Click += new System.EventHandler(this.btnTimkiem_Click);
+            this.button3.Image = global::QuanLyNhaKho.Properties.Resources.icons8_close_window_24;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(263, 140);
+            this.button3.Name = "button3";
+            this.button3.Padding = new System.Windows.Forms.Padding(25, 0, 18, 0);
+            this.button3.Size = new System.Drawing.Size(109, 42);
+            this.button3.TabIndex = 24;
+            this.button3.Text = "Xóa";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.btnXoa_Click);
             // 
-            // btnQuaylai
+            // button4
             // 
-            this.btnQuaylai.Location = new System.Drawing.Point(583, 148);
-            this.btnQuaylai.Name = "btnQuaylai";
-            this.btnQuaylai.Size = new System.Drawing.Size(97, 36);
-            this.btnQuaylai.TabIndex = 2;
-            this.btnQuaylai.Text = "Quay Lại";
-            this.btnQuaylai.UseVisualStyleBackColor = true;
-            this.btnQuaylai.Click += new System.EventHandler(this.btnQuaylai_Click);
+            this.button4.Image = global::QuanLyNhaKho.Properties.Resources.icons8_edit_24;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.Location = new System.Drawing.Point(123, 140);
+            this.button4.Name = "button4";
+            this.button4.Padding = new System.Windows.Forms.Padding(20, 0, 18, 0);
+            this.button4.Size = new System.Drawing.Size(109, 42);
+            this.button4.TabIndex = 25;
+            this.button4.Text = "Sửa";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // KhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.dgvDanhSachKH);
-            this.Controls.Add(this.btnQuaylai);
-            this.Controls.Add(this.btnTimkiem);
-            this.Controls.Add(this.btnXoa);
-            this.Controls.Add(this.btnSua);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtDiachi);
             this.Controls.Add(this.label4);
@@ -221,6 +237,7 @@
             this.Controls.Add(this.txtTenKH);
             this.Controls.Add(this.label1);
             this.Name = "KhachHang";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Khách Hàng";
             this.Load += new System.EventHandler(this.KhachHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachKH)).EndInit();
@@ -240,14 +257,14 @@
         private System.Windows.Forms.TextBox txtSdt;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.Button btnSua;
-        private System.Windows.Forms.Button btnXoa;
-        private System.Windows.Forms.Button btnTimkiem;
-        private System.Windows.Forms.Button btnQuaylai;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
     }
 }

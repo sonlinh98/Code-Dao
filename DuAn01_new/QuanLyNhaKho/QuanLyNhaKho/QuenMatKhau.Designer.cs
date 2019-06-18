@@ -30,15 +30,15 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
-            this.btnCapnhap = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtTaikhoan = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtMatkhau1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtMatkhau2 = new System.Windows.Forms.TextBox();
-            this.btnQuaylai = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnCapnhap = new System.Windows.Forms.Button();
+            this.btnQuaylai = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -56,16 +56,6 @@
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(189, 22);
             this.txtID.TabIndex = 1;
-            // 
-            // btnCapnhap
-            // 
-            this.btnCapnhap.Location = new System.Drawing.Point(127, 335);
-            this.btnCapnhap.Name = "btnCapnhap";
-            this.btnCapnhap.Size = new System.Drawing.Size(121, 39);
-            this.btnCapnhap.TabIndex = 2;
-            this.btnCapnhap.Text = "Cập Nhập";
-            this.btnCapnhap.UseVisualStyleBackColor = true;
-            this.btnCapnhap.Click += new System.EventHandler(this.btnCapnhap_Click);
             // 
             // label2
             // 
@@ -117,16 +107,6 @@
             this.txtMatkhau2.Size = new System.Drawing.Size(189, 22);
             this.txtMatkhau2.TabIndex = 4;
             // 
-            // btnQuaylai
-            // 
-            this.btnQuaylai.Location = new System.Drawing.Point(390, 335);
-            this.btnQuaylai.Name = "btnQuaylai";
-            this.btnQuaylai.Size = new System.Drawing.Size(121, 39);
-            this.btnQuaylai.TabIndex = 2;
-            this.btnQuaylai.Text = "Quay Lại";
-            this.btnQuaylai.UseVisualStyleBackColor = true;
-            this.btnQuaylai.Click += new System.EventHandler(this.btnQuaylai_Click);
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -136,6 +116,34 @@
             this.label5.Size = new System.Drawing.Size(151, 25);
             this.label5.TabIndex = 3;
             this.label5.Text = "Quên Mật Khẩu";
+            // 
+            // btnCapnhap
+            // 
+            this.btnCapnhap.Image = global::QuanLyNhaKho.Properties.Resources.icons8_save_close_24;
+            this.btnCapnhap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCapnhap.Location = new System.Drawing.Point(127, 335);
+            this.btnCapnhap.Name = "btnCapnhap";
+            this.btnCapnhap.Padding = new System.Windows.Forms.Padding(10, 0, 5, 0);
+            this.btnCapnhap.Size = new System.Drawing.Size(121, 39);
+            this.btnCapnhap.TabIndex = 2;
+            this.btnCapnhap.Text = "Cập Nhập";
+            this.btnCapnhap.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCapnhap.UseVisualStyleBackColor = true;
+            this.btnCapnhap.Click += new System.EventHandler(this.btnCapnhap_Click);
+            // 
+            // btnQuaylai
+            // 
+            this.btnQuaylai.Image = global::QuanLyNhaKho.Properties.Resources.icons8_left_26;
+            this.btnQuaylai.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQuaylai.Location = new System.Drawing.Point(390, 335);
+            this.btnQuaylai.Name = "btnQuaylai";
+            this.btnQuaylai.Padding = new System.Windows.Forms.Padding(15, 0, 10, 0);
+            this.btnQuaylai.Size = new System.Drawing.Size(121, 39);
+            this.btnQuaylai.TabIndex = 2;
+            this.btnQuaylai.Text = "Quay Lại";
+            this.btnQuaylai.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnQuaylai.UseVisualStyleBackColor = true;
+            this.btnQuaylai.Click += new System.EventHandler(this.btnQuaylai_Click);
             // 
             // QuenMatKhau
             // 
@@ -155,6 +163,7 @@
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.label1);
             this.Name = "QuenMatKhau";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QuenMatKhau";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -51,7 +51,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(118, 61);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 16);
+            this.label1.Size = new System.Drawing.Size(95, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã hàng hóa:";
             // 
@@ -60,7 +60,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(118, 117);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 16);
+            this.label2.Size = new System.Drawing.Size(101, 17);
             this.label2.TabIndex = 0;
             this.label2.Text = "Tên hàng hóa:";
             // 
@@ -69,7 +69,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(118, 171);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 16);
+            this.label3.Size = new System.Drawing.Size(79, 17);
             this.label3.TabIndex = 0;
             this.label3.Text = "Đơn vị tính:";
             // 
@@ -78,7 +78,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(118, 227);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(86, 16);
+            this.label4.Size = new System.Drawing.Size(93, 17);
             this.label4.TabIndex = 0;
             this.label4.Text = "Hạn sử dụng:";
             // 
@@ -87,7 +87,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(436, 101);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(44, 16);
+            this.label5.Size = new System.Drawing.Size(47, 17);
             this.label5.TabIndex = 0;
             this.label5.Text = "Mô tả:";
             // 
@@ -96,7 +96,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(436, 171);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(71, 16);
+            this.label6.Size = new System.Drawing.Size(76, 17);
             this.label6.TabIndex = 0;
             this.label6.Text = "Danh mục:";
             // 
@@ -105,7 +105,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(436, 227);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(94, 16);
+            this.label7.Size = new System.Drawing.Size(100, 17);
             this.label7.TabIndex = 0;
             this.label7.Text = "Nhà cung cấp:";
             // 
@@ -156,21 +156,29 @@
             // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(303, 307);
+            this.btnLuu.Image = global::QuanLyNhaKho.Properties.Resources.icons8_save_close_24;
+            this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLuu.Location = new System.Drawing.Point(439, 302);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(75, 23);
+            this.btnLuu.Padding = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.btnLuu.Size = new System.Drawing.Size(82, 32);
             this.btnLuu.TabIndex = 3;
             this.btnLuu.Text = "Lưu";
+            this.btnLuu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLuu.UseVisualStyleBackColor = true;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnHuy
             // 
-            this.btnHuy.Location = new System.Drawing.Point(410, 307);
+            this.btnHuy.Image = global::QuanLyNhaKho.Properties.Resources.icons8_left_26;
+            this.btnHuy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHuy.Location = new System.Drawing.Point(314, 302);
             this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(75, 23);
+            this.btnHuy.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.btnHuy.Size = new System.Drawing.Size(76, 32);
             this.btnHuy.TabIndex = 3;
             this.btnHuy.Text = "Hủy";
+            this.btnHuy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnHuy.UseVisualStyleBackColor = true;
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 

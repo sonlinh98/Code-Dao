@@ -102,25 +102,6 @@ namespace QuanLyNhaKho
                 }
                 else
                 {
-                    int giaBan;
-                    bool isNumericgiaBan = int.TryParse(txtGiaBan.Text, out giaBan);
-                    if (txtGiaBan.Text.Equals(""))
-                    {
-                        MessageBox.Show("Giá nhập không được để trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        txtGiaBan.Focus();
-                    }
-                    else if (!isNumericgiaBan)
-                    {
-                        MessageBox.Show("Giá nhập phải là chữ số", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        txtGiaBan.Focus();
-                    }
-                    else if (giaBan <= 0)
-                    {
-                        MessageBox.Show("Giá nhập phải lớn hơn 0", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        txtGiaBan.Focus();
-                    }
-                    else
-                    {
                         // Xóa bỏ danh sách hàng hóa cũ
                         dgvDanhSachHangMua.DataSource = null;
 
@@ -154,9 +135,11 @@ namespace QuanLyNhaKho
                             else
                             {
                                 // Lấy dữ liệu số lượng nhập, giá nhập, thành tiền vào danh sách
-                                chiTietMotSanPham.DonGia = txtGiaBan.Text;
+                                double giaBanCuaSPThem = Math.Round((((double.Parse(chiTietMotSanPham.DonGia) * 2) / int.Parse(chiTietMotSanPham.SoLuong)) * int.Parse(chiTietMotSanPham.DonGia)) / 10000, 1) * 10000;
+
+                                chiTietMotSanPham.DonGia = giaBanCuaSPThem.ToString();
                                 chiTietMotSanPham.SoLuong = txtSoLuongMua.Text;
-                                chiTietMotSanPham.ThanhTien = (int.Parse(txtGiaBan.Text) * int.Parse(txtSoLuongMua.Text)).ToString();
+                                chiTietMotSanPham.ThanhTien = (giaBanCuaSPThem * int.Parse(txtSoLuongMua.Text)).ToString();
 
                                 DanhSachHangBan.Add(chiTietMotSanPham);
 
@@ -170,7 +153,7 @@ namespace QuanLyNhaKho
                                 dgvDanhSachHangMua.Columns["ThanhTien"].HeaderText = "Thành tiền";
 
                                 // Tính tổng tiền mỗi khi thêm sản phẩm
-                                TongTien += int.Parse(txtSoLuongMua.Text) * int.Parse(txtGiaBan.Text);
+                                TongTien += int.Parse(txtSoLuongMua.Text) * giaBanCuaSPThem;
                                 txtTongTien.Text = TongTien.ToString();
 
                                 // xóa bỏ số lượng
@@ -180,26 +163,10 @@ namespace QuanLyNhaKho
                         }
                     }
                 }
-            }
 
 
         }
 
-        private void txtMaHH_Validating(object sender, CancelEventArgs e)
-        {
-            ChiTietHangHoaDAO chiTietMotSanPham = layer02.LayThongTinMotHangHoaNhapTheoMa(txtMaHH.Text);
-
-            if (chiTietMotSanPham.MaHH == null)
-            {
-                MessageBox.Show("Mã hàng hóa không đúng. Vui lòng kiểm tra lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtMaHH.Focus();
-            }
-            else
-            {
-                // Tính giá xuất
-                txtGiaBan.Text = (int.Parse(chiTietMotSanPham.DonGia) + int.Parse(chiTietMotSanPham.DonGia) * 0.1).ToString();
-            }
-        }
 
         private void dgvDanhSachHangMua_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -274,7 +241,6 @@ namespace QuanLyNhaKho
             txtMaHH.Text = "";
 
             txtGhiChu.Text = "";
-            txtGiaBan.Text = "0";
         }
 
         private void btnThanhToan_Click(object sender, EventArgs e)

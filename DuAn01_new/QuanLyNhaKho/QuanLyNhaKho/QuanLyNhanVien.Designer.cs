@@ -48,11 +48,6 @@
             this.txtSdt = new System.Windows.Forms.TextBox();
             this.txtChucvu = new System.Windows.Forms.TextBox();
             this.txtTenNV = new System.Windows.Forms.TextBox();
-            this.btnQuaylai = new System.Windows.Forms.Button();
-            this.btnTimkiem = new System.Windows.Forms.Button();
-            this.btnXoa = new System.Windows.Forms.Button();
-            this.btnSua = new System.Windows.Forms.Button();
-            this.btnThem = new System.Windows.Forms.Button();
             this.dtpNgaysinh = new System.Windows.Forms.DateTimePicker();
             this.txtDiachi = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -61,6 +56,11 @@
             this.txtPhanquyen = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.btnRestart = new System.Windows.Forms.Button();
+            this.btnQuaylai = new System.Windows.Forms.Button();
+            this.btnTimkiem = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.btnSua = new System.Windows.Forms.Button();
+            this.btnThem = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhavien)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,7 +83,7 @@
             this.dgvNhavien.Location = new System.Drawing.Point(0, 326);
             this.dgvNhavien.Name = "dgvNhavien";
             this.dgvNhavien.RowTemplate.Height = 24;
-            this.dgvNhavien.Size = new System.Drawing.Size(844, 309);
+            this.dgvNhavien.Size = new System.Drawing.Size(950, 309);
             this.dgvNhavien.TabIndex = 22;
             this.dgvNhavien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhavien_CellClick);
             // 
@@ -146,7 +146,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(480, 118);
+            this.label7.Location = new System.Drawing.Point(534, 119);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(51, 17);
             this.label7.TabIndex = 20;
@@ -164,7 +164,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(480, 157);
+            this.label6.Location = new System.Drawing.Point(534, 158);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(42, 17);
             this.label6.TabIndex = 18;
@@ -173,7 +173,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(480, 78);
+            this.label4.Location = new System.Drawing.Point(534, 79);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(91, 17);
             this.label4.TabIndex = 17;
@@ -208,7 +208,7 @@
             // 
             // txtSdt
             // 
-            this.txtSdt.Location = new System.Drawing.Point(609, 75);
+            this.txtSdt.Location = new System.Drawing.Point(663, 76);
             this.txtSdt.Name = "txtSdt";
             this.txtSdt.Size = new System.Drawing.Size(183, 22);
             this.txtSdt.TabIndex = 13;
@@ -227,56 +227,6 @@
             this.txtTenNV.Size = new System.Drawing.Size(183, 22);
             this.txtTenNV.TabIndex = 11;
             // 
-            // btnQuaylai
-            // 
-            this.btnQuaylai.Location = new System.Drawing.Point(717, 12);
-            this.btnQuaylai.Name = "btnQuaylai";
-            this.btnQuaylai.Size = new System.Drawing.Size(115, 37);
-            this.btnQuaylai.TabIndex = 9;
-            this.btnQuaylai.Text = "Quay Lại";
-            this.btnQuaylai.UseVisualStyleBackColor = true;
-            this.btnQuaylai.Click += new System.EventHandler(this.btnQuaylai_Click);
-            // 
-            // btnTimkiem
-            // 
-            this.btnTimkiem.Location = new System.Drawing.Point(510, 256);
-            this.btnTimkiem.Name = "btnTimkiem";
-            this.btnTimkiem.Size = new System.Drawing.Size(115, 37);
-            this.btnTimkiem.TabIndex = 8;
-            this.btnTimkiem.Text = "Tìm Kiếm";
-            this.btnTimkiem.UseVisualStyleBackColor = true;
-            this.btnTimkiem.Click += new System.EventHandler(this.btnTimkiem_Click);
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.Location = new System.Drawing.Point(358, 256);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(115, 37);
-            this.btnXoa.TabIndex = 7;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.UseVisualStyleBackColor = true;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
-            // 
-            // btnSua
-            // 
-            this.btnSua.Location = new System.Drawing.Point(205, 256);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(115, 37);
-            this.btnSua.TabIndex = 10;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.UseVisualStyleBackColor = true;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
-            // 
-            // btnThem
-            // 
-            this.btnThem.Location = new System.Drawing.Point(50, 256);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(115, 37);
-            this.btnThem.TabIndex = 6;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.UseVisualStyleBackColor = true;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
             // dtpNgaysinh
             // 
             this.dtpNgaysinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -287,14 +237,14 @@
             // 
             // txtDiachi
             // 
-            this.txtDiachi.Location = new System.Drawing.Point(609, 115);
+            this.txtDiachi.Location = new System.Drawing.Point(663, 116);
             this.txtDiachi.Name = "txtDiachi";
             this.txtDiachi.Size = new System.Drawing.Size(183, 22);
             this.txtDiachi.TabIndex = 13;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(609, 154);
+            this.txtEmail.Location = new System.Drawing.Point(663, 155);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(183, 22);
             this.txtEmail.TabIndex = 13;
@@ -323,7 +273,7 @@
             // 
             // txtPhanquyen
             // 
-            this.txtPhanquyen.Location = new System.Drawing.Point(609, 200);
+            this.txtPhanquyen.Location = new System.Drawing.Point(663, 201);
             this.txtPhanquyen.Name = "txtPhanquyen";
             this.txtPhanquyen.Size = new System.Drawing.Size(183, 22);
             this.txtPhanquyen.TabIndex = 13;
@@ -331,7 +281,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(480, 203);
+            this.label8.Location = new System.Drawing.Point(534, 204);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(84, 17);
             this.label8.TabIndex = 18;
@@ -339,19 +289,93 @@
             // 
             // btnRestart
             // 
-            this.btnRestart.Location = new System.Drawing.Point(667, 256);
+            this.btnRestart.Image = global::QuanLyNhaKho.Properties.Resources.icons8_synchronize_26;
+            this.btnRestart.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRestart.Location = new System.Drawing.Point(713, 255);
             this.btnRestart.Name = "btnRestart";
+            this.btnRestart.Padding = new System.Windows.Forms.Padding(14, 0, 10, 0);
             this.btnRestart.Size = new System.Drawing.Size(115, 37);
             this.btnRestart.TabIndex = 9;
             this.btnRestart.Text = "Restart";
+            this.btnRestart.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRestart.UseVisualStyleBackColor = true;
             this.btnRestart.Click += new System.EventHandler(this.btnRestart_Click);
+            // 
+            // btnQuaylai
+            // 
+            this.btnQuaylai.Image = global::QuanLyNhaKho.Properties.Resources.icons8_left_26;
+            this.btnQuaylai.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQuaylai.Location = new System.Drawing.Point(790, 12);
+            this.btnQuaylai.Name = "btnQuaylai";
+            this.btnQuaylai.Padding = new System.Windows.Forms.Padding(10, 0, 5, 0);
+            this.btnQuaylai.Size = new System.Drawing.Size(115, 37);
+            this.btnQuaylai.TabIndex = 9;
+            this.btnQuaylai.Text = "Quay Lại";
+            this.btnQuaylai.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnQuaylai.UseVisualStyleBackColor = true;
+            this.btnQuaylai.Click += new System.EventHandler(this.btnQuaylai_Click);
+            // 
+            // btnTimkiem
+            // 
+            this.btnTimkiem.Image = global::QuanLyNhaKho.Properties.Resources.icons8_view_24;
+            this.btnTimkiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTimkiem.Location = new System.Drawing.Point(556, 255);
+            this.btnTimkiem.Name = "btnTimkiem";
+            this.btnTimkiem.Padding = new System.Windows.Forms.Padding(10, 0, 5, 0);
+            this.btnTimkiem.Size = new System.Drawing.Size(115, 37);
+            this.btnTimkiem.TabIndex = 8;
+            this.btnTimkiem.Text = "Tìm Kiếm";
+            this.btnTimkiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnTimkiem.UseVisualStyleBackColor = true;
+            this.btnTimkiem.Click += new System.EventHandler(this.btnTimkiem_Click);
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Image = global::QuanLyNhaKho.Properties.Resources.icons8_close_window_24;
+            this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXoa.Location = new System.Drawing.Point(404, 255);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Padding = new System.Windows.Forms.Padding(25, 0, 20, 0);
+            this.btnXoa.Size = new System.Drawing.Size(115, 37);
+            this.btnXoa.TabIndex = 7;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
+            // btnSua
+            // 
+            this.btnSua.Image = global::QuanLyNhaKho.Properties.Resources.icons8_edit_24;
+            this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSua.Location = new System.Drawing.Point(251, 255);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Padding = new System.Windows.Forms.Padding(26, 0, 20, 0);
+            this.btnSua.Size = new System.Drawing.Size(115, 37);
+            this.btnSua.TabIndex = 10;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
+            // btnThem
+            // 
+            this.btnThem.Image = global::QuanLyNhaKho.Properties.Resources.icons8_plus_24;
+            this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThem.Location = new System.Drawing.Point(96, 255);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Padding = new System.Windows.Forms.Padding(22, 0, 20, 0);
+            this.btnThem.Size = new System.Drawing.Size(115, 37);
+            this.btnThem.TabIndex = 6;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // QuanLyNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(844, 635);
+            this.ClientSize = new System.Drawing.Size(950, 635);
             this.Controls.Add(this.rdNu);
             this.Controls.Add(this.rdNam);
             this.Controls.Add(this.dtpNgaysinh);
@@ -377,6 +401,7 @@
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnThem);
             this.Name = "QuanLyNhanVien";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QuanLyNhanVien";
             this.Load += new System.EventHandler(this.QuanLyNhanVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhavien)).EndInit();

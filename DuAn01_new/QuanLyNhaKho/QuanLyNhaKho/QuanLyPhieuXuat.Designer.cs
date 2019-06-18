@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnBack = new System.Windows.Forms.Button();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnTim = new System.Windows.Forms.Button();
-            this.btnIn = new System.Windows.Forms.Button();
-            this.btnLapPhieuXuat = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvChiTietPhieuXuat = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvDanhSachPhieuXuat = new System.Windows.Forms.DataGridView();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.btnTim = new System.Windows.Forms.Button();
+            this.btnIn = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnLapPhieuXuat = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietPhieuXuat)).BeginInit();
@@ -63,16 +63,6 @@
             this.panel1.Size = new System.Drawing.Size(967, 58);
             this.panel1.TabIndex = 3;
             // 
-            // btnBack
-            // 
-            this.btnBack.Location = new System.Drawing.Point(18, 10);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(75, 34);
-            this.btnBack.TabIndex = 3;
-            this.btnBack.Text = "Quay lại";
-            this.btnBack.UseVisualStyleBackColor = true;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
             // txtTimKiem
             // 
             this.txtTimKiem.Location = new System.Drawing.Point(602, 15);
@@ -88,36 +78,6 @@
             this.label1.Size = new System.Drawing.Size(68, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "Tìm kiếm:";
-            // 
-            // btnTim
-            // 
-            this.btnTim.Location = new System.Drawing.Point(853, 14);
-            this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(108, 25);
-            this.btnTim.TabIndex = 0;
-            this.btnTim.Text = "Tìm";
-            this.btnTim.UseVisualStyleBackColor = true;
-            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
-            // 
-            // btnIn
-            // 
-            this.btnIn.Location = new System.Drawing.Point(327, 9);
-            this.btnIn.Name = "btnIn";
-            this.btnIn.Size = new System.Drawing.Size(108, 35);
-            this.btnIn.TabIndex = 0;
-            this.btnIn.Text = "In";
-            this.btnIn.UseVisualStyleBackColor = true;
-            this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
-            // 
-            // btnLapPhieuXuat
-            // 
-            this.btnLapPhieuXuat.Location = new System.Drawing.Point(99, 9);
-            this.btnLapPhieuXuat.Name = "btnLapPhieuXuat";
-            this.btnLapPhieuXuat.Size = new System.Drawing.Size(108, 35);
-            this.btnLapPhieuXuat.TabIndex = 0;
-            this.btnLapPhieuXuat.Text = "Tạo phiếu";
-            this.btnLapPhieuXuat.UseVisualStyleBackColor = true;
-            this.btnLapPhieuXuat.Click += new System.EventHandler(this.btnLapPhieuXuat_Click);
             // 
             // groupBox2
             // 
@@ -174,15 +134,74 @@
             this.dgvDanhSachPhieuXuat.TabIndex = 0;
             this.dgvDanhSachPhieuXuat.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSachPhieuXuat_CellClick);
             // 
+            // btnBack
+            // 
+            this.btnBack.Image = global::QuanLyNhaKho.Properties.Resources.icons8_left_26;
+            this.btnBack.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBack.Location = new System.Drawing.Point(9, 9);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(96, 34);
+            this.btnBack.TabIndex = 3;
+            this.btnBack.Text = "Quay lại";
+            this.btnBack.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // btnTim
+            // 
+            this.btnTim.Image = global::QuanLyNhaKho.Properties.Resources.icons8_search_16;
+            this.btnTim.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTim.Location = new System.Drawing.Point(853, 14);
+            this.btnTim.Name = "btnTim";
+            this.btnTim.Padding = new System.Windows.Forms.Padding(30, 0, 24, 0);
+            this.btnTim.Size = new System.Drawing.Size(108, 25);
+            this.btnTim.TabIndex = 0;
+            this.btnTim.Text = "Tìm";
+            this.btnTim.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnTim.UseVisualStyleBackColor = true;
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
+            // 
+            // btnIn
+            // 
+            this.btnIn.Image = global::QuanLyNhaKho.Properties.Resources.icons8_print_26;
+            this.btnIn.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnIn.Location = new System.Drawing.Point(339, 9);
+            this.btnIn.Name = "btnIn";
+            this.btnIn.Padding = new System.Windows.Forms.Padding(25, 0, 25, 0);
+            this.btnIn.Size = new System.Drawing.Size(108, 35);
+            this.btnIn.TabIndex = 0;
+            this.btnIn.Text = "In";
+            this.btnIn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnIn.UseVisualStyleBackColor = true;
+            this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
+            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(213, 9);
+            this.button1.Image = global::QuanLyNhaKho.Properties.Resources.icons8_synchronize_26;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.button1.Location = new System.Drawing.Point(225, 9);
             this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(8, 0, 6, 0);
             this.button1.Size = new System.Drawing.Size(108, 35);
             this.button1.TabIndex = 0;
             this.button1.Text = "Làm mới";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.btnLamMoi_Click);
+            // 
+            // btnLapPhieuXuat
+            // 
+            this.btnLapPhieuXuat.Image = global::QuanLyNhaKho.Properties.Resources.icons8_plus_24;
+            this.btnLapPhieuXuat.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnLapPhieuXuat.Location = new System.Drawing.Point(111, 9);
+            this.btnLapPhieuXuat.Name = "btnLapPhieuXuat";
+            this.btnLapPhieuXuat.Padding = new System.Windows.Forms.Padding(5, 0, 2, 0);
+            this.btnLapPhieuXuat.Size = new System.Drawing.Size(108, 35);
+            this.btnLapPhieuXuat.TabIndex = 0;
+            this.btnLapPhieuXuat.Text = "Tạo phiếu";
+            this.btnLapPhieuXuat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLapPhieuXuat.UseVisualStyleBackColor = true;
+            this.btnLapPhieuXuat.Click += new System.EventHandler(this.btnLapPhieuXuat_Click);
             // 
             // QuanLyPhieuXuat
             // 

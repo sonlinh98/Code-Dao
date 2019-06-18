@@ -10,7 +10,7 @@ namespace QuanLyNhaKho
 {
     class DALayer01
     {
-        private String connectionString = @"Data Source=VIVOBOOK-S15\SQLEXPRESS;Initial Catalog=QLkhohang;User ID=sa;Password=1";
+        private String connectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=QLkhohang;User ID=sa;Password=1";
         public SqlConnection GetSqlConnection()
         {
             return new SqlConnection(connectionString);

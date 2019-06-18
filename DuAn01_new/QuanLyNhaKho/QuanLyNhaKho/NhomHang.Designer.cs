@@ -28,68 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnQuaylai = new System.Windows.Forms.Button();
-            this.btnTimkiem = new System.Windows.Forms.Button();
-            this.btnXoa = new System.Windows.Forms.Button();
-            this.btnSua = new System.Windows.Forms.Button();
-            this.btnThem = new System.Windows.Forms.Button();
             this.dgvNhomHang = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtTenNH = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnQuaylai = new System.Windows.Forms.Button();
+            this.btnTimkiem = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.btnSua = new System.Windows.Forms.Button();
+            this.btnThem = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhomHang)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnQuaylai
-            // 
-            this.btnQuaylai.Location = new System.Drawing.Point(631, 117);
-            this.btnQuaylai.Name = "btnQuaylai";
-            this.btnQuaylai.Size = new System.Drawing.Size(109, 42);
-            this.btnQuaylai.TabIndex = 23;
-            this.btnQuaylai.Text = "Quay Lại";
-            this.btnQuaylai.UseVisualStyleBackColor = true;
-            this.btnQuaylai.Click += new System.EventHandler(this.btnQuaylai_Click);
-            // 
-            // btnTimkiem
-            // 
-            this.btnTimkiem.Location = new System.Drawing.Point(490, 117);
-            this.btnTimkiem.Name = "btnTimkiem";
-            this.btnTimkiem.Size = new System.Drawing.Size(109, 42);
-            this.btnTimkiem.TabIndex = 24;
-            this.btnTimkiem.Text = "Tìm Kiếm";
-            this.btnTimkiem.UseVisualStyleBackColor = true;
-            this.btnTimkiem.Click += new System.EventHandler(this.btnTimkiem_Click);
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.Location = new System.Drawing.Point(351, 117);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(109, 42);
-            this.btnXoa.TabIndex = 25;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.UseVisualStyleBackColor = true;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
-            // 
-            // btnSua
-            // 
-            this.btnSua.Location = new System.Drawing.Point(211, 117);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(109, 42);
-            this.btnSua.TabIndex = 26;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.UseVisualStyleBackColor = true;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
-            // 
-            // btnThem
-            // 
-            this.btnThem.Location = new System.Drawing.Point(74, 117);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(109, 42);
-            this.btnThem.TabIndex = 27;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.UseVisualStyleBackColor = true;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // dgvNhomHang
             // 
@@ -135,6 +85,76 @@
             this.label1.TabIndex = 19;
             this.label1.Text = "Tên Nhóm Hàng";
             // 
+            // btnQuaylai
+            // 
+            this.btnQuaylai.Image = global::QuanLyNhaKho.Properties.Resources.icons8_left_26;
+            this.btnQuaylai.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQuaylai.Location = new System.Drawing.Point(631, 117);
+            this.btnQuaylai.Name = "btnQuaylai";
+            this.btnQuaylai.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.btnQuaylai.Size = new System.Drawing.Size(109, 42);
+            this.btnQuaylai.TabIndex = 23;
+            this.btnQuaylai.Text = "Quay Lại";
+            this.btnQuaylai.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnQuaylai.UseVisualStyleBackColor = true;
+            this.btnQuaylai.Click += new System.EventHandler(this.btnQuaylai_Click);
+            // 
+            // btnTimkiem
+            // 
+            this.btnTimkiem.Image = global::QuanLyNhaKho.Properties.Resources.icons8_view_24;
+            this.btnTimkiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTimkiem.Location = new System.Drawing.Point(490, 117);
+            this.btnTimkiem.Name = "btnTimkiem";
+            this.btnTimkiem.Padding = new System.Windows.Forms.Padding(10, 0, 5, 0);
+            this.btnTimkiem.Size = new System.Drawing.Size(109, 42);
+            this.btnTimkiem.TabIndex = 24;
+            this.btnTimkiem.Text = "Tìm Kiếm";
+            this.btnTimkiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnTimkiem.UseVisualStyleBackColor = true;
+            this.btnTimkiem.Click += new System.EventHandler(this.btnTimkiem_Click);
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Image = global::QuanLyNhaKho.Properties.Resources.icons8_close_window_24;
+            this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXoa.Location = new System.Drawing.Point(351, 117);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Padding = new System.Windows.Forms.Padding(25, 0, 18, 0);
+            this.btnXoa.Size = new System.Drawing.Size(109, 42);
+            this.btnXoa.TabIndex = 25;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
+            // btnSua
+            // 
+            this.btnSua.Image = global::QuanLyNhaKho.Properties.Resources.icons8_edit_24;
+            this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSua.Location = new System.Drawing.Point(211, 117);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Padding = new System.Windows.Forms.Padding(20, 0, 15, 0);
+            this.btnSua.Size = new System.Drawing.Size(109, 42);
+            this.btnSua.TabIndex = 26;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
+            // btnThem
+            // 
+            this.btnThem.Image = global::QuanLyNhaKho.Properties.Resources.icons8_plus_24;
+            this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThem.Location = new System.Drawing.Point(74, 117);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Padding = new System.Windows.Forms.Padding(20, 0, 10, 0);
+            this.btnThem.Size = new System.Drawing.Size(109, 42);
+            this.btnThem.TabIndex = 27;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
             // NhomHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -149,6 +169,7 @@
             this.Controls.Add(this.txtTenNH);
             this.Controls.Add(this.label1);
             this.Name = "NhomHang";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Nhóm Hàng";
             this.Load += new System.EventHandler(this.NhomHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhomHang)).EndInit();

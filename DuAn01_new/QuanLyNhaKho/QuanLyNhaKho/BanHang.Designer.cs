@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnThemMatHang = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.dtpNgayMua = new System.Windows.Forms.DateTimePicker();
             this.txtTongTien = new System.Windows.Forms.TextBox();
@@ -41,7 +39,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.dgvDanhSachHangMua = new System.Windows.Forms.DataGridView();
-            this.txtGiaBan = new System.Windows.Forms.TextBox();
             this.txtSoLuongMua = new System.Windows.Forms.TextBox();
             this.txtMaHD = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -50,8 +47,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtMaHH = new System.Windows.Forms.TextBox();
-            this.btnHuy = new System.Windows.Forms.Button();
-            this.btnThanhToan = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtSDT = new System.Windows.Forms.TextBox();
@@ -59,34 +54,20 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnThanhToan = new System.Windows.Forms.Button();
+            this.btnHuy = new System.Windows.Forms.Button();
+            this.btnThemMatHang = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachHangMua)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnThemMatHang
-            // 
-            this.btnThemMatHang.Location = new System.Drawing.Point(811, 30);
-            this.btnThemMatHang.Name = "btnThemMatHang";
-            this.btnThemMatHang.Size = new System.Drawing.Size(132, 32);
-            this.btnThemMatHang.TabIndex = 3;
-            this.btnThemMatHang.Text = "Thêm mặt hàng";
-            this.btnThemMatHang.UseVisualStyleBackColor = true;
-            this.btnThemMatHang.Click += new System.EventHandler(this.btnThemMatHang_Click);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(580, 40);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(62, 17);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "Giá bán:";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(363, 40);
+            this.label10.Location = new System.Drawing.Point(510, 37);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(68, 17);
             this.label10.TabIndex = 0;
@@ -102,7 +83,8 @@
             // 
             // txtTongTien
             // 
-            this.txtTongTien.Location = new System.Drawing.Point(324, 543);
+            this.txtTongTien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTongTien.Location = new System.Drawing.Point(326, 20);
             this.txtTongTien.Name = "txtTongTien";
             this.txtTongTien.ReadOnly = true;
             this.txtTongTien.Size = new System.Drawing.Size(176, 22);
@@ -114,6 +96,7 @@
             // 
             this.txtNhanVien.Location = new System.Drawing.Point(133, 83);
             this.txtNhanVien.Name = "txtNhanVien";
+            this.txtNhanVien.ReadOnly = true;
             this.txtNhanVien.Size = new System.Drawing.Size(176, 22);
             this.txtNhanVien.TabIndex = 2;
             // 
@@ -143,8 +126,9 @@
             // 
             // label8
             // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(251, 546);
+            this.label8.Location = new System.Drawing.Point(253, 23);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(72, 17);
             this.label8.TabIndex = 0;
@@ -171,32 +155,25 @@
             // dgvDanhSachHangMua
             // 
             this.dgvDanhSachHangMua.AllowUserToAddRows = false;
+            this.dgvDanhSachHangMua.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDanhSachHangMua.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDanhSachHangMua.BackgroundColor = System.Drawing.Color.LightGray;
             this.dgvDanhSachHangMua.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDanhSachHangMua.Location = new System.Drawing.Point(7, 72);
             this.dgvDanhSachHangMua.Name = "dgvDanhSachHangMua";
             this.dgvDanhSachHangMua.RowTemplate.Height = 24;
-            this.dgvDanhSachHangMua.Size = new System.Drawing.Size(942, 207);
+            this.dgvDanhSachHangMua.Size = new System.Drawing.Size(978, 286);
             this.dgvDanhSachHangMua.TabIndex = 2;
             this.dgvDanhSachHangMua.TabStop = false;
             this.dgvDanhSachHangMua.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSachHangMua_CellClick);
             // 
-            // txtGiaBan
-            // 
-            this.txtGiaBan.Location = new System.Drawing.Point(648, 35);
-            this.txtGiaBan.Name = "txtGiaBan";
-            this.txtGiaBan.ReadOnly = true;
-            this.txtGiaBan.Size = new System.Drawing.Size(100, 22);
-            this.txtGiaBan.TabIndex = 2;
-            this.txtGiaBan.Text = "0";
-            this.txtGiaBan.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
             // txtSoLuongMua
             // 
-            this.txtSoLuongMua.Location = new System.Drawing.Point(447, 37);
+            this.txtSoLuongMua.Location = new System.Drawing.Point(594, 34);
             this.txtSoLuongMua.Name = "txtSoLuongMua";
-            this.txtSoLuongMua.Size = new System.Drawing.Size(100, 22);
+            this.txtSoLuongMua.Size = new System.Drawing.Size(134, 22);
             this.txtSoLuongMua.TabIndex = 1;
             this.txtSoLuongMua.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -209,9 +186,10 @@
             // 
             // label12
             // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label12.AutoSize = true;
             this.label12.ForeColor = System.Drawing.Color.Coral;
-            this.label12.Location = new System.Drawing.Point(18, 493);
+            this.label12.Location = new System.Drawing.Point(18, 572);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(210, 17);
             this.label12.TabIndex = 14;
@@ -259,30 +237,11 @@
             this.txtMaHH.Name = "txtMaHH";
             this.txtMaHH.Size = new System.Drawing.Size(176, 22);
             this.txtMaHH.TabIndex = 0;
-            this.txtMaHH.Validating += new System.ComponentModel.CancelEventHandler(this.txtMaHH_Validating);
-            // 
-            // btnHuy
-            // 
-            this.btnHuy.Location = new System.Drawing.Point(669, 538);
-            this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(87, 32);
-            this.btnHuy.TabIndex = 1;
-            this.btnHuy.Text = "Hủy bỏ";
-            this.btnHuy.UseVisualStyleBackColor = true;
-            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
-            // 
-            // btnThanhToan
-            // 
-            this.btnThanhToan.Location = new System.Drawing.Point(531, 538);
-            this.btnThanhToan.Name = "btnThanhToan";
-            this.btnThanhToan.Size = new System.Drawing.Size(86, 32);
-            this.btnThanhToan.TabIndex = 0;
-            this.btnThanhToan.Text = "Thanh toán";
-            this.btnThanhToan.UseVisualStyleBackColor = true;
-            this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.dtpNgayMua);
             this.groupBox1.Controls.Add(this.txtNhanVien);
             this.groupBox1.Controls.Add(this.txtGhiChu);
@@ -301,7 +260,7 @@
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(949, 192);
+            this.groupBox1.Size = new System.Drawing.Size(985, 192);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin bán hàng";
@@ -347,34 +306,89 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.btnThemMatHang);
             this.groupBox2.Controls.Add(this.dgvDanhSachHangMua);
-            this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.txtGiaBan);
             this.groupBox2.Controls.Add(this.txtSoLuongMua);
             this.groupBox2.Controls.Add(this.txtMaHH);
             this.groupBox2.Location = new System.Drawing.Point(12, 211);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(949, 285);
+            this.groupBox2.Size = new System.Drawing.Size(985, 364);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chi tiết đơn hàng";
+            // 
+            // btnThanhToan
+            // 
+            this.btnThanhToan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnThanhToan.Image = global::QuanLyNhaKho.Properties.Resources.icons8_pay_24;
+            this.btnThanhToan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThanhToan.Location = new System.Drawing.Point(533, 15);
+            this.btnThanhToan.Name = "btnThanhToan";
+            this.btnThanhToan.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnThanhToan.Size = new System.Drawing.Size(118, 32);
+            this.btnThanhToan.TabIndex = 0;
+            this.btnThanhToan.Text = "Thanh toán";
+            this.btnThanhToan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThanhToan.UseVisualStyleBackColor = true;
+            this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
+            // 
+            // btnHuy
+            // 
+            this.btnHuy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnHuy.Image = global::QuanLyNhaKho.Properties.Resources.icons8_synchronize_24;
+            this.btnHuy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHuy.Location = new System.Drawing.Point(670, 15);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(93, 32);
+            this.btnHuy.TabIndex = 1;
+            this.btnHuy.Text = "Quay lại";
+            this.btnHuy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
+            // 
+            // btnThemMatHang
+            // 
+            this.btnThemMatHang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnThemMatHang.Image = global::QuanLyNhaKho.Properties.Resources.icons8_plus_24;
+            this.btnThemMatHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThemMatHang.Location = new System.Drawing.Point(839, 29);
+            this.btnThemMatHang.Name = "btnThemMatHang";
+            this.btnThemMatHang.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnThemMatHang.Size = new System.Drawing.Size(140, 32);
+            this.btnThemMatHang.TabIndex = 3;
+            this.btnThemMatHang.Text = "Thêm mặt hàng";
+            this.btnThemMatHang.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThemMatHang.UseVisualStyleBackColor = true;
+            this.btnThemMatHang.Click += new System.EventHandler(this.btnThemMatHang_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.txtTongTien);
+            this.panel1.Controls.Add(this.btnHuy);
+            this.panel1.Controls.Add(this.btnThanhToan);
+            this.panel1.Location = new System.Drawing.Point(21, 592);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(976, 62);
+            this.panel1.TabIndex = 15;
             // 
             // BanHang
             // 
             this.AcceptButton = this.btnThanhToan;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(978, 587);
+            this.ClientSize = new System.Drawing.Size(1014, 666);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.btnHuy);
-            this.Controls.Add(this.btnThanhToan);
-            this.Controls.Add(this.txtTongTien);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.label8);
             this.Name = "BanHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bán hàng";
@@ -384,6 +398,8 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -392,7 +408,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnThemMatHang;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DateTimePicker dtpNgayMua;
         private System.Windows.Forms.TextBox txtTongTien;
@@ -404,7 +419,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView dgvDanhSachHangMua;
-        private System.Windows.Forms.TextBox txtGiaBan;
         private System.Windows.Forms.TextBox txtSoLuongMua;
         private System.Windows.Forms.TextBox txtMaHD;
         private System.Windows.Forms.Label label12;
@@ -422,6 +436,7 @@
         private System.Windows.Forms.TextBox txtSDT;
         private System.Windows.Forms.TextBox txtDiaChi;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Panel panel1;
 
     }
 }

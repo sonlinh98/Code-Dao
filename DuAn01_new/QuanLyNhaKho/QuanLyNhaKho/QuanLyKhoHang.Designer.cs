@@ -30,10 +30,10 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnPhieuxuat = new System.Windows.Forms.Button();
             this.btnPhieunhap = new System.Windows.Forms.Button();
             this.btnKiemKe = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -61,46 +61,55 @@
             this.panel2.Size = new System.Drawing.Size(902, 312);
             this.panel2.TabIndex = 7;
             // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(215, 99);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(536, 55);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Quản Lý Kho Hàng Hóa";
+            // 
             // btnPhieuxuat
             // 
-            this.btnPhieuxuat.Location = new System.Drawing.Point(367, 62);
+            this.btnPhieuxuat.Image = global::QuanLyNhaKho.Properties.Resources.xuatkho;
+            this.btnPhieuxuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPhieuxuat.Location = new System.Drawing.Point(375, 59);
             this.btnPhieuxuat.Name = "btnPhieuxuat";
-            this.btnPhieuxuat.Size = new System.Drawing.Size(175, 58);
+            this.btnPhieuxuat.Size = new System.Drawing.Size(203, 80);
             this.btnPhieuxuat.TabIndex = 10;
             this.btnPhieuxuat.Text = "Quản Lý Phiếu Xuất";
+            this.btnPhieuxuat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnPhieuxuat.UseVisualStyleBackColor = true;
             this.btnPhieuxuat.Click += new System.EventHandler(this.btnPhieuxuat_Click);
             // 
             // btnPhieunhap
             // 
-            this.btnPhieunhap.Location = new System.Drawing.Point(119, 62);
+            this.btnPhieunhap.Image = global::QuanLyNhaKho.Properties.Resources.nhapkho;
+            this.btnPhieunhap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPhieunhap.Location = new System.Drawing.Point(109, 59);
             this.btnPhieunhap.Name = "btnPhieunhap";
-            this.btnPhieunhap.Size = new System.Drawing.Size(175, 58);
+            this.btnPhieunhap.Size = new System.Drawing.Size(221, 80);
             this.btnPhieunhap.TabIndex = 11;
             this.btnPhieunhap.Text = "Quản Lý Phiếu Nhập";
+            this.btnPhieunhap.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnPhieunhap.UseVisualStyleBackColor = true;
             this.btnPhieunhap.Click += new System.EventHandler(this.btnPhieunhap_Click);
             // 
             // btnKiemKe
             // 
-            this.btnKiemKe.Location = new System.Drawing.Point(614, 62);
+            this.btnKiemKe.Image = global::QuanLyNhaKho.Properties.Resources.kiemke;
+            this.btnKiemKe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnKiemKe.Location = new System.Drawing.Point(620, 59);
             this.btnKiemKe.Name = "btnKiemKe";
-            this.btnKiemKe.Size = new System.Drawing.Size(175, 58);
+            this.btnKiemKe.Size = new System.Drawing.Size(205, 80);
             this.btnKiemKe.TabIndex = 12;
             this.btnKiemKe.Text = "Kiểm Kê Hàng Hóa";
+            this.btnKiemKe.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnKiemKe.UseVisualStyleBackColor = true;
             this.btnKiemKe.Click += new System.EventHandler(this.btnKiemKe_Click);
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(330, 153);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(263, 29);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Quản Lý Kho Hàng Hóa";
             // 
             // QuanLyKhoHang
             // 
@@ -110,7 +119,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "QuanLyKhoHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "QuanLyKhoHang";
+            this.Text = "Quản lý kho hàng";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

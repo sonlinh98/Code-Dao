@@ -44,20 +44,22 @@
             this.label7 = new System.Windows.Forms.Label();
             this.cmbDanhmuc = new System.Windows.Forms.ComboBox();
             this.cmbNhakho = new System.Windows.Forms.ComboBox();
-            this.btnTimkiem = new System.Windows.Forms.Button();
-            this.btnQuaylai = new System.Windows.Forms.Button();
-            this.btnSapHetHan = new System.Windows.Forms.Button();
-            this.btnHetHan = new System.Windows.Forms.Button();
-            this.btnTonkho = new System.Windows.Forms.Button();
-            this.btnIn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.cboLuaChonIn = new System.Windows.Forms.ComboBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnQuaylai = new System.Windows.Forms.Button();
+            this.btnHetHan = new System.Windows.Forms.Button();
+            this.btnSapHetHan = new System.Windows.Forms.Button();
+            this.btnTimkiem = new System.Windows.Forms.Button();
+            this.btnTonkho = new System.Windows.Forms.Button();
+            this.btnIn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHanghoa)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtTenhang
             // 
-            this.txtTenhang.Location = new System.Drawing.Point(259, 35);
+            this.txtTenhang.Location = new System.Drawing.Point(250, 33);
             this.txtTenhang.Name = "txtTenhang";
             this.txtTenhang.Size = new System.Drawing.Size(247, 22);
             this.txtTenhang.TabIndex = 4;
@@ -65,15 +67,18 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(180, 38);
+            this.label1.Location = new System.Drawing.Point(171, 36);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 16);
+            this.label1.Size = new System.Drawing.Size(71, 17);
             this.label1.TabIndex = 3;
             this.label1.Text = "Tên Hàng";
             // 
             // dgvHanghoa
             // 
             this.dgvHanghoa.AllowUserToAddRows = false;
+            this.dgvHanghoa.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvHanghoa.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvHanghoa.BackgroundColor = System.Drawing.Color.LightGray;
             this.dgvHanghoa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -87,11 +92,10 @@
             this.Column6,
             this.Column7,
             this.Column8});
-            this.dgvHanghoa.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvHanghoa.Location = new System.Drawing.Point(0, 207);
             this.dgvHanghoa.Name = "dgvHanghoa";
             this.dgvHanghoa.RowTemplate.Height = 24;
-            this.dgvHanghoa.Size = new System.Drawing.Size(1109, 312);
+            this.dgvHanghoa.Size = new System.Drawing.Size(1054, 312);
             this.dgvHanghoa.TabIndex = 4;
             // 
             // Column1
@@ -151,25 +155,25 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(541, 38);
+            this.label6.Location = new System.Drawing.Point(532, 36);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(58, 16);
+            this.label6.Size = new System.Drawing.Size(61, 17);
             this.label6.TabIndex = 3;
             this.label6.Text = "Nhà kho";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(541, 78);
+            this.label7.Location = new System.Drawing.Point(532, 76);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(68, 16);
+            this.label7.Size = new System.Drawing.Size(72, 17);
             this.label7.TabIndex = 3;
             this.label7.Text = "Danh mục";
             // 
             // cmbDanhmuc
             // 
             this.cmbDanhmuc.FormattingEnabled = true;
-            this.cmbDanhmuc.Location = new System.Drawing.Point(679, 75);
+            this.cmbDanhmuc.Location = new System.Drawing.Point(670, 73);
             this.cmbDanhmuc.Name = "cmbDanhmuc";
             this.cmbDanhmuc.Size = new System.Drawing.Size(247, 24);
             this.cmbDanhmuc.TabIndex = 6;
@@ -177,116 +181,152 @@
             // cmbNhakho
             // 
             this.cmbNhakho.FormattingEnabled = true;
-            this.cmbNhakho.Location = new System.Drawing.Point(679, 31);
+            this.cmbNhakho.Location = new System.Drawing.Point(670, 29);
             this.cmbNhakho.Name = "cmbNhakho";
             this.cmbNhakho.Size = new System.Drawing.Size(247, 24);
             this.cmbNhakho.TabIndex = 5;
             // 
-            // btnTimkiem
-            // 
-            this.btnTimkiem.Location = new System.Drawing.Point(768, 140);
-            this.btnTimkiem.Name = "btnTimkiem";
-            this.btnTimkiem.Size = new System.Drawing.Size(149, 37);
-            this.btnTimkiem.TabIndex = 3;
-            this.btnTimkiem.Text = "Tìm Kiếm";
-            this.btnTimkiem.UseVisualStyleBackColor = true;
-            this.btnTimkiem.Click += new System.EventHandler(this.btnTimkiem_Click);
-            // 
-            // btnQuaylai
-            // 
-            this.btnQuaylai.Location = new System.Drawing.Point(12, 12);
-            this.btnQuaylai.Name = "btnQuaylai";
-            this.btnQuaylai.Size = new System.Drawing.Size(138, 37);
-            this.btnQuaylai.TabIndex = 7;
-            this.btnQuaylai.Text = "Quay lại";
-            this.btnQuaylai.UseVisualStyleBackColor = true;
-            this.btnQuaylai.Click += new System.EventHandler(this.btnQuaylai_Click);
-            // 
-            // btnSapHetHan
-            // 
-            this.btnSapHetHan.Location = new System.Drawing.Point(288, 140);
-            this.btnSapHetHan.Name = "btnSapHetHan";
-            this.btnSapHetHan.Size = new System.Drawing.Size(145, 37);
-            this.btnSapHetHan.TabIndex = 1;
-            this.btnSapHetHan.Text = "Hàng Sắp Hết Hạn";
-            this.btnSapHetHan.UseVisualStyleBackColor = true;
-            this.btnSapHetHan.Click += new System.EventHandler(this.btnSapHetHan_Click);
-            // 
-            // btnHetHan
-            // 
-            this.btnHetHan.Location = new System.Drawing.Point(152, 140);
-            this.btnHetHan.Name = "btnHetHan";
-            this.btnHetHan.Size = new System.Drawing.Size(115, 37);
-            this.btnHetHan.TabIndex = 0;
-            this.btnHetHan.Text = "Hàng Hết Hạn";
-            this.btnHetHan.UseVisualStyleBackColor = true;
-            this.btnHetHan.Click += new System.EventHandler(this.btnHetHan_Click);
-            // 
-            // btnTonkho
-            // 
-            this.btnTonkho.Location = new System.Drawing.Point(454, 140);
-            this.btnTonkho.Name = "btnTonkho";
-            this.btnTonkho.Size = new System.Drawing.Size(136, 37);
-            this.btnTonkho.TabIndex = 2;
-            this.btnTonkho.Text = "Tồn Kho";
-            this.btnTonkho.UseVisualStyleBackColor = true;
-            this.btnTonkho.Click += new System.EventHandler(this.btnTonkho_Click);
-            // 
-            // btnIn
-            // 
-            this.btnIn.Location = new System.Drawing.Point(610, 140);
-            this.btnIn.Name = "btnIn";
-            this.btnIn.Size = new System.Drawing.Size(136, 37);
-            this.btnIn.TabIndex = 0;
-            this.btnIn.TabStop = false;
-            this.btnIn.Text = "In báo cáo";
-            this.btnIn.UseVisualStyleBackColor = true;
-            this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(180, 78);
+            this.label2.Location = new System.Drawing.Point(171, 76);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 16);
+            this.label2.Size = new System.Drawing.Size(86, 17);
             this.label2.TabIndex = 3;
             this.label2.Text = "Lựa chọn in:";
             // 
             // cboLuaChonIn
             // 
             this.cboLuaChonIn.FormattingEnabled = true;
-            this.cboLuaChonIn.Location = new System.Drawing.Point(264, 75);
+            this.cboLuaChonIn.Location = new System.Drawing.Point(255, 73);
             this.cboLuaChonIn.Name = "cboLuaChonIn";
             this.cboLuaChonIn.Size = new System.Drawing.Size(201, 24);
             this.cboLuaChonIn.TabIndex = 8;
             this.cboLuaChonIn.SelectedIndexChanged += new System.EventHandler(this.cboLuaChonIn_SelectedIndexChanged);
             // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.btnQuaylai);
+            this.panel1.Controls.Add(this.cboLuaChonIn);
+            this.panel1.Controls.Add(this.btnHetHan);
+            this.panel1.Controls.Add(this.cmbNhakho);
+            this.panel1.Controls.Add(this.btnSapHetHan);
+            this.panel1.Controls.Add(this.cmbDanhmuc);
+            this.panel1.Controls.Add(this.btnTimkiem);
+            this.panel1.Controls.Add(this.btnTonkho);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.btnIn);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.txtTenhang);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(0, 2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1054, 199);
+            this.panel1.TabIndex = 9;
+            // 
+            // btnQuaylai
+            // 
+            this.btnQuaylai.Image = global::QuanLyNhaKho.Properties.Resources.icons8_left_26;
+            this.btnQuaylai.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQuaylai.Location = new System.Drawing.Point(12, 10);
+            this.btnQuaylai.Name = "btnQuaylai";
+            this.btnQuaylai.Padding = new System.Windows.Forms.Padding(22, 0, 18, 0);
+            this.btnQuaylai.Size = new System.Drawing.Size(138, 37);
+            this.btnQuaylai.TabIndex = 7;
+            this.btnQuaylai.Text = "Quay lại";
+            this.btnQuaylai.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnQuaylai.UseVisualStyleBackColor = true;
+            this.btnQuaylai.Click += new System.EventHandler(this.btnQuaylai_Click);
+            // 
+            // btnHetHan
+            // 
+            this.btnHetHan.Image = global::QuanLyNhaKho.Properties.Resources.icons8_warning_24;
+            this.btnHetHan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHetHan.Location = new System.Drawing.Point(104, 138);
+            this.btnHetHan.Name = "btnHetHan";
+            this.btnHetHan.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnHetHan.Size = new System.Drawing.Size(138, 37);
+            this.btnHetHan.TabIndex = 0;
+            this.btnHetHan.Text = "Hàng Hết Hạn";
+            this.btnHetHan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnHetHan.UseVisualStyleBackColor = true;
+            this.btnHetHan.Click += new System.EventHandler(this.btnHetHan_Click);
+            // 
+            // btnSapHetHan
+            // 
+            this.btnSapHetHan.Image = global::QuanLyNhaKho.Properties.Resources.icons8_expired_24;
+            this.btnSapHetHan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSapHetHan.Location = new System.Drawing.Point(264, 138);
+            this.btnSapHetHan.Name = "btnSapHetHan";
+            this.btnSapHetHan.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.btnSapHetHan.Size = new System.Drawing.Size(160, 37);
+            this.btnSapHetHan.TabIndex = 1;
+            this.btnSapHetHan.Text = "Hàng Sắp Hết Hạn";
+            this.btnSapHetHan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSapHetHan.UseVisualStyleBackColor = true;
+            this.btnSapHetHan.Click += new System.EventHandler(this.btnSapHetHan_Click);
+            // 
+            // btnTimkiem
+            // 
+            this.btnTimkiem.Image = global::QuanLyNhaKho.Properties.Resources.icons8_view_24;
+            this.btnTimkiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTimkiem.Location = new System.Drawing.Point(759, 138);
+            this.btnTimkiem.Name = "btnTimkiem";
+            this.btnTimkiem.Padding = new System.Windows.Forms.Padding(28, 0, 20, 0);
+            this.btnTimkiem.Size = new System.Drawing.Size(149, 37);
+            this.btnTimkiem.TabIndex = 3;
+            this.btnTimkiem.Text = "Tìm Kiếm";
+            this.btnTimkiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnTimkiem.UseVisualStyleBackColor = true;
+            this.btnTimkiem.Click += new System.EventHandler(this.btnTimkiem_Click);
+            // 
+            // btnTonkho
+            // 
+            this.btnTonkho.Image = global::QuanLyNhaKho.Properties.Resources.icons8_open_box_24;
+            this.btnTonkho.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTonkho.Location = new System.Drawing.Point(445, 138);
+            this.btnTonkho.Name = "btnTonkho";
+            this.btnTonkho.Padding = new System.Windows.Forms.Padding(25, 0, 14, 0);
+            this.btnTonkho.Size = new System.Drawing.Size(136, 37);
+            this.btnTonkho.TabIndex = 2;
+            this.btnTonkho.Text = "Tồn Kho";
+            this.btnTonkho.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnTonkho.UseVisualStyleBackColor = true;
+            this.btnTonkho.Click += new System.EventHandler(this.btnTonkho_Click);
+            // 
+            // btnIn
+            // 
+            this.btnIn.Image = global::QuanLyNhaKho.Properties.Resources.icons8_print_26;
+            this.btnIn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnIn.Location = new System.Drawing.Point(601, 138);
+            this.btnIn.Name = "btnIn";
+            this.btnIn.Padding = new System.Windows.Forms.Padding(16, 0, 5, 0);
+            this.btnIn.Size = new System.Drawing.Size(136, 37);
+            this.btnIn.TabIndex = 0;
+            this.btnIn.TabStop = false;
+            this.btnIn.Text = "In báo cáo";
+            this.btnIn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnIn.UseVisualStyleBackColor = true;
+            this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
+            // 
             // HangHoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1109, 519);
-            this.Controls.Add(this.cboLuaChonIn);
-            this.Controls.Add(this.cmbNhakho);
-            this.Controls.Add(this.cmbDanhmuc);
+            this.ClientSize = new System.Drawing.Size(1054, 519);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvHanghoa);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtTenhang);
-            this.Controls.Add(this.btnIn);
-            this.Controls.Add(this.btnTonkho);
-            this.Controls.Add(this.btnQuaylai);
-            this.Controls.Add(this.btnTimkiem);
-            this.Controls.Add(this.btnSapHetHan);
-            this.Controls.Add(this.btnHetHan);
             this.Name = "HangHoa";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Hàng Hóa";
             this.Load += new System.EventHandler(this.HangHoa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHanghoa)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -315,5 +355,6 @@
         private System.Windows.Forms.Button btnIn;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cboLuaChonIn;
+        private System.Windows.Forms.Panel panel1;
     }
 }
