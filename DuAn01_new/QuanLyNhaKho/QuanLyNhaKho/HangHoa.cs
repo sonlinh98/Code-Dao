@@ -25,10 +25,13 @@ namespace QuanLyNhaKho
         {
             txtTenhang.Clear();
             dgvHanghoa.DataSource = layer02.LayThongTinHangHoa().Tables[0];
-            cmbNhakho.DataSource = layer02.LayThongTinHangHoa().Tables[1];
+            cmbNhakho.DataSource = layer02.LayDanhSachNhaKho();
             cmbNhakho.DisplayMember = "TenNK";
+            cmbNhakho.ValueMember = "MaNK";
+
             cmbDanhmuc.DataSource = layer02.LayThongTinHangHoa().Tables[2];
             cmbDanhmuc.DisplayMember = "TenDM";
+         
 
             cboLuaChonIn.Items.Clear();
 
@@ -78,11 +81,12 @@ namespace QuanLyNhaKho
                 //MessageBox.Show(dgvHanghoa.Rows[rows].Cells[3].Value.ToString());
                     datas.Add(datarow);
             }
-            if (cboLuaChonIn.SelectedIndex==0)// không lựa chọn gì
+            if (cboLuaChonIn.SelectedIndex == 0)// không lựa chọn gì
             {
                 MessageBox.Show("Vui lòng chọn loại phiếu in trước khi in.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 cboLuaChonIn.Focus();
-            } else if (cboLuaChonIn.SelectedIndex==1)// tồn kho
+            }
+             else if (cboLuaChonIn.SelectedIndex==1)// tồn kho
             {
                 using (frmReviewIn XemTruocKhiIn = new frmReviewIn())
                 {
@@ -135,6 +139,11 @@ namespace QuanLyNhaKho
             {
                 dgvHanghoa.DataSource = layer02.HangHoaSapHetHan();
             }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

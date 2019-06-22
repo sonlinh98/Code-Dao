@@ -42,10 +42,15 @@ namespace QuanLyNhaKho
             dgvDanhSachHangMua.Columns["TenHH"].HeaderText = "Tên hàng hóa";
             dgvDanhSachHangMua.Columns["DVT"].HeaderText = "DVT";
             dgvDanhSachHangMua.Columns["SoLuong"].HeaderText = "Số lượng";
-            dgvDanhSachHangMua.Columns["DonGia"].HeaderText = "Giá nhập";
+            dgvDanhSachHangMua.Columns["DonGia"].HeaderText = "Đơn giá";
             dgvDanhSachHangMua.Columns["ThanhTien"].HeaderText = "Thành tiền";
 
 
+            cboTenHangHoa.DataSource = layer02.LayDanhSachHangHoa();
+            cboTenHangHoa.DisplayMember = "TenHH";
+            cboTenHangHoa.ValueMember = "MaHH";
+            cboTenHangHoa.SelectedItem = null;
+            cboTenHangHoa.SelectedText = "--Chọn mặt hàng--";
         }
 
 
@@ -76,13 +81,6 @@ namespace QuanLyNhaKho
         private void btnThemMatHang_Click(object sender, EventArgs e)
         {
 
-            if (txtMaHH.Text.Equals(""))
-            {
-                MessageBox.Show("Mã hàng hóa không được để trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtMaHH.Focus();
-            }
-            else
-            {
                 int sl;
                 bool isNumericSL = int.TryParse(txtSoLuongMua.Text, out sl);
                 if (txtSoLuongMua.Text.Equals(""))
@@ -108,19 +106,19 @@ namespace QuanLyNhaKho
                         //MessageBox.Show(txtMaHangHoa.Text);
 
                         // Cập nhật danh sách mới
-                        ChiTietHangHoaDAO chiTietMotSanPham = layer02.LayThongTinMotHangHoaNhapTheoMa(txtMaHH.Text);
+                        ChiTietHangHoaDAO chiTietMotSanPham = layer02.LayThongTinMotHangHoaNhapTheoMa(cboTenHangHoa.SelectedValue.ToString());
                         //MessageBox.Show(chiTietMotSanPham.MaHH);
 
                         if (chiTietMotSanPham.MaHH == null)
                         {
                             MessageBox.Show("Mã hàng hóa không đúng. Vui lòng kiểm tra lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            txtMaHH.Focus();
+                            cboTenHangHoa.Focus();
 
                         }
                         else
                         {
                             // Kiểm tra xem mã hàng hóa đó đã có trong danh sách hàng nhập chưa
-                            if (isCheckHHinDanhSachHangBan(DanhSachHangBan, txtMaHH.Text))// trường hợp có
+                            if (isCheckHHinDanhSachHangBan(DanhSachHangBan, cboTenHangHoa.SelectedValue.ToString()))// trường hợp có
                             {
                                 MessageBox.Show("Mã hàng hóa đã có trong danh sách nhập. Nếu muốn sửa thông tin mặt hàng này thì hãy xóa mặt hàng này và thêm lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 dgvDanhSachHangMua.DataSource = DanhSachHangBan;
@@ -129,7 +127,7 @@ namespace QuanLyNhaKho
                                 dgvDanhSachHangMua.Columns["TenHH"].HeaderText = "Tên hàng hóa";
                                 dgvDanhSachHangMua.Columns["DVT"].HeaderText = "DVT";
                                 dgvDanhSachHangMua.Columns["SoLuong"].HeaderText = "Số lượng";
-                                dgvDanhSachHangMua.Columns["DonGia"].HeaderText = "Giá nhập";
+                                dgvDanhSachHangMua.Columns["DonGia"].HeaderText = "Đơn giá";
                                 dgvDanhSachHangMua.Columns["ThanhTien"].HeaderText = "Thành tiền";
                             }
                             else
@@ -149,7 +147,7 @@ namespace QuanLyNhaKho
                                 dgvDanhSachHangMua.Columns["TenHH"].HeaderText = "Tên hàng hóa";
                                 dgvDanhSachHangMua.Columns["DVT"].HeaderText = "DVT";
                                 dgvDanhSachHangMua.Columns["SoLuong"].HeaderText = "Số lượng";
-                                dgvDanhSachHangMua.Columns["DonGia"].HeaderText = "Giá nhập";
+                                dgvDanhSachHangMua.Columns["DonGia"].HeaderText = "Đơn giá";
                                 dgvDanhSachHangMua.Columns["ThanhTien"].HeaderText = "Thành tiền";
 
                                 // Tính tổng tiền mỗi khi thêm sản phẩm
@@ -161,7 +159,7 @@ namespace QuanLyNhaKho
                             }
 
                         }
-                    }
+                    
                 }
 
 
@@ -203,7 +201,7 @@ namespace QuanLyNhaKho
                 dgvDanhSachHangMua.Columns["TenHH"].HeaderText = "Tên hàng hóa";
                 dgvDanhSachHangMua.Columns["DVT"].HeaderText = "DVT";
                 dgvDanhSachHangMua.Columns["SoLuong"].HeaderText = "Số lượng";
-                dgvDanhSachHangMua.Columns["DonGia"].HeaderText = "Giá nhập";
+                dgvDanhSachHangMua.Columns["DonGia"].HeaderText = "Đơn giá";
                 dgvDanhSachHangMua.Columns["ThanhTien"].HeaderText = "Thành tiền";
             }
         }
@@ -238,7 +236,11 @@ namespace QuanLyNhaKho
             dgvDanhSachHangMua.DataSource = null;
 
             txtSoLuongMua.Text = "0";
-            txtMaHH.Text = "";
+            cboTenHangHoa.DataSource = layer02.LayDanhSachHangHoa();
+            cboTenHangHoa.DisplayMember = "TenHH";
+            cboTenHangHoa.ValueMember = "MaHH";
+            cboTenHangHoa.SelectedItem = null;
+            cboTenHangHoa.SelectedText = "--Chọn mặt hàng--";
 
             txtGhiChu.Text = "";
         }
@@ -286,7 +288,7 @@ namespace QuanLyNhaKho
                                 {
                                     layer02.ThanhToanVaThemHoaDonBanHang(txtMaHD.Text, NhanVienDangNhap.MaNV, dtpNgayMua.Value, txtGhiChu.Text, double.Parse(txtTongTien.Text), txtTenKH.Text, txtDiaChi.Text, txtSDT.Text, txtEmail.Text, DanhSachHangBan);
 
-                                    MessageBox.Show("Thanh toán và tạo hóa đơn thàng công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    MessageBox.Show("Thanh toán và tạo hóa đơn bán hàng thàng công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                                     ClearDataHoaDonBanHang();
                                 }

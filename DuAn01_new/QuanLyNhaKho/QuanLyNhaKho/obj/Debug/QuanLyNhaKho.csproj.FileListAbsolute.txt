@@ -154,7 +154,6 @@ C:\Users\trongson\Desktop\Code-Dao\DuAn01_new\QuanLyNhaKho\QuanLyNhaKho\obj\Debu
 C:\Users\trongson\Desktop\Code-Dao\DuAn01_new\QuanLyNhaKho\QuanLyNhaKho\obj\Debug\QuanLyNhaKho.pdb
 C:\Users\trongson\Desktop\Code-Dao\DuAn01_new\QuanLyNhaKho\QuanLyNhaKho\bin\Debug\QuanLyNhaKho.exe
 C:\Users\trongson\Desktop\Code-Dao\DuAn01_new\QuanLyNhaKho\QuanLyNhaKho\bin\Debug\QuanLyNhaKho.pdb
-C:\Users\trongson\Desktop\Code-Dao\DuAn01_new\QuanLyNhaKho\QuanLyNhaKho\obj\Debug\QuanLyNhaKho.csprojResolveAssemblyReference.cache
 C:\Users\trongson\Desktop\Code-Dao\DuAn01_new\QuanLyNhaKho\QuanLyNhaKho\obj\Debug\QuanLyNhaKho.BanHang.resources
 C:\Users\trongson\Desktop\Code-Dao\DuAn01_new\QuanLyNhaKho\QuanLyNhaKho\obj\Debug\QuanLyNhaKho.DangNhap.resources
 C:\Users\trongson\Desktop\Code-Dao\DuAn01_new\QuanLyNhaKho\QuanLyNhaKho\obj\Debug\QuanLyNhaKho.FormQuanLyVien.resources
@@ -180,3 +179,10 @@ C:\Users\trongson\Desktop\Code-Dao\DuAn01_new\QuanLyNhaKho\QuanLyNhaKho\obj\Debu
 C:\Users\trongson\Desktop\Code-Dao\DuAn01_new\QuanLyNhaKho\QuanLyNhaKho\obj\Debug\QuanLyNhaKho.XtraReportTonKho.resources
 C:\Users\trongson\Desktop\Code-Dao\DuAn01_new\QuanLyNhaKho\QuanLyNhaKho\obj\Debug\QuanLyNhaKho.csproj.GenerateResource.Cache
 C:\Users\trongson\Desktop\Code-Dao\DuAn01_new\QuanLyNhaKho\QuanLyNhaKho\obj\Debug\QuanLyNhaKho.exe.licenses
+C:\Users\trongson\Desktop\Code-Dao\DuAn01_new\QuanLyNhaKho\QuanLyNhaKho\obj\Debug\QuanLyNhaKho.QuanLyBaoCao.resources
+C:\Users\trongson\Desktop\Code-Dao\DuAn01_new\QuanLyNhaKho\QuanLyNhaKho\obj\Debug\QuanLyNhaKho.BaoCaoNhapXuatTon.resources
+C:\Users\trongson\Desktop\Code-Dao\DuAn01_new\QuanLyNhaKho\QuanLyNhaKho\obj\Debug\QuanLyNhaKho.BaoCaoNhapKho.resources
+C:\Users\trongson\Desktop\Code-Dao\DuAn01_new\QuanLyNhaKho\QuanLyNhaKho\obj\Debug\QuanLyNhaKho.BaoCaoXuatKho.resources
+C:\Users\trongson\Desktop\Code-Dao\DuAn01_new\QuanLyNhaKho\QuanLyNhaKho\obj\Debug\QuanLyNhaKho.XtraReportBaoCaoNhapKho.resources
+C:\Users\trongson\Desktop\Code-Dao\DuAn01_new\QuanLyNhaKho\QuanLyNhaKho\obj\Debug\QuanLyNhaKho.XtraReportBaoCaoXuatKho.resources
+C:\Users\trongson\Desktop\Code-Dao\DuAn01_new\QuanLyNhaKho\QuanLyNhaKho\obj\Debug\QuanLyNhaKho.XtraReportBaoCaoTonKho.resources

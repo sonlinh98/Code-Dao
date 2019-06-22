@@ -59,7 +59,7 @@ namespace QuanLyNhaKho
         {
             dgvDanhSachPhieuXuat.DataSource = null;
             dgvDanhSachPhieuXuat.DataSource = layer02.LayThongTinDanhSachPhieuXuat();
-            dgvChiTietPhieuXuat.DataSource = null;
+            dgvDanhSachPhieuXuat.Columns["STT"].Width = 60;
         }
 
         private void btnTim_Click(object sender, EventArgs e)

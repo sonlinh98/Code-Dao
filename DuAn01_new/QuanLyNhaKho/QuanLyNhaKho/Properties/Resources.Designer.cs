@@ -63,6 +63,36 @@ namespace QuanLyNhaKho.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap baocao3 {
+            get {
+                object obj = ResourceManager.GetObject("baocao3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap baocaotonkho {
+            get {
+                object obj = ResourceManager.GetObject("baocaotonkho", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap baocaoxuat {
+            get {
+                object obj = ResourceManager.GetObject("baocaoxuat", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bg {
             get {
                 object obj = ResourceManager.GetObject("bg", resourceCulture);
@@ -106,6 +136,16 @@ namespace QuanLyNhaKho.Properties {
         internal static System.Drawing.Bitmap icons8_expired_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-expired-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_export_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-export-48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

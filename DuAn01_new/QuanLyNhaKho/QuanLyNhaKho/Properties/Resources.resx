@@ -118,79 +118,91 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="icons8-warning-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icon\icons8-warning-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8-plus-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icon\icons8-plus-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="sanpham" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icon\sanpham.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8-left-26" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icon\icons8-left-26.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-save-close-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon\icons8-save-close-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-expired-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icon\icons8-expired-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-synchronize-26" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icon\icons8-synchronize-26.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="nhakho" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icon\nhakho.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8-view-26" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icon\icons8-view-26.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="nhapkho" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icon\nhapkho.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8-print-26" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icon\icons8-print-26.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="kh" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icon\kh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icon\bg.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8-about-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icon\icons8-about-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="xuatkho" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icon\xuatkho.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-view-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon\icons8-view-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="nhanvien" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icon\nhanvien.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-edit-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icon\icons8-edit-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8-search-16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icon\icons8-search-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-synchronize-26" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon\icons8-synchronize-26.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="kiemke" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icon\kiemke.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-save-close-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icon\icons8-save-close-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-about-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon\icons8-about-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-pay-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icon\icons8-pay-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-search-16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon\icons8-search-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="baocao3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon\baocao3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-export-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon\icons8-export-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-print-26" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon\icons8-print-26.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-plus-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon\icons8-plus-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-close-window-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icon\icons8-close-window-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8-pay-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon\icons8-pay-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-view-26" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon\icons8-view-26.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-supplier-53" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon\icons8-supplier-53.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sanpham" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon\sanpham.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-edit-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon\icons8-edit-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8-synchronize-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icon\icons8-synchronize-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="baocaotonkho" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon\baocaotonkho.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-left-26" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon\icons8-left-26.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nhakho" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon\nhakho.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="kh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon\kh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-warning-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon\icons8-warning-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nhapkho" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon\nhapkho.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="xuatkho" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon\xuatkho.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-open-box-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icon\icons8-open-box-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-view-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icon\icons8-view-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon\bg.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-supplier-53" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icon\icons8-supplier-53.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="baocaoxuat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon\baocaoxuat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

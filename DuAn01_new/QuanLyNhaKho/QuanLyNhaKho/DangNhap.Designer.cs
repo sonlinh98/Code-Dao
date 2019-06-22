@@ -42,12 +42,14 @@
             // 
             // btnDangnhap
             // 
+            this.btnDangnhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDangnhap.Image = ((System.Drawing.Image)(resources.GetObject("btnDangnhap.Image")));
             this.btnDangnhap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDangnhap.Location = new System.Drawing.Point(59, 282);
+            this.btnDangnhap.Location = new System.Drawing.Point(40, 229);
+            this.btnDangnhap.Margin = new System.Windows.Forms.Padding(2);
             this.btnDangnhap.Name = "btnDangnhap";
-            this.btnDangnhap.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            this.btnDangnhap.Size = new System.Drawing.Size(131, 37);
+            this.btnDangnhap.Padding = new System.Windows.Forms.Padding(8, 4, 8, 4);
+            this.btnDangnhap.Size = new System.Drawing.Size(134, 51);
             this.btnDangnhap.TabIndex = 3;
             this.btnDangnhap.Text = "Đăng Nhập";
             this.btnDangnhap.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -56,50 +58,58 @@
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(173, 138);
+            this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtID.Location = new System.Drawing.Point(162, 113);
+            this.txtID.Margin = new System.Windows.Forms.Padding(2);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(230, 22);
+            this.txtID.Size = new System.Drawing.Size(174, 26);
             this.txtID.TabIndex = 1;
             // 
             // btnQuenMK
             // 
+            this.btnQuenMK.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuenMK.Image = ((System.Drawing.Image)(resources.GetObject("btnQuenMK.Image")));
             this.btnQuenMK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQuenMK.Location = new System.Drawing.Point(242, 282);
+            this.btnQuenMK.Location = new System.Drawing.Point(209, 229);
+            this.btnQuenMK.Margin = new System.Windows.Forms.Padding(2);
             this.btnQuenMK.Name = "btnQuenMK";
-            this.btnQuenMK.Padding = new System.Windows.Forms.Padding(5, 0, 4, 0);
-            this.btnQuenMK.Size = new System.Drawing.Size(150, 37);
+            this.btnQuenMK.Padding = new System.Windows.Forms.Padding(4, 0, 3, 0);
+            this.btnQuenMK.Size = new System.Drawing.Size(144, 51);
             this.btnQuenMK.TabIndex = 4;
-            this.btnQuenMK.Text = "Quên Mật Khẩu";
+            this.btnQuenMK.Text = "Đổi mật khẩu";
             this.btnQuenMK.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnQuenMK.UseVisualStyleBackColor = true;
             this.btnQuenMK.Click += new System.EventHandler(this.btnQuenMK_Click);
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(173, 207);
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(162, 169);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(230, 22);
+            this.txtPassword.Size = new System.Drawing.Size(174, 26);
             this.txtPassword.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(118, 49);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(72, 36);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(252, 36);
+            this.label1.Size = new System.Drawing.Size(256, 33);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Quản Lý Nhà Kho";
+            this.label1.Text = "Quản Lý Kho hàng";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(42, 138);
+            this.label2.Location = new System.Drawing.Point(64, 113);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 25);
+            this.label2.Size = new System.Drawing.Size(78, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Tài khoản";
             // 
@@ -107,9 +117,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(42, 204);
+            this.label3.Location = new System.Drawing.Point(64, 167);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(93, 25);
+            this.label3.Size = new System.Drawing.Size(75, 20);
             this.label3.TabIndex = 2;
             this.label3.Text = "Mật khẩu";
             // 
@@ -125,23 +136,25 @@
             this.panel1.Controls.Add(this.btnQuenMK);
             this.panel1.Controls.Add(this.txtID);
             this.panel1.Controls.Add(this.txtPassword);
-            this.panel1.Location = new System.Drawing.Point(339, 126);
+            this.panel1.Location = new System.Drawing.Point(501, 175);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(450, 372);
+            this.panel1.Size = new System.Drawing.Size(382, 324);
             this.panel1.TabIndex = 5;
             // 
             // DangNhap
             // 
             this.AcceptButton = this.btnDangnhap;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::QuanLyNhaKho.Properties.Resources.bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1107, 691);
+            this.ClientSize = new System.Drawing.Size(1350, 729);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "DangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Đăng nhập hệ thống";
+            this.Text = "Đăng nhập hệ thống quản lý kho hàng Thịnh Hưng";
             this.Load += new System.EventHandler(this.DangNhap_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

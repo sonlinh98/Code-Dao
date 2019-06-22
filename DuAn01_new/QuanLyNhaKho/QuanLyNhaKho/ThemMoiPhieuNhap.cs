@@ -28,7 +28,7 @@ namespace QuanLyNhaKho
         private void ThemMoiPhieuNhap_Load(object sender, EventArgs e)
         {
             cboKho.DataSource = layer02.LayDanhSachNhaKho();
-            cboKho.DisplayMember = "Tenkho";
+            cboKho.DisplayMember = "TenNK";
             cboKho.ValueMember = "MaNK";
             cboKho.SelectedItem = null;
             cboKho.SelectedText = "--Chọn nhà kho--";
@@ -59,18 +59,17 @@ namespace QuanLyNhaKho
             // Sinh ngẫu nhiên số phiếu nhập
             txtSoPhieuNhap.Text = SinhMaSoPhieuNhapTuDong();
 
-            txtMaHangHoa.Focus();
+            cboTenHangHoa.DataSource = layer02.LayDanhSachHangHoa();
+            cboTenHangHoa.DisplayMember = "TenHH";
+            cboTenHangHoa.ValueMember = "MaHH";
+            cboTenHangHoa.SelectedItem = null;
+            cboTenHangHoa.SelectedText = "--Chọn mặt hàng--";
         }
 
         private void btnThemMatHang_Click(object sender, EventArgs e)
         {
 
-            if (txtMaHangHoa.Text.Equals(""))
-            {
-                MessageBox.Show("Mã hàng hóa không được để trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtMaHangHoa.Focus();
-            }
-            else
+            if (cboTenHangHoa.SelectedItem!=null)
             {
                 int sl;
                 bool isNumericSL = int.TryParse(txtSoLuong.Text, out sl);
@@ -116,19 +115,19 @@ namespace QuanLyNhaKho
                         //MessageBox.Show(txtMaHangHoa.Text);
 
                         // Cập nhật danh sách mới
-                        ChiTietHangHoaDAO chiTietMotSanPham = layer02.LayThongTinMotHangHoaNhapTheoMa(txtMaHangHoa.Text);
+                        ChiTietHangHoaDAO chiTietMotSanPham = layer02.LayThongTinMotHangHoaNhapTheoMa(cboTenHangHoa.SelectedValue.ToString());
                         //MessageBox.Show(chiTietMotSanPham.MaHH);
 
                         if (chiTietMotSanPham.MaHH == null)
                         {
                             MessageBox.Show("Mã hàng hóa không đúng. Vui lòng kiểm tra lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            txtMaHangHoa.Focus();
+                            cboTenHangHoa.Focus();
 
                         }
                         else
                         {
                             // Kiểm tra xem mã hàng hóa đó đã có trong danh sách hàng nhập chưa
-                            if (isCheckHHinDanhSachHangNhap(DanhSachHangHoaNhap, txtMaHangHoa.Text))// trường hợp có
+                            if (isCheckHHinDanhSachHangNhap(DanhSachHangHoaNhap, cboTenHangHoa.SelectedValue.ToString()))// trường hợp có
                             {
                                 MessageBox.Show("Mã hàng hóa đã có trong danh sách nhập. Nếu muốn sửa thông tin mặt hàng này thì hãy xóa mặt hàng này và thêm lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 dgvDanhSachHangMua.DataSource = DanhSachHangHoaNhap;
@@ -163,9 +162,13 @@ namespace QuanLyNhaKho
                                 txtTongTien.Text = TongTien.ToString();
                             }
 
+
                         }
                     }
                 }
+            }else {
+                MessageBox.Show("Vui lòng chọn hàng hóa trước khi thêm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cboTenHangHoa.Focus();
             }
 
         }
@@ -219,7 +222,12 @@ namespace QuanLyNhaKho
 
             TongTien = 0;
 
-            txtMaHangHoa.Text = "";
+            cboTenHangHoa.DataSource = layer02.LayDanhSachHangHoa();
+            cboTenHangHoa.DisplayMember = "TenHH";
+            cboTenHangHoa.ValueMember = "MaHH";
+            cboTenHangHoa.SelectedItem = null;
+            cboTenHangHoa.SelectedText = "--Chọn mặt hàng--";
+
             txtSoLuong.Text = "0";
             txtGiaNhap.Text = "0";
 
@@ -260,7 +268,7 @@ namespace QuanLyNhaKho
             }
             else
             {
-                if (cboKho.SelectedItem==null)
+                if (cboKho.SelectedItem == null)
                 {
                     MessageBox.Show("Vui lòng chọn kho", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     cboKho.Focus();

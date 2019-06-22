@@ -54,10 +54,11 @@
             this.Column2,
             this.Column3});
             this.dgvKhoHang.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvKhoHang.Location = new System.Drawing.Point(0, 220);
+            this.dgvKhoHang.Location = new System.Drawing.Point(0, 179);
+            this.dgvKhoHang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvKhoHang.Name = "dgvKhoHang";
             this.dgvKhoHang.RowTemplate.Height = 24;
-            this.dgvKhoHang.Size = new System.Drawing.Size(800, 230);
+            this.dgvKhoHang.Size = new System.Drawing.Size(600, 187);
             this.dgvKhoHang.TabIndex = 12;
             this.dgvKhoHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKhoHang_CellClick);
             // 
@@ -81,33 +82,37 @@
             // 
             // txtDiachi
             // 
-            this.txtDiachi.Location = new System.Drawing.Point(587, 31);
+            this.txtDiachi.Location = new System.Drawing.Point(440, 25);
+            this.txtDiachi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtDiachi.Name = "txtDiachi";
-            this.txtDiachi.Size = new System.Drawing.Size(180, 22);
+            this.txtDiachi.Size = new System.Drawing.Size(136, 20);
             this.txtDiachi.TabIndex = 10;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(472, 34);
+            this.label3.Location = new System.Drawing.Point(354, 28);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 17);
+            this.label3.Size = new System.Drawing.Size(41, 13);
             this.label3.TabIndex = 6;
             this.label3.Text = "Địa Chỉ";
             // 
             // txtTenNK
             // 
-            this.txtTenNK.Location = new System.Drawing.Point(194, 29);
+            this.txtTenNK.Location = new System.Drawing.Point(146, 24);
+            this.txtTenNK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtTenNK.Name = "txtTenNK";
-            this.txtTenNK.Size = new System.Drawing.Size(172, 22);
+            this.txtTenNK.Size = new System.Drawing.Size(130, 20);
             this.txtTenNK.TabIndex = 11;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(30, 32);
+            this.label1.Location = new System.Drawing.Point(22, 26);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 17);
+            this.label1.Size = new System.Drawing.Size(71, 13);
             this.label1.TabIndex = 7;
             this.label1.Text = "Tên Nhà Kho";
             // 
@@ -115,10 +120,11 @@
             // 
             this.button1.Image = global::QuanLyNhaKho.Properties.Resources.icons8_left_26;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(629, 125);
+            this.button1.Location = new System.Drawing.Point(472, 102);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.button1.Size = new System.Drawing.Size(109, 42);
+            this.button1.Padding = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.button1.Size = new System.Drawing.Size(90, 34);
             this.button1.TabIndex = 18;
             this.button1.Text = "Quay Lại";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -129,10 +135,11 @@
             // 
             this.button2.Image = global::QuanLyNhaKho.Properties.Resources.icons8_view_24;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(488, 125);
+            this.button2.Location = new System.Drawing.Point(366, 102);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(10, 0, 4, 0);
-            this.button2.Size = new System.Drawing.Size(109, 42);
+            this.button2.Padding = new System.Windows.Forms.Padding(8, 0, 3, 0);
+            this.button2.Size = new System.Drawing.Size(87, 34);
             this.button2.TabIndex = 19;
             this.button2.Text = "Tìm Kiếm";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -143,10 +150,11 @@
             // 
             this.button3.Image = global::QuanLyNhaKho.Properties.Resources.icons8_close_window_24;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(349, 125);
+            this.button3.Location = new System.Drawing.Point(262, 102);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(25, 0, 18, 0);
-            this.button3.Size = new System.Drawing.Size(109, 42);
+            this.button3.Padding = new System.Windows.Forms.Padding(19, 0, 14, 0);
+            this.button3.Size = new System.Drawing.Size(89, 34);
             this.button3.TabIndex = 20;
             this.button3.Text = "Xóa";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -157,10 +165,11 @@
             // 
             this.button4.Image = global::QuanLyNhaKho.Properties.Resources.icons8_edit_24;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(209, 125);
+            this.button4.Location = new System.Drawing.Point(157, 102);
+            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button4.Name = "button4";
-            this.button4.Padding = new System.Windows.Forms.Padding(20, 0, 18, 0);
-            this.button4.Size = new System.Drawing.Size(109, 42);
+            this.button4.Padding = new System.Windows.Forms.Padding(15, 0, 14, 0);
+            this.button4.Size = new System.Drawing.Size(88, 34);
             this.button4.TabIndex = 21;
             this.button4.Text = "Sửa";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -171,10 +180,11 @@
             // 
             this.button5.Image = global::QuanLyNhaKho.Properties.Resources.icons8_plus_24;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(72, 125);
+            this.button5.Location = new System.Drawing.Point(54, 102);
+            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button5.Name = "button5";
-            this.button5.Padding = new System.Windows.Forms.Padding(20, 0, 15, 0);
-            this.button5.Size = new System.Drawing.Size(109, 42);
+            this.button5.Padding = new System.Windows.Forms.Padding(15, 0, 11, 0);
+            this.button5.Size = new System.Drawing.Size(89, 34);
             this.button5.TabIndex = 22;
             this.button5.Text = "Thêm";
             this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -183,9 +193,9 @@
             // 
             // KhoHang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button3);
@@ -196,6 +206,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtTenNK);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "KhoHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "KhoHang";

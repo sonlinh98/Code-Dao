@@ -82,5 +82,10 @@ namespace QuanLyNhaKho
             documentViewer1.DocumentSource = reportSapHetHan;
             reportSapHetHan.CreateDocument();
         }
+
+        private void frmReviewIn_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

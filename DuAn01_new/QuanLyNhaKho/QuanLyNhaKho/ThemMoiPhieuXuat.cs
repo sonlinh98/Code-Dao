@@ -31,7 +31,7 @@ namespace QuanLyNhaKho
             txtSoPhieuXuat.Text = SinhMaSoPhieuXuatTuDong();
 
             cboKho.DataSource = layer02.LayDanhSachNhaKho();
-            cboKho.DisplayMember = "Tenkho";
+            cboKho.DisplayMember = "TenNK";
             cboKho.ValueMember = "MaNK";
             cboKho.SelectedItem = null;
             cboKho.SelectedText = "--Chọn nhà kho--";
@@ -53,11 +53,17 @@ namespace QuanLyNhaKho
             dgvDanhSachHangXuat.Columns["TenHH"].HeaderText = "Tên hàng hóa";
             dgvDanhSachHangXuat.Columns["DVT"].HeaderText = "DVT";
             dgvDanhSachHangXuat.Columns["SoLuong"].HeaderText = "Số lượng";
-            dgvDanhSachHangXuat.Columns["DonGia"].HeaderText = "Giá nhập";
+            dgvDanhSachHangXuat.Columns["DonGia"].HeaderText = "Giá xuất";
             dgvDanhSachHangXuat.Columns["ThanhTien"].HeaderText = "Thành tiền";
 
 
             txtNhanVien.Text = NVDangNhap.TenNV;
+
+            cboTenHangHoa.DataSource = layer02.LayDanhSachHangHoa();
+            cboTenHangHoa.DisplayMember = "TenHH";
+            cboTenHangHoa.ValueMember = "MaHH";
+            cboTenHangHoa.SelectedItem = null;
+            cboTenHangHoa.SelectedText = "--Chọn mặt hàng--";
 
         }
 
@@ -94,13 +100,6 @@ namespace QuanLyNhaKho
         {
             
 
-            if (txtMaHH.Text.Equals(""))
-            {
-                MessageBox.Show("Mã hàng hóa không được để trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtMaHH.Focus();
-            }
-            else
-            {
                 int sl;
                 bool isNumericSL = int.TryParse(txtSoLuongXuat.Text, out sl);
                 if (txtSoLuongXuat.Text.Equals(""))
@@ -126,18 +125,18 @@ namespace QuanLyNhaKho
                         //MessageBox.Show(txtMaHangHoa.Text);
 
                         // Cập nhật danh sách mới
-                        ChiTietHangHoaDAO chiTietMotSanPham = layer02.LayThongTinMotHangHoaNhapTheoMa(txtMaHH.Text);
+                        ChiTietHangHoaDAO chiTietMotSanPham = layer02.LayThongTinMotHangHoaNhapTheoMa(cboTenHangHoa.SelectedValue.ToString());
                         //MessageBox.Show(chiTietMotSanPham.MaHH);
 
                         if (chiTietMotSanPham.MaHH == null)
                         {
                             MessageBox.Show("Mã hàng hóa không đúng. Vui lòng kiểm tra lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            txtMaHH.Focus();
+                            cboTenHangHoa.Focus();
                         }
                         else
                         {
                             // Kiểm tra xem mã hàng hóa đó đã có trong danh sách hàng nhập chưa
-                            if (isCheckHHinDanhSachHangXuat(DanhSachHangHoaXuat, txtMaHH.Text))// trường hợp có
+                            if (isCheckHHinDanhSachHangXuat(DanhSachHangHoaXuat, cboTenHangHoa.SelectedValue.ToString()))// trường hợp có
                             {
                                 MessageBox.Show("Mã hàng hóa đã có trong danh sách nhập. Nếu muốn sửa thông tin mặt hàng này thì hãy xóa mặt hàng này và thêm lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 dgvDanhSachHangXuat.DataSource = DanhSachHangHoaXuat;
@@ -146,7 +145,7 @@ namespace QuanLyNhaKho
                                 dgvDanhSachHangXuat.Columns["TenHH"].HeaderText = "Tên hàng hóa";
                                 dgvDanhSachHangXuat.Columns["DVT"].HeaderText = "DVT";
                                 dgvDanhSachHangXuat.Columns["SoLuong"].HeaderText = "Số lượng";
-                                dgvDanhSachHangXuat.Columns["DonGia"].HeaderText = "Giá nhập";
+                                dgvDanhSachHangXuat.Columns["DonGia"].HeaderText = "Giá xuất";
                                 dgvDanhSachHangXuat.Columns["ThanhTien"].HeaderText = "Thành tiền";
                             }
                             else
@@ -168,7 +167,7 @@ namespace QuanLyNhaKho
                                 dgvDanhSachHangXuat.Columns["TenHH"].HeaderText = "Tên hàng hóa";
                                 dgvDanhSachHangXuat.Columns["DVT"].HeaderText = "DVT";
                                 dgvDanhSachHangXuat.Columns["SoLuong"].HeaderText = "Số lượng";
-                                dgvDanhSachHangXuat.Columns["DonGia"].HeaderText = "Giá nhập";
+                                dgvDanhSachHangXuat.Columns["DonGia"].HeaderText = "Giá xuất";
                                 dgvDanhSachHangXuat.Columns["ThanhTien"].HeaderText = "Thành tiền";
 
                                 // Tính tổng tiền mỗi khi thêm sản phẩm
@@ -179,7 +178,7 @@ namespace QuanLyNhaKho
                        
                     }
                 }
-            }
+         
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -213,8 +212,9 @@ namespace QuanLyNhaKho
 
             TongTien = 0;
 
+            cboTenHangHoa.SelectedItem = null;
+            cboTenHangHoa.SelectedText = "--Chọn hàng hóa--";
 
-            txtMaHH.Text = "";
             txtSoLuongXuat.Text = "0";
 
             dgvDanhSachHangXuat.DataSource = null;
@@ -231,7 +231,7 @@ namespace QuanLyNhaKho
             dgvDanhSachHangXuat.Columns["TenHH"].HeaderText = "Tên hàng hóa";
             dgvDanhSachHangXuat.Columns["DVT"].HeaderText = "DVT";
             dgvDanhSachHangXuat.Columns["SoLuong"].HeaderText = "Số lượng";
-            dgvDanhSachHangXuat.Columns["DonGia"].HeaderText = "Giá nhập";
+            dgvDanhSachHangXuat.Columns["DonGia"].HeaderText = "Giá xuất";
             dgvDanhSachHangXuat.Columns["ThanhTien"].HeaderText = "Thành tiền";
 
         }
@@ -274,7 +274,7 @@ namespace QuanLyNhaKho
 
                                 ClearDataThemMoiPhieuXuat();
 
-                                MessageBox.Show("Thêm phiếu nhập hàng thàng công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Thêm phiếu xuất hàng thàng công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                             catch (SqlException)
                             {
@@ -327,7 +327,7 @@ namespace QuanLyNhaKho
                 dgvDanhSachHangXuat.Columns["TenHH"].HeaderText = "Tên hàng hóa";
                 dgvDanhSachHangXuat.Columns["DVT"].HeaderText = "DVT";
                 dgvDanhSachHangXuat.Columns["SoLuong"].HeaderText = "Số lượng";
-                dgvDanhSachHangXuat.Columns["DonGia"].HeaderText = "Giá nhập";
+                dgvDanhSachHangXuat.Columns["DonGia"].HeaderText = "Giá xuất";
                 dgvDanhSachHangXuat.Columns["ThanhTien"].HeaderText = "Thành tiền";
             }
         }

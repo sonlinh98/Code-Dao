@@ -14,6 +14,10 @@ namespace QuanLyNhaKho
     public partial class QuanLyKhoHang : Form
     {
         private NhanVienDAO NVDangNhap = new NhanVienDAO();
+        public QuanLyKhoHang()
+        {
+            InitializeComponent();
+        }
         public QuanLyKhoHang(NhanVienDAO nhanviendangnhap)
         {
             InitializeComponent();
@@ -43,6 +47,28 @@ namespace QuanLyNhaKho
             hanghoa.ShowDialog();
             this.Close();
         }
+
+        private void btnDangXuat_Click(object sender, EventArgs e)
+        {
+            Hide();
+            DangNhap dn = new DangNhap();
+            dn.ShowDialog();
+            this.Close();
+        }
+
+        private void btnBaoCao_Click(object sender, EventArgs e)
+        {
+            Hide();
+            QuanLyBaoCao baocao = new QuanLyBaoCao();
+            baocao.ShowDialog();
+            this.Close();
+        }
+
+        private void QuanLyKhoHang_Load(object sender, EventArgs e)
+        {
+
+        }
+
 
 
     }

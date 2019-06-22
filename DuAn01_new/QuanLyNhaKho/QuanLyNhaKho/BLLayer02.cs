@@ -416,6 +416,21 @@ namespace QuanLyNhaKho
             return chiTietHH;
         }
 
+        public List<ChiTietHangHoaDAO> LayDanhSachHangHoa()
+        {
+            string cmdText = "SELECT MaHH, TenHH, Dvt, Soluong, Giavon, Mota AS 'Thanhtien' FROM dbo.Hanghoa";
+            SqlDataReader dr = Layer01.GetExecuteReader(cmdText);
+            List<ChiTietHangHoaDAO> chitiets = new List<ChiTietHangHoaDAO>();
+            while (dr.Read())
+            {
+                ChiTietHangHoaDAO chiTietHH = new ChiTietHangHoaDAO(dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), dr[5].ToString());
+                chitiets.Add(chiTietHH);
+            }
+            dr.Close();
+            return chitiets;
+        }
+
+
         public List<ChiTietHangHoaDAO> LayThongTinChiTietCuaPhieuNhapTheoSoPhieu(string soPhieu)
         {
             string cmdText = "Select dbo.CTPhieunhap.MaHH,dbo.Hanghoa.TenHH,dbo.Hanghoa.Dvt, dbo.CTPhieunhap.Soluong, dbo.CTPhieunhap.Giavon, (CAST(CTPhieunhap.Soluong as float) * CAST(CTPhieunhap.Giavon as float) ) AS 'ThanhTien' FROM dbo.CTPhieunhap INNER JOIN dbo.Hanghoa ON Hanghoa.MaHH = CTPhieunhap.MaHH WHERE dbo.CTPhieunhap.MaPN ='" + soPhieu + "'";
@@ -483,19 +498,55 @@ namespace QuanLyNhaKho
 
         public DataTable LayDanhSachNhaKho()
         {
-            string cmdText = "SELECT * FROM dbo.Nhakho";
+            string cmdText = "SELECT * FROM dbo.Nhakho WHERE dbo.Nhakho.MaNK != 'NK0000'";
             DataTable dataTable = Layer01.GetDataTable(cmdText);
             return dataTable;
         }
 
         public DataTable LayDanhSachNhaCungCap()
         {
+            string cmdText = "SELECT * FROM dbo.Nhacungcap WHERE MaNCC != 'NCC00000'";
+            DataTable dataTable = Layer01.GetDataTable(cmdText);
+            return dataTable;
+        }
+
+        public DataTable LayDanhSachNhaKhoALL()
+        {
+            string cmdText = "SELECT * FROM dbo.Nhakho";
+            DataTable dataTable = Layer01.GetDataTable(cmdText);
+            return dataTable;
+        }
+
+        public DataTable LayDanhSachNhaCungCapALL()
+        {
             string cmdText = "SELECT * FROM dbo.Nhacungcap";
             DataTable dataTable = Layer01.GetDataTable(cmdText);
             return dataTable;
         }
 
+        public string GetTenKhoTheoMaKho(string makho)
+        {
+            string cmdText = "select TenNK from NhaKho where MaNK = '" + makho + "'";
+            SqlDataReader dataReader = Layer01.GetExecuteReader(cmdText);
+            if (dataReader.Read())
+            {
+                CloseConnection();
+                return dataReader[0].ToString();
+            }
+            return null;
+        }
 
+        public string GetTenNhaCungCapTheoMaNhaCungCap(string maNCC)
+        {
+            string cmdText = "SELECT TenNCC FROM dbo.Nhacungcap WHERE MaNCC = '" + maNCC + "'";
+            SqlDataReader dataReader = Layer01.GetExecuteReader(cmdText);
+            if (dataReader.Read())
+            {
+                CloseConnection();
+                return dataReader[0].ToString();
+            }
+            return null;
+        }
 
         #endregion
 
@@ -599,5 +650,71 @@ namespace QuanLyNhaKho
 
         //#endregion
 
+        #region Phần báo cáo
+
+        public List<BaoCaoXuatKhoDAO> LayDuLieuBaoCaoXuatKho(string MaKho, string MaNCC, DateTime TuNgay, DateTime DenNgay)
+        {
+            string cmdText;
+            if (MaKho.Equals("NK0000") && MaNCC.Equals("NCC00000"))
+            {
+                cmdText = "SELECT dbo.Phieuxuat.MaPX, dbo.Phieuxuat.Ngayxuat, dbo.Phieuxuat.Ghichu, dbo.CTPhieuxuat.MaHH, dbo.Hanghoa.TenHH, dbo.Hanghoa.Dvt, dbo.CTPhieuxuat.Soluong, dbo.CTPhieuxuat.Giavon, (CAST(dbo.CTPhieuxuat.Soluong as float) * CAST(dbo.CTPhieuxuat.Giavon as float) ) AS 'ThanhTien' FROM dbo.Phieuxuat INNER JOIN dbo.CTPhieuxuat ON CTPhieuxuat.MaPX = Phieuxuat.MaPX INNER JOIN dbo.Hanghoa ON Hanghoa.MaHH = CTPhieuxuat.MaHH WHERE dbo.Phieuxuat.Ngayxuat BETWEEN '" + TuNgay + "' AND '"+DenNgay+"'";
+            }
+            else if (MaKho.Equals("NK0000") && !MaNCC.Equals("NCC00000"))
+            {
+                
+                cmdText = "SELECT dbo.Phieuxuat.MaPX, dbo.Phieuxuat.Ngayxuat, dbo.Phieuxuat.Ghichu, dbo.CTPhieuxuat.MaHH, dbo.Hanghoa.TenHH, dbo.Hanghoa.Dvt, dbo.CTPhieuxuat.Soluong, dbo.CTPhieuxuat.Giavon, (CAST(dbo.CTPhieuxuat.Soluong as float) * CAST(dbo.CTPhieuxuat.Giavon as float) ) AS 'ThanhTien' FROM dbo.Phieuxuat INNER JOIN dbo.CTPhieuxuat ON CTPhieuxuat.MaPX = Phieuxuat.MaPX INNER JOIN dbo.Hanghoa ON Hanghoa.MaHH = CTPhieuxuat.MaHH WHERE dbo.Hanghoa.MaNCC = '" + MaNCC + "' AND dbo.Phieuxuat.Ngayxuat BETWEEN '" + TuNgay + "' AND '" + DenNgay + "'";
+            }
+            else if (!MaKho.Equals("NK0000") && MaNCC.Equals("NCC00000"))
+            {
+                cmdText = "SELECT dbo.Phieuxuat.MaPX, dbo.Phieuxuat.Ngayxuat, dbo.Phieuxuat.Ghichu, dbo.CTPhieuxuat.MaHH, dbo.Hanghoa.TenHH, dbo.Hanghoa.Dvt, dbo.CTPhieuxuat.Soluong, dbo.CTPhieuxuat.Giavon, (CAST(dbo.CTPhieuxuat.Soluong as float) * CAST(dbo.CTPhieuxuat.Giavon as float) ) AS 'ThanhTien' FROM dbo.Phieuxuat INNER JOIN dbo.CTPhieuxuat ON CTPhieuxuat.MaPX = Phieuxuat.MaPX INNER JOIN dbo.Hanghoa ON Hanghoa.MaHH = CTPhieuxuat.MaHH WHERE dbo.Phieuxuat.MaNK = '" + MaKho + "' AND dbo.Phieuxuat.Ngayxuat BETWEEN '" + TuNgay + "' AND '" + DenNgay + "'";
+            }
+            else
+            {
+                cmdText = "SELECT dbo.Phieuxuat.MaPX, dbo.Phieuxuat.Ngayxuat, dbo.Phieuxuat.Ghichu, dbo.CTPhieuxuat.MaHH, dbo.Hanghoa.TenHH, dbo.Hanghoa.Dvt, dbo.CTPhieuxuat.Soluong, dbo.CTPhieuxuat.Giavon, (CAST(dbo.CTPhieuxuat.Soluong as float) * CAST(dbo.CTPhieuxuat.Giavon as float) ) AS 'ThanhTien' FROM dbo.Phieuxuat INNER JOIN dbo.CTPhieuxuat ON CTPhieuxuat.MaPX = Phieuxuat.MaPX INNER JOIN dbo.Hanghoa ON Hanghoa.MaHH = CTPhieuxuat.MaHH WHERE dbo.Phieuxuat.MaNK = '" + MaKho + "' AND dbo.Hanghoa.MaNCC = '" + MaNCC + "' AND dbo.Phieuxuat.Ngayxuat BETWEEN '" + TuNgay + "' AND '" + DenNgay + "'";
+            }
+            SqlDataReader dr = Layer01.GetExecuteReader(cmdText);
+            List<BaoCaoXuatKhoDAO> dataBaoCao = new List<BaoCaoXuatKhoDAO>();
+            while (dr.Read())
+            {
+                BaoCaoXuatKhoDAO row = new BaoCaoXuatKhoDAO(dr[0].ToString(), DateTime.Parse(dr[1].ToString()), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), dr[6].ToString(),dr[7].ToString(), dr[8].ToString());
+                dataBaoCao.Add(row);
+            }
+            dr.Close();
+            return dataBaoCao;
+        }
+
+        public List<BaoCaoNhapKhoDAO> LayDuLieuBaoCaoNhapKho(string MaKho, string MaNCC, DateTime TuNgay, DateTime DenNgay)
+        {
+            string cmdText;
+            if (MaKho.Equals("NK0000") && MaNCC.Equals("NCC00000"))
+            {
+                cmdText = "SELECT dbo.Phieunhap.MaPN, dbo.Phieunhap.Ngaynhap, dbo.Phieunhap.Ghichu, dbo.CTPhieunhap.MaHH, dbo.Hanghoa.TenHH, dbo.Hanghoa.Dvt, dbo.CTPhieunhap.Soluong, dbo.CTPhieunhap.Giavon, (CAST(dbo.CTPhieunhap.Soluong as float) * CAST(dbo.CTPhieunhap.Giavon as float) ) AS 'ThanhTien' FROM dbo.Phieunhap INNER JOIN dbo.CTPhieunhap ON CTPhieunhap.MaPN = Phieunhap.MaPN INNER JOIN dbo.Hanghoa ON Hanghoa.MaHH = CTPhieunhap.MaHH WHERE dbo.Phieunhap.Ngaynhap BETWEEN '"+TuNgay+"' AND '"+DenNgay+"'";
+            }
+            else if (MaKho.Equals("NK0000") && !MaNCC.Equals("NCC00000"))
+            {
+
+                cmdText = "SELECT dbo.Phieunhap.MaPN, dbo.Phieunhap.Ngaynhap, dbo.Phieunhap.Ghichu, dbo.CTPhieunhap.MaHH, dbo.Hanghoa.TenHH, dbo.Hanghoa.Dvt, dbo.CTPhieunhap.Soluong, dbo.CTPhieunhap.Giavon, (CAST(dbo.CTPhieunhap.Soluong as float) * CAST(dbo.CTPhieunhap.Giavon as float) ) AS 'ThanhTien' FROM dbo.Phieunhap INNER JOIN dbo.CTPhieunhap ON CTPhieunhap.MaPN = Phieunhap.MaPN INNER JOIN dbo.Hanghoa ON Hanghoa.MaHH = CTPhieunhap.MaHH WHERE  dbo.Hanghoa.MaNCC = '" + MaNCC + "' AND dbo.Phieunhap.Ngaynhap BETWEEN '" + TuNgay + "' AND '" + DenNgay + "'";
+            }
+            else if (!MaKho.Equals("NK0000") && MaNCC.Equals("NCC00000"))
+            {
+
+                cmdText = "SELECT dbo.Phieunhap.MaPN, dbo.Phieunhap.Ngaynhap, dbo.Phieunhap.Ghichu, dbo.CTPhieunhap.MaHH, dbo.Hanghoa.TenHH, dbo.Hanghoa.Dvt, dbo.CTPhieunhap.Soluong, dbo.CTPhieunhap.Giavon, (CAST(dbo.CTPhieunhap.Soluong as float) * CAST(dbo.CTPhieunhap.Giavon as float) ) AS 'ThanhTien' FROM dbo.Phieunhap INNER JOIN dbo.CTPhieunhap ON CTPhieunhap.MaPN = Phieunhap.MaPN INNER JOIN dbo.Hanghoa ON Hanghoa.MaHH = CTPhieunhap.MaHH WHERE dbo.Phieunhap.MaNK = '" + MaKho + "' AND dbo.Phieunhap.Ngaynhap BETWEEN '" + TuNgay + "' AND '" + DenNgay + "'";
+            }
+            else
+            {
+                cmdText = "SELECT dbo.Phieunhap.MaPN, dbo.Phieunhap.Ngaynhap, dbo.Phieunhap.Ghichu, dbo.CTPhieunhap.MaHH, dbo.Hanghoa.TenHH, dbo.Hanghoa.Dvt, dbo.CTPhieunhap.Soluong, dbo.CTPhieunhap.Giavon, (CAST(dbo.CTPhieunhap.Soluong as float) * CAST(dbo.CTPhieunhap.Giavon as float) ) AS 'ThanhTien' FROM dbo.Phieunhap INNER JOIN dbo.CTPhieunhap ON CTPhieunhap.MaPN = Phieunhap.MaPN INNER JOIN dbo.Hanghoa ON Hanghoa.MaHH = CTPhieunhap.MaHH WHERE dbo.Phieunhap.MaNK = '" + MaKho + "' AND  dbo.Hanghoa.MaNCC = '" + MaNCC + "' AND dbo.Phieunhap.Ngaynhap BETWEEN '" + TuNgay + "' AND '" + DenNgay + "'";
+            }
+            SqlDataReader dr = Layer01.GetExecuteReader(cmdText);
+            List<BaoCaoNhapKhoDAO> dataBaoCao = new List<BaoCaoNhapKhoDAO>();
+            while (dr.Read())
+            {
+                BaoCaoNhapKhoDAO row = new BaoCaoNhapKhoDAO(dr[0].ToString(), DateTime.Parse(dr[1].ToString()), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), dr[6].ToString(), dr[7].ToString(), dr[8].ToString());
+                dataBaoCao.Add(row);
+            }
+            dr.Close();
+            return dataBaoCao;
+        }
+
+        #endregion 
     }
 }

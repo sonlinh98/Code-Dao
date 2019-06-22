@@ -55,5 +55,13 @@ namespace QuanLyNhaKho
             nhomHang.ShowDialog();
             this.Close();
         }
+
+        private void btnDangXuat_Click(object sender, EventArgs e)
+        {
+            Hide();
+            DangNhap dn = new DangNhap();
+            dn.ShowDialog();
+            this.Close();
+        }
     }
 }
