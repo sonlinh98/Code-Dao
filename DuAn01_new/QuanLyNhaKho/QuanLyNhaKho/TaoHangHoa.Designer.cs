@@ -120,7 +120,7 @@
             // 
             this.cboDanhMuc.FormattingEnabled = true;
             this.cboDanhMuc.Location = new System.Drawing.Point(398, 136);
-            this.cboDanhMuc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboDanhMuc.Margin = new System.Windows.Forms.Padding(2);
             this.cboDanhMuc.Name = "cboDanhMuc";
             this.cboDanhMuc.Size = new System.Drawing.Size(121, 21);
             this.cboDanhMuc.TabIndex = 1;
@@ -129,7 +129,7 @@
             // 
             this.cboNCC.FormattingEnabled = true;
             this.cboNCC.Location = new System.Drawing.Point(398, 182);
-            this.cboNCC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboNCC.Margin = new System.Windows.Forms.Padding(2);
             this.cboNCC.Name = "cboNCC";
             this.cboNCC.Size = new System.Drawing.Size(121, 21);
             this.cboNCC.TabIndex = 1;
@@ -137,7 +137,7 @@
             // txtMaHH
             // 
             this.txtMaHH.Location = new System.Drawing.Point(160, 47);
-            this.txtMaHH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMaHH.Margin = new System.Windows.Forms.Padding(2);
             this.txtMaHH.Name = "txtMaHH";
             this.txtMaHH.Size = new System.Drawing.Size(134, 20);
             this.txtMaHH.TabIndex = 2;
@@ -145,7 +145,7 @@
             // txtTenHH
             // 
             this.txtTenHH.Location = new System.Drawing.Point(160, 93);
-            this.txtTenHH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTenHH.Margin = new System.Windows.Forms.Padding(2);
             this.txtTenHH.Name = "txtTenHH";
             this.txtTenHH.Size = new System.Drawing.Size(134, 20);
             this.txtTenHH.TabIndex = 2;
@@ -153,7 +153,7 @@
             // txtDVT
             // 
             this.txtDVT.Location = new System.Drawing.Point(160, 136);
-            this.txtDVT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDVT.Margin = new System.Windows.Forms.Padding(2);
             this.txtDVT.Name = "txtDVT";
             this.txtDVT.Size = new System.Drawing.Size(134, 20);
             this.txtDVT.TabIndex = 2;
@@ -161,7 +161,7 @@
             // txtMoTa
             // 
             this.txtMoTa.Location = new System.Drawing.Point(378, 47);
-            this.txtMoTa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMoTa.Margin = new System.Windows.Forms.Padding(2);
             this.txtMoTa.Multiline = true;
             this.txtMoTa.Name = "txtMoTa";
             this.txtMoTa.Size = new System.Drawing.Size(141, 78);
@@ -171,13 +171,13 @@
             // 
             this.btnLuu.Image = global::QuanLyNhaKho.Properties.Resources.icons8_save_close_24;
             this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLuu.Location = new System.Drawing.Point(323, 245);
-            this.btnLuu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLuu.Location = new System.Drawing.Point(330, 245);
+            this.btnLuu.Margin = new System.Windows.Forms.Padding(2);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.btnLuu.Size = new System.Drawing.Size(68, 26);
+            this.btnLuu.Size = new System.Drawing.Size(89, 32);
             this.btnLuu.TabIndex = 3;
-            this.btnLuu.Text = "Lưu";
+            this.btnLuu.Text = "Tạo mới";
             this.btnLuu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLuu.UseVisualStyleBackColor = true;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
@@ -186,13 +186,13 @@
             // 
             this.btnHuy.Image = global::QuanLyNhaKho.Properties.Resources.icons8_left_26;
             this.btnHuy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHuy.Location = new System.Drawing.Point(228, 245);
-            this.btnHuy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnHuy.Location = new System.Drawing.Point(210, 245);
+            this.btnHuy.Margin = new System.Windows.Forms.Padding(2);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Padding = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.btnHuy.Size = new System.Drawing.Size(65, 26);
+            this.btnHuy.Size = new System.Drawing.Size(84, 32);
             this.btnHuy.TabIndex = 3;
-            this.btnHuy.Text = "Hủy";
+            this.btnHuy.Text = "Quay lại";
             this.btnHuy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnHuy.UseVisualStyleBackColor = true;
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
@@ -201,7 +201,7 @@
             // 
             this.dtpHanSuDung.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpHanSuDung.Location = new System.Drawing.Point(160, 183);
-            this.dtpHanSuDung.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpHanSuDung.Margin = new System.Windows.Forms.Padding(2);
             this.dtpHanSuDung.Name = "dtpHanSuDung";
             this.dtpHanSuDung.Size = new System.Drawing.Size(105, 20);
             this.dtpHanSuDung.TabIndex = 4;
@@ -227,7 +227,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "TaoHangHoa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tạo mới hàng hóa";

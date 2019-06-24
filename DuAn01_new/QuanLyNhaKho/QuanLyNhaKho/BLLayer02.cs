@@ -566,7 +566,7 @@ namespace QuanLyNhaKho
             return dataTable;
         }
 
-        public void ThanhToanVaThemHoaDonBanHang(string MaHD, string MaNV,  DateTime Ngaymua, string Ghichu,double Tongtien, string TenKH, string Diachi, string sdt, string email, List<ChiTietHangHoaDAO> DanhSachHangBan)
+        public void ThanhToanVaThemHoaDonBanHang(string MaHD, string MaNV, DateTime Ngaymua, string Ghichu, double Tongtien, string TenKH, string Diachi, string sdt, string email, List<ChiTietHangHoaDAO> DanhSachHangBan)
         {
             // Thêm thông tin khách hàng
             string maKHGoc = LayMaKHCuoiCung().Rows[0][0].ToString();// lấy ô đầu tiên của bảng kết quả trả về
@@ -592,14 +592,14 @@ namespace QuanLyNhaKho
 
 
             // Thêm thông tin chung về phiếu mua
-            string cmdText = "INSERT INTO dbo.Phieumua ( MaPM , MaKH , MaNV , Ngaymua , Thanhtoan , Ghichu  ) VALUES  ('"+MaHD+"','"+maKH+"','"+MaNV+"','"+Ngaymua+"','"+Tongtien+"',N'"+Ghichu+"')";
+            string cmdText = "INSERT INTO dbo.Phieumua ( MaPM , MaKH , MaNV , Ngaymua , Thanhtoan , Ghichu  ) VALUES  ('" + MaHD + "','" + maKH + "','" + MaNV + "','" + Ngaymua + "','" + Tongtien + "',N'" + Ghichu + "')";
             Layer01.ExecuteNonQuery(cmdText);
 
 
             // Thêm Danh sách hàng mua và cập nhật số lượng trong kho
             foreach (ChiTietHangHoaDAO item in DanhSachHangBan)
             {
-                string cmdText1 = "INSERT INTO dbo.CTPhieumua ( MaPM, MaHH, Soluong, Giavon ) VALUES ('"+MaHD+"','"+item.MaHH+"','"+item.SoLuong+"','"+item.DonGia+"')";
+                string cmdText1 = "INSERT INTO dbo.CTPhieumua ( MaPM, MaHH, Soluong, Giavon ) VALUES ('" + MaHD + "','" + item.MaHH + "','" + item.SoLuong + "','" + item.DonGia + "')";
                 Layer01.ExecuteNonQuery(cmdText1);
                 string cmdText2 = "	UPDATE dbo.Hanghoa SET Soluong = Soluong-" + int.Parse(item.SoLuong) + " WHERE MaHH = '" + item.MaHH + "'";
                 Layer01.ExecuteNonQuery(cmdText2);
@@ -657,11 +657,11 @@ namespace QuanLyNhaKho
             string cmdText;
             if (MaKho.Equals("NK0000") && MaNCC.Equals("NCC00000"))
             {
-                cmdText = "SELECT dbo.Phieuxuat.MaPX, dbo.Phieuxuat.Ngayxuat, dbo.Phieuxuat.Ghichu, dbo.CTPhieuxuat.MaHH, dbo.Hanghoa.TenHH, dbo.Hanghoa.Dvt, dbo.CTPhieuxuat.Soluong, dbo.CTPhieuxuat.Giavon, (CAST(dbo.CTPhieuxuat.Soluong as float) * CAST(dbo.CTPhieuxuat.Giavon as float) ) AS 'ThanhTien' FROM dbo.Phieuxuat INNER JOIN dbo.CTPhieuxuat ON CTPhieuxuat.MaPX = Phieuxuat.MaPX INNER JOIN dbo.Hanghoa ON Hanghoa.MaHH = CTPhieuxuat.MaHH WHERE dbo.Phieuxuat.Ngayxuat BETWEEN '" + TuNgay + "' AND '"+DenNgay+"'";
+                cmdText = "SELECT dbo.Phieuxuat.MaPX, dbo.Phieuxuat.Ngayxuat, dbo.Phieuxuat.Ghichu, dbo.CTPhieuxuat.MaHH, dbo.Hanghoa.TenHH, dbo.Hanghoa.Dvt, dbo.CTPhieuxuat.Soluong, dbo.CTPhieuxuat.Giavon, (CAST(dbo.CTPhieuxuat.Soluong as float) * CAST(dbo.CTPhieuxuat.Giavon as float) ) AS 'ThanhTien' FROM dbo.Phieuxuat INNER JOIN dbo.CTPhieuxuat ON CTPhieuxuat.MaPX = Phieuxuat.MaPX INNER JOIN dbo.Hanghoa ON Hanghoa.MaHH = CTPhieuxuat.MaHH WHERE dbo.Phieuxuat.Ngayxuat BETWEEN '" + TuNgay + "' AND '" + DenNgay + "'";
             }
             else if (MaKho.Equals("NK0000") && !MaNCC.Equals("NCC00000"))
             {
-                
+
                 cmdText = "SELECT dbo.Phieuxuat.MaPX, dbo.Phieuxuat.Ngayxuat, dbo.Phieuxuat.Ghichu, dbo.CTPhieuxuat.MaHH, dbo.Hanghoa.TenHH, dbo.Hanghoa.Dvt, dbo.CTPhieuxuat.Soluong, dbo.CTPhieuxuat.Giavon, (CAST(dbo.CTPhieuxuat.Soluong as float) * CAST(dbo.CTPhieuxuat.Giavon as float) ) AS 'ThanhTien' FROM dbo.Phieuxuat INNER JOIN dbo.CTPhieuxuat ON CTPhieuxuat.MaPX = Phieuxuat.MaPX INNER JOIN dbo.Hanghoa ON Hanghoa.MaHH = CTPhieuxuat.MaHH WHERE dbo.Hanghoa.MaNCC = '" + MaNCC + "' AND dbo.Phieuxuat.Ngayxuat BETWEEN '" + TuNgay + "' AND '" + DenNgay + "'";
             }
             else if (!MaKho.Equals("NK0000") && MaNCC.Equals("NCC00000"))
@@ -676,7 +676,7 @@ namespace QuanLyNhaKho
             List<BaoCaoXuatKhoDAO> dataBaoCao = new List<BaoCaoXuatKhoDAO>();
             while (dr.Read())
             {
-                BaoCaoXuatKhoDAO row = new BaoCaoXuatKhoDAO(dr[0].ToString(), DateTime.Parse(dr[1].ToString()), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), dr[6].ToString(),dr[7].ToString(), dr[8].ToString());
+                BaoCaoXuatKhoDAO row = new BaoCaoXuatKhoDAO(dr[0].ToString(), DateTime.Parse(dr[1].ToString()), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), dr[6].ToString(), dr[7].ToString(), dr[8].ToString());
                 dataBaoCao.Add(row);
             }
             dr.Close();
@@ -688,7 +688,7 @@ namespace QuanLyNhaKho
             string cmdText;
             if (MaKho.Equals("NK0000") && MaNCC.Equals("NCC00000"))
             {
-                cmdText = "SELECT dbo.Phieunhap.MaPN, dbo.Phieunhap.Ngaynhap, dbo.Phieunhap.Ghichu, dbo.CTPhieunhap.MaHH, dbo.Hanghoa.TenHH, dbo.Hanghoa.Dvt, dbo.CTPhieunhap.Soluong, dbo.CTPhieunhap.Giavon, (CAST(dbo.CTPhieunhap.Soluong as float) * CAST(dbo.CTPhieunhap.Giavon as float) ) AS 'ThanhTien' FROM dbo.Phieunhap INNER JOIN dbo.CTPhieunhap ON CTPhieunhap.MaPN = Phieunhap.MaPN INNER JOIN dbo.Hanghoa ON Hanghoa.MaHH = CTPhieunhap.MaHH WHERE dbo.Phieunhap.Ngaynhap BETWEEN '"+TuNgay+"' AND '"+DenNgay+"'";
+                cmdText = "SELECT dbo.Phieunhap.MaPN, dbo.Phieunhap.Ngaynhap, dbo.Phieunhap.Ghichu, dbo.CTPhieunhap.MaHH, dbo.Hanghoa.TenHH, dbo.Hanghoa.Dvt, dbo.CTPhieunhap.Soluong, dbo.CTPhieunhap.Giavon, (CAST(dbo.CTPhieunhap.Soluong as float) * CAST(dbo.CTPhieunhap.Giavon as float) ) AS 'ThanhTien' FROM dbo.Phieunhap INNER JOIN dbo.CTPhieunhap ON CTPhieunhap.MaPN = Phieunhap.MaPN INNER JOIN dbo.Hanghoa ON Hanghoa.MaHH = CTPhieunhap.MaHH WHERE dbo.Phieunhap.Ngaynhap BETWEEN '" + TuNgay + "' AND '" + DenNgay + "'";
             }
             else if (MaKho.Equals("NK0000") && !MaNCC.Equals("NCC00000"))
             {
@@ -715,6 +715,146 @@ namespace QuanLyNhaKho
             return dataBaoCao;
         }
 
-        #endregion 
+        public List<BaoCaoNhapXuatTonDAO> LayDuLieuBaoCaoTonKho(string MaKho, int nam, int thang)
+        {
+            string cmdText = "SELECT dbo.Hanghoa.MaHH, dbo.Hanghoa.TenHH, dbo.Hanghoa.Dvt, dbo.Hanghoa.Soluong AS 'toncuoiky', ( CAST(dbo.Hanghoa.Soluong AS FLOAT) * CAST(dbo.Hanghoa.Giavon AS FLOAT) )  AS 'thanhtiencuoiky', dbo.TonDauKy.Soluong AS 'tondauky',( CAST(dbo.TonDauKy.Soluong AS FLOAT) * CAST(dbo.TonDauKy.GiaVP AS FLOAT) ) AS 'giatritondauky' , dbo.CTPhieunhap.Soluong AS 'slnhap', ( CAST(dbo.CTPhieunhap.Soluong AS FLOAT) * CAST(dbo.CTPhieunhap.Giavon AS FLOAT) ) AS 'thanhtiengianhap', dbo.CTPhieuxuat.Soluong AS 'slxuat', ( CAST(dbo.CTPhieuxuat.Soluong AS FLOAT) * CAST(dbo.CTPhieuxuat.Giavon AS FLOAT) )  AS'thanhtiengiaxuat', dbo.CTPhieumua.Soluong AS 'slmua', ( CAST(dbo.CTPhieumua.Soluong AS FLOAT) * CAST(dbo.CTPhieumua.Giavon AS FLOAT) )  AS 'thanhtiengiamua' , dbo.Phieunhap.MaNK, dbo.Phieuxuat.MaNK FROM    dbo.Hanghoa FULL OUTER JOIN dbo.TonDauKy ON TonDauKy.MaHH = Hanghoa.MaHH FULL OUTER JOIN dbo.CTPhieumua ON CTPhieumua.MaHH = Hanghoa.MaHH FULL OUTER JOIN dbo.CTPhieunhap ON CTPhieunhap.MaHH = Hanghoa.MaHH FULL OUTER JOIN dbo.CTPhieuxuat ON CTPhieuxuat.MaHH = Hanghoa.MaHH FULL OUTER JOIN dbo.Phieuxuat ON Phieuxuat.MaPX = CTPhieuxuat.MaPX FULL OUTER JOIN dbo.Phieunhap ON Phieunhap.MaPN = CTPhieunhap.MaPN FULL OUTER JOIN dbo.Phieumua ON Phieumua.MaPM = CTPhieumua.MaPM WHERE MONTH(dbo.Phieunhap.Ngaynhap) = " + thang + " AND YEAR(dbo.Phieunhap.Ngaynhap) = " + nam + "  Or MONTH(dbo.Phieuxuat.Ngayxuat) = " + thang + " AND YEAR(dbo.Phieuxuat.Ngayxuat) = " + nam + " or  MONTH(dbo.Phieumua.Ngaymua) = " + thang + " AND YEAR(dbo.Phieumua.Ngaymua) = " + nam + " ";
+
+            SqlDataReader dr = Layer01.GetExecuteReader(cmdText);
+            List<BaoCaoNhapXuatTonDAO> dataBaoCao = new List<BaoCaoNhapXuatTonDAO>();
+            while (dr.Read())
+            {
+                //string mahh, string tenhh, string dvt, string slTonDK, string TTTDK, string sltonCuoiKy, string ttCuoiky, string slnhap, string ttnhap, string slxuat, string ttxuat
+                BaoCaoNhapXuatTonDAO row = new BaoCaoNhapXuatTonDAO();
+                if (MaKho.Equals("NK0000"))// tất cả nhà kho
+                {
+                    if (dr[7].ToString().Equals(""))// hàng này không có phiếu nhập
+                    {
+                        row = new BaoCaoNhapXuatTonDAO(dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), dr[6].ToString(), "0", "0", "0", "0");
+                        if (!dr[9].ToString().Equals("") && dr[11].ToString().Equals(""))// hàng có phiếu xuất và không có phiếu mua
+                        {
+                            row.SLXuat = dr[9].ToString();
+                            row.ThanhTienXuat = dr[10].ToString();
+                        }
+                        else if (dr[9].ToString().Equals("") && !dr[11].ToString().Equals(""))// hàng có phiếu mua và không có phiếu xuất
+                        {
+                            row.SLXuat = dr[11].ToString();
+                            row.ThanhTienXuat = dr[12].ToString();
+                        }
+                        else if (!dr[9].ToString().Equals("") && !dr[11].ToString().Equals(""))// hàng có cả phiếu mua và phiếu xuất.
+                        {
+                            row.SLXuat = (int.Parse(dr[11].ToString()) + int.Parse(dr[9].ToString())).ToString();
+                            row.ThanhTienXuat = (int.Parse(dr[12].ToString()) + int.Parse(dr[10].ToString())).ToString();
+                        }
+                    }
+                    else// hàng có phiếu nhập
+                    {
+                        row = new BaoCaoNhapXuatTonDAO(dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), dr[6].ToString(), dr[7].ToString(), dr[8].ToString(), "0", "0");
+                        if (!dr[9].ToString().Equals("") && dr[11].ToString().Equals(""))// hàng có phiếu xuất và không có phiếu mua
+                        {
+                            row.SLXuat = dr[9].ToString();
+                            row.ThanhTienXuat = dr[10].ToString();
+                        }
+                        else if (dr[9].ToString().Equals("") && !dr[11].ToString().Equals(""))// hàng có phiếu mua và không có phiếu xuất
+                        {
+                            row.SLXuat = dr[11].ToString();
+                            row.ThanhTienXuat = dr[12].ToString();
+                        }
+                        else if (!dr[9].ToString().Equals("") && !dr[11].ToString().Equals(""))// hàng có cả phiếu mua và phiếu xuất.
+                        {
+                            row.SLXuat = (int.Parse(dr[11].ToString()) + int.Parse(dr[9].ToString())).ToString();
+                            row.ThanhTienXuat = (int.Parse(dr[12].ToString()) + int.Parse(dr[10].ToString())).ToString();
+                        }
+                    }
+                    dataBaoCao.Add(row);
+                }
+                else// không phải tất cả nhà kho
+                {
+                    if (dr[7].ToString().Equals(""))// hàng này không có phiếu nhập
+                    {
+                        row = new BaoCaoNhapXuatTonDAO(dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), dr[6].ToString(), "0", "0", "0", "0");
+                        if (!dr[9].ToString().Equals("") && dr[11].ToString().Equals("") )// hàng có phiếu xuất và không có phiếu mua
+                        {
+                            row.SLXuat = dr[9].ToString();
+                            row.ThanhTienXuat = dr[10].ToString();
+                        }
+                        else if (dr[9].ToString().Equals("") && !dr[11].ToString().Equals(""))// hàng có phiếu mua và không có phiếu xuất
+                        {
+                            row.SLXuat = dr[11].ToString();
+                            row.ThanhTienXuat = dr[12].ToString();
+                        }
+                        else if (!dr[9].ToString().Equals("") && !dr[11].ToString().Equals(""))// hàng có cả phiếu mua và phiếu xuất.
+                        {
+                            row.SLXuat = (int.Parse(dr[11].ToString()) + int.Parse(dr[9].ToString())).ToString();
+                            row.ThanhTienXuat = (int.Parse(dr[12].ToString()) + int.Parse(dr[10].ToString())).ToString();
+                        }
+                        if (dr[14].ToString().Equals(MaKho))// mã kho xuất bằng với mã kho chọn
+                        {
+                            dataBaoCao.Add(row);
+                        }
+                    }
+                    else if (dr[9].ToString().Equals(""))// hàng không có phiếu xuất
+                    {
+                        row = new BaoCaoNhapXuatTonDAO(dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), dr[6].ToString(), "0", "0", "0", "0");
+                        if (!dr[7].ToString().Equals(""))// có phiếu nhập
+                        {
+                            row.SLNhap = dr[7].ToString();
+                            row.ThanhTienNhap = dr[8].ToString();
+                        }
+                        if (dr[13].ToString().Equals(MaKho))// mã kho nhập bằng với mã kho chọn
+                        {
+                            dataBaoCao.Add(row);
+                        }
+                    }
+                    else if (!dr[7].ToString().Equals("") && !dr[9].ToString().Equals(""))// hàng có phiếu nhập và phiếu xuất
+                    {
+                        // khởi tạo dữ liệu
+                         row = new BaoCaoNhapXuatTonDAO(dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), dr[6].ToString(), dr[7].ToString(), dr[8].ToString(), "0", "0");
+                        if (!dr[9].ToString().Equals("") && dr[11].ToString().Equals(""))// hàng có phiếu xuất và không có phiếu mua
+                        {
+                            row.SLXuat = dr[9].ToString();
+                            row.ThanhTienXuat = dr[10].ToString();
+                        }
+                        else if (dr[9].ToString().Equals("") && !dr[11].ToString().Equals(""))// hàng có phiếu mua và không có phiếu xuất
+                        {
+                            row.SLXuat = dr[11].ToString();
+                            row.ThanhTienXuat = dr[12].ToString();
+                        }
+                        else if (!dr[9].ToString().Equals("") && !dr[11].ToString().Equals(""))// hàng có cả phiếu mua và phiếu xuất.
+                        {
+                            row.SLXuat = (int.Parse(dr[11].ToString()) + int.Parse(dr[9].ToString())).ToString();
+                            row.ThanhTienXuat = (int.Parse(dr[12].ToString()) + int.Parse(dr[10].ToString())).ToString();
+                        }
+
+                        // phiếu nhập và phiếu xuất cùng kho
+
+                        if (dr[13].ToString().Equals(MaKho)&&dr[14].ToString().Equals(MaKho))
+                        {
+                            dataBaoCao.Add(row);
+                        }
+
+                        // phiếu nhập bằng kho chọn và phiếu xuất khác kho chọn
+                        else if (dr[13].ToString().Equals(MaKho) && !dr[14].ToString().Equals(MaKho))
+                        {
+                            row.SLXuat = "0";
+                            row.ThanhTienXuat = "0";
+                            dataBaoCao.Add(row);
+                        }
+
+                        // phiếu nhập khác kho chọn và phiếu xuất cùng kho chọn
+                        else  if (!dr[13].ToString().Equals(MaKho) && dr[14].ToString().Equals(MaKho))
+                        {
+                            row.SLNhap = "0";
+                            row.ThanhTienNhap = "0";
+                            dataBaoCao.Add(row);
+                        }
+                    }
+                }
+
+            }
+            dr.Close();
+            return dataBaoCao;
+        }
+
+        #endregion
     }
 }

@@ -32,11 +32,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BaoCaoNhapXuatTon));
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpThangNam = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.btnXemBaoCao = new System.Windows.Forms.Button();
+            this.cboKho = new System.Windows.Forms.ComboBox();
             this.documentViewer1 = new DevExpress.XtraPrinting.Preview.DocumentViewer();
             this.documentViewerBarManager1 = new DevExpress.XtraPrinting.Preview.DocumentViewerBarManager(this.components);
             this.previewBar1 = new DevExpress.XtraPrinting.Preview.PreviewBar();
@@ -136,11 +136,11 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.dtpThangNam);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.comboBox2);
+            this.groupBox1.Controls.Add(this.btnXemBaoCao);
+            this.groupBox1.Controls.Add(this.cboKho);
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(4, 7);
             this.groupBox1.Name = "groupBox1";
@@ -149,17 +149,17 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thao tác";
             // 
-            // dateTimePicker1
+            // dtpThangNam
             // 
-            this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.dateTimePicker1.CustomFormat = "MM/yyyy";
-            this.dateTimePicker1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(188, 36);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.ShowUpDown = true;
-            this.dateTimePicker1.Size = new System.Drawing.Size(120, 23);
-            this.dateTimePicker1.TabIndex = 3;
+            this.dtpThangNam.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.dtpThangNam.CustomFormat = "MM/yyyy";
+            this.dtpThangNam.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpThangNam.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpThangNam.Location = new System.Drawing.Point(188, 36);
+            this.dtpThangNam.Name = "dtpThangNam";
+            this.dtpThangNam.ShowUpDown = true;
+            this.dtpThangNam.Size = new System.Drawing.Size(120, 23);
+            this.dtpThangNam.TabIndex = 3;
             // 
             // label2
             // 
@@ -183,26 +183,27 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Trong tháng:";
             // 
-            // button1
+            // btnXemBaoCao
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(816, 25);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(98, 29);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Xem báo cáo";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnXemBaoCao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnXemBaoCao.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXemBaoCao.Location = new System.Drawing.Point(809, 25);
+            this.btnXemBaoCao.Name = "btnXemBaoCao";
+            this.btnXemBaoCao.Size = new System.Drawing.Size(106, 34);
+            this.btnXemBaoCao.TabIndex = 1;
+            this.btnXemBaoCao.Text = "Xem báo cáo";
+            this.btnXemBaoCao.UseVisualStyleBackColor = true;
+            this.btnXemBaoCao.Click += new System.EventHandler(this.btnXemBaoCao_Click);
             // 
-            // comboBox2
+            // cboKho
             // 
-            this.comboBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.comboBox2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(478, 36);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(151, 24);
-            this.comboBox2.TabIndex = 0;
+            this.cboKho.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.cboKho.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboKho.FormattingEnabled = true;
+            this.cboKho.Location = new System.Drawing.Point(478, 36);
+            this.cboKho.Name = "cboKho";
+            this.cboKho.Size = new System.Drawing.Size(151, 24);
+            this.cboKho.TabIndex = 0;
             // 
             // documentViewer1
             // 
@@ -1030,6 +1031,7 @@
             this.Name = "BaoCaoNhapXuatTon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Báo cáo nhập xuất tồn kho - Kho hàng Thịnh Hưng";
+            this.Load += new System.EventHandler(this.BaoCaoNhapXuatTon_Load);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
             this.splitContainerControl1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
@@ -1050,8 +1052,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Button btnXemBaoCao;
+        private System.Windows.Forms.ComboBox cboKho;
         private DevExpress.XtraPrinting.Preview.DocumentViewerBarManager documentViewerBarManager1;
         private DevExpress.XtraPrinting.Preview.PreviewBar previewBar1;
         private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem2;
@@ -1121,6 +1123,6 @@
         private DevExpress.XtraPrinting.Preview.PrintPreviewBarCheckItem printPreviewBarCheckItem15;
         private DevExpress.XtraPrinting.Preview.PrintPreviewBarCheckItem printPreviewBarCheckItem16;
         private DevExpress.XtraPrinting.Preview.PrintPreviewBarCheckItem printPreviewBarCheckItem17;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpThangNam;
     }
 }

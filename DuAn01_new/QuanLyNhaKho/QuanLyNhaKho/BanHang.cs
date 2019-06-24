@@ -133,7 +133,8 @@ namespace QuanLyNhaKho
                             else
                             {
                                 // Lấy dữ liệu số lượng nhập, giá nhập, thành tiền vào danh sách
-                                double giaBanCuaSPThem = Math.Round((((double.Parse(chiTietMotSanPham.DonGia) * 2) / int.Parse(chiTietMotSanPham.SoLuong)) * int.Parse(chiTietMotSanPham.DonGia)) / 10000, 1) * 10000;
+                                double giaBanCuaSPThem = Math.Round((double.Parse(chiTietMotSanPham.DonGia) * 2) / 10000, 1) * 10000;
+                                    //Math.Round((((double.Parse(chiTietMotSanPham.DonGia) * 2) / int.Parse(chiTietMotSanPham.SoLuong)) * int.Parse(chiTietMotSanPham.DonGia)) / 10000, 1) * 10000;
 
                                 chiTietMotSanPham.DonGia = giaBanCuaSPThem.ToString();
                                 chiTietMotSanPham.SoLuong = txtSoLuongMua.Text;

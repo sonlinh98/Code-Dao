@@ -24,7 +24,7 @@ namespace QuanLyNhaKho.DAO
         {
         }
 
-       public BaoCaoNhapXuatTonDAO(string mahh, string tenhh, string dvt, string slTonDK, string TTTDK, string slnhap, string ttnhap, string slxuat, string ttxuat, string sltonCuoiKy, string ttCuoiky)
+       public BaoCaoNhapXuatTonDAO(string mahh, string tenhh, string dvt, string sltonCuoiKy, string ttCuoiky, string slTonDK, string TTTDK, string slnhap, string ttnhap, string slxuat, string ttxuat)
        {
            MaHH = mahh;
            TenHH = tenhh;

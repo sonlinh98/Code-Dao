@@ -155,19 +155,31 @@ CREATE TABLE CTPhieumua
         ON DELETE CASCADE,
     )
 GO
+CREATE TABLE TonDauKy
+    (
+      MaNK VARCHAR(10) NOT NULL ,
+      MaHH VARCHAR(10) NOT NULL ,
+      Soluong VARCHAR(20) NOT NULL ,
+      GiaVP VARCHAR(20) NOT NULL ,
+      CONSTRAINT fk_TonDauKy PRIMARY KEY ( MaNK, MaHH ) ,
+      CONSTRAINT fk_TonDauKy_Kho FOREIGN KEY ( MaNK ) REFERENCES dbo.Nhakho ( MaNK ) ,
+      CONSTRAINT fk_TonDauKy_HangHoa FOREIGN KEY ( MaHH ) REFERENCES dbo.Hanghoa ( MaHH ),
+    )
+GO
+
 -- drop table CTPhieumua, Phieumua, CTPhieunhap, Phieunhap, CTPhieuxuat, Hanghoa, Phieuxuat, Nhakho, Nhacungcap, Danhmuc, Nhanvien, Khachhang
 INSERT  INTO Nhanvien
 VALUES  ( 'NV00000001', 'thunguyenQL', '12345', N'Nguyễn Thị Thu', 'Quản lý',
           '1998/12/22', 1, N'Hòa Bình', '0999999999',
           'domanhquang.rnd@gmail.com', 1 )
 INSERT  INTO Nhanvien
-VALUES  ( 'NV00000002', 'thunguyenQLkho', '12345', N'Nguyễn Thị Thu', 'Bộ phận kho',
+VALUES  ( 'NV00000002', 'thunguyen', '12345', N'Nguyễn Thị Thu', 'Bộ phận kho',
           '1998/12/22', 1, N'Hòa Bình', '0999999999',
           'domanhquang.rnd@gmail.com', 2 )
  -- kho
 INSERT  INTO Nhanvien
-VALUES  ( 'NV00000003', 'thunguyenbanhang', '12345', N'Nguyễn Thị Thu', 'Bộ phận bán hàng',
-          '1998/12/22', 1, N'Hòa Bình', '0999999999',
+VALUES  ( 'NV00000003', 'thunguyenbanhang', '12345', N'Nguyễn Thị Thu',
+          'Bộ phận bán hàng', '1998/12/22', 1, N'Hòa Bình', '0999999999',
           'domanhquang.rnd@gmail.com', 3 )
  -- bán hàng
 
@@ -183,12 +195,7 @@ INSERT  INTO Nhacungcap
 VALUES  ( 'NCC00002', N'Xi măng xuân thành', N'Hà Nội', '9876543210',
           'domanhquang.rnd@gmail.com' )
 
-INSERT  INTO Phieunhap
-VALUES  ( 'PN00001', 'NV00000002', 'NK0001', '2019/06/09', N'Nguyễn văn A',
-          N'Đã giao', 3000000 )
-INSERT  INTO Phieunhap
-VALUES  ( 'PN00002', 'NV00000002', 'NK0002', '2019/06/09', N'Nguyễn văn B',
-          N'Đã giao', 3000000 )
+
 
 INSERT  INTO Danhmuc
 VALUES  ( 'DM00001', N'Xi măng' )
@@ -196,30 +203,148 @@ INSERT  INTO Danhmuc
 VALUES  ( 'DM00002', N'Cát' )
 
 INSERT  INTO Hanghoa
-VALUES  ( 'HH00001', N'Xi măng PS p30', N'Tấn', '2019/10/10', '10000', '300',
+VALUES  ( 'HH00001', N'Xi măng PS p30', N'Tấn', '2019/10/10', '10000', '260',
           'DM00001', N'Hàng tốt', 'NCC00001' )
 INSERT  INTO Hanghoa
 VALUES  ( 'HH00002', N'Cát vàng', N'm3', '2019/10/10', '10000', '300',
           'DM00002', N'Hàng tốt', 'NCC00002' )
 INSERT  INTO Hanghoa
-VALUES  ( 'HH00003', N'Xi măng hoàng thạch', N'Tấn', '2019/06/15', '10000', '300',
-          'DM00001', N'Hàng tốt', 'NCC00002' )
+VALUES  ( 'HH00003', N'Xi măng hoàng thạch', N'Tấn', '2019/06/15', '10000',
+          '230', 'DM00001', N'Hàng tốt', 'NCC00002' )
+
+
+INSERT  INTO Phieunhap
+VALUES  ( 'PN00001', 'NV00000002', 'NK0001', '2019/06/09', N'Nguyễn văn A',
+          N'Đã giao', 6000000 )
+INSERT  INTO Phieunhap
+VALUES  ( 'PN00002', 'NV00000002', 'NK0002', '2019/06/09', N'Nguyễn văn B',
+          N'Đã giao', 3000000 )
+
+INSERT  INTO CTPhieunhap
+VALUES  ( 'PN00001', 'HH00001', '300', '10000' )
+INSERT  INTO CTPhieunhap
+VALUES  ( 'PN00001', 'HH00002', '300', '10000' )
+INSERT  INTO CTPhieunhap
+VALUES  ( 'PN00002', 'HH00003', '300', '10000' )
 
 
 
-INSERT  INTO CTPhieunhap
-VALUES  ( 'PN00001', 'HH00001', '10000', '300' )
-INSERT  INTO CTPhieunhap
-VALUES  ( 'PN00001', 'HH00002', '10000', '300' )
-INSERT  INTO CTPhieunhap
-VALUES  ( 'PN00002', 'HH00003', '10000', '300' )
-INSERT  INTO CTPhieunhap
-VALUES  ( 'PN00002', 'HH00004', '10000', '300' )
-INSERT  INTO CTPhieunhap
-VALUES  ( 'PN00001', 'HH00005', '10000', '300' )
-INSERT  INTO CTPhieunhap
-VALUES  ( 'PN00002', 'HH00006', '10000', '300' )
+INSERT  INTO dbo.Phieuxuat
+        ( MaPX ,
+          MaNK ,
+          MaNV ,
+          Ngayxuat ,
+          Nguoinhanhang ,
+          Ghichu ,
+          Tongtien
+        )
+VALUES  ( 'PX00001' , -- MaPX - varchar(10)
+          'NK0001' , -- MaNK - varchar(10)
+          'NV00000003' , -- MaNV - varchar(10)
+          GETDATE() , -- Ngayxuat - date
+          N'Trọng sơn' , -- Nguoinhanhang - nvarchar(30)
+          N'Đã nhận' , -- Ghichu - nvarchar(100)
+          35000000  -- Tongtien - money
+        )
 
+
+INSERT  INTO dbo.CTPhieuxuat
+        ( MaPX ,
+          MaHH ,
+          Soluong ,
+          Giavon
+        )
+VALUES  ( 'PX00001' , -- MaPX - varchar(10)
+          'HH00001' , -- MaHH - varchar(10)
+          '20' , -- Soluong - varchar(20)
+          '500000'  -- Giavon - varchar(20)
+		 )
+
+INSERT  INTO dbo.CTPhieuxuat
+        ( MaPX ,
+          MaHH ,
+          Soluong ,
+          Giavon
+        )
+VALUES  ( 'PX00001' , -- MaPX - varchar(10)
+          'HH00003' , -- MaHH - varchar(10)
+          '50' , -- Soluong - varchar(20)
+          '500000'  -- Giavon - varchar(20)
+        )
+
+INSERT  INTO dbo.TonDauKy
+        ( MaNK, MaHH, Soluong, GiaVP )
+VALUES  ( 'NK0001', -- MaNK - varchar(10)
+          'HH00001', -- MaHH - varchar(10)
+          '300', -- Soluong - varchar(20)
+          '10000'  -- GiaVP - varchar(20)
+          )
+INSERT  INTO dbo.TonDauKy
+        ( MaNK, MaHH, Soluong, GiaVP )
+VALUES  ( 'NK0001', -- MaNK - varchar(10)
+          'HH00002', -- MaHH - varchar(10)
+          '300', -- Soluong - varchar(20)
+          '10000'  -- GiaVP - varchar(20)
+          )
+INSERT  INTO dbo.TonDauKy
+        ( MaNK, MaHH, Soluong, GiaVP )
+VALUES  ( 'NK0002', -- MaNK - varchar(10)
+          'HH00003', -- MaHH - varchar(10)
+          '300', -- Soluong - varchar(20)
+          '10000'  -- GiaVP - varchar(20)
+          )
+
+INSERT  INTO dbo.Khachhang
+        ( MaKH ,
+          TenKH ,
+          Diachi ,
+          Sdt ,
+          Email
+        )
+VALUES  ( 'KH00001' , -- MaKH - varchar(10)
+          N'trọng sơn' , -- TenKH - nvarchar(50)
+          N'hà nội' , -- Diachi - nvarchar(100)
+          '01293847' , -- Sdt - varchar(15)
+          'aghs@gmail.com'  -- Email - varchar(30)
+        )
+
+INSERT  INTO dbo.Phieumua
+        ( MaPM ,
+          MaKH ,
+          MaNV ,
+          Ngaymua ,
+          Thanhtoan ,
+          Ghichu
+        )
+VALUES  ( 'PM00001' , -- MaPM - varchar(10)
+          'KH00001' , -- MaKH - varchar(10)
+          'NV00000003' , -- MaNV - varchar(10)
+          GETDATE() , -- Ngaymua - date
+          '10000000' , -- Thanhtoan - varchar(20)
+          N'Đã thanh toán'  -- Ghichu - nvarchar(100)
+        )
+INSERT  INTO dbo.CTPhieumua
+        ( MaPM ,
+          MaHH ,
+          Soluong ,
+          Giavon
+        )
+VALUES  ( 'PM00001' , -- MaPM - varchar(10)
+          'HH00001' , -- MaHH - varchar(10)
+          '20' , -- Soluong - varchar(20)
+          '250000'  -- Giavon - varchar(20)
+        )
+INSERT  INTO dbo.CTPhieumua
+        ( MaPM ,
+          MaHH ,
+          Soluong ,
+          Giavon
+        )
+VALUES  ( 'PM00001' , -- MaPM - varchar(10)
+          'HH00003' , -- MaHH - varchar(10)
+          '20' , -- Soluong - varchar(20)
+          '250000'  -- Giavon - varchar(20)
+        )
 SELECT  *
 FROM    Nhakho
         INNER JOIN Phieunhap ON Nhakho.MaNK = Phieunhap.MaNK
@@ -241,79 +366,6 @@ WHERE   DATEDIFF(YEAR, GETDATE(), Hansudung) = 0
 
   -- Xử lý phiếu xuất
 
-INSERT  INTO dbo.Phieuxuat
-        ( MaPX ,
-          MaNK ,
-          MaNV ,
-          Ngayxuat ,
-          Nguoinhanhang ,
-          Ghichu ,
-          Tongtien
-        )
-VALUES  ( 'PX00001' , -- MaPX - varchar(10)
-          'NK0001' , -- MaNK - varchar(10)
-          'NV00000003' , -- MaNV - varchar(10)
-          GETDATE() , -- Ngayxuat - date
-          N'Trọng sơn' , -- Nguoinhanhang - nvarchar(30)
-          N'Đã nhận' , -- Ghichu - nvarchar(100)
-          1000000  -- Tongtien - money
-        )
-INSERT  INTO dbo.Phieuxuat
-        ( MaPX ,
-          MaNK ,
-          MaNV ,
-          Ngayxuat ,
-          Nguoinhanhang ,
-          Ghichu ,
-          Tongtien
-        )
-VALUES  ( 'PX00002' , -- MaPX - varchar(10)
-          'NK0001' , -- MaNK - varchar(10)
-          'NV00000001' , -- MaNV - varchar(10)
-          GETDATE() , -- Ngayxuat - date
-          N'Trọng sơn' , -- Nguoinhanhang - nvarchar(30)
-          N'Đã nhận' , -- Ghichu - nvarchar(100)
-          2000000  -- Tongtien - money
-        )
-INSERT  INTO dbo.Phieuxuat
-        ( MaPX ,
-          MaNK ,
-          MaNV ,
-          Ngayxuat ,
-          Nguoinhanhang ,
-          Ghichu ,
-          Tongtien
-        )
-VALUES  ( 'PX00003' , -- MaPX - varchar(10)
-          'NK0002' , -- MaNK - varchar(10)
-          'NV00000003' , -- MaNV - varchar(10)
-          GETDATE() , -- Ngayxuat - date
-          N'Trọng sơn' , -- Nguoinhanhang - nvarchar(30)
-          N'Đã nhận' , -- Ghichu - nvarchar(100)
-          3000000  -- Tongtien - money
-        )
-
-
-
-INSERT  INTO dbo.CTPhieuxuat
-        ( MaPX ,
-          MaHH ,
-          Soluong ,
-          Giavon
-        )
-VALUES  ( 'PX00001' , -- MaPX - varchar(10)
-          'HH00001' , -- MaHH - varchar(10)
-          '20' , -- Soluong - varchar(20)
-          '500000'  -- Giavon - varchar(20)
-		 )
-
-INSERT  INTO dbo.CTPhieuxuat
-        ( MaPX, MaHH, Soluong, Giavon )
-VALUES  ( 'PX00001', -- MaPX - varchar(10)
-          'HH00003', -- MaHH - varchar(10)
-          '5', -- Soluong - varchar(20)
-          '500000'  -- Giavon - varchar(20)
-          )
 	-- lấy danh sách phiếu xuất
 SELECT  ROW_NUMBER() OVER ( ORDER BY dbo.Phieuxuat.MaPX ) STT ,
         dbo.Phieuxuat.MaPX AS N'Số phiếu xuất' ,
@@ -420,98 +472,135 @@ FROM    dbo.Phieunhap
 ORDER BY MaPN DESC
 
 
-		SELECT MaHH, TenHH, Dvt, Soluong, Giavon, Mota AS 'Thanhtien' FROM dbo.Hanghoa WHERE MaHH = '1'
+--SELECT  MaHH ,
+--        TenHH ,
+--        Dvt ,
+--        Soluong ,
+--        Giavon ,
+--        Mota AS 'Thanhtien'
+--FROM    dbo.Hanghoa
+--WHERE   MaHH = '1'
 		
-UPDATE dbo.Hanghoa SET Soluong = Soluong+3 WHERE MaHH = 'HH00001'
-SELECT * FROM dbo.Phieunhap
-SELECT * FROM dbo.CTPhieunhap
-SELECT * FROM dbo.Hanghoa
-
-SELECT * FROM dbo.Phieuxuat
-SELECT * FROM dbo.CTPhieuxuat
-SELECT * FROM dbo.Hanghoa
+--UPDATE  dbo.Hanghoa
+--SET     Soluong = Soluong + 3
+--WHERE   MaHH = 'HH00001'
 
 
-SELECT * FROM dbo.Khachhang
+--SELECT  *
+--FROM    dbo.Khachhang
 
-INSERT INTO dbo.Khachhang 
-        ( MaKH, TenKH, Diachi, Sdt, Email )
-VALUES  ( 'KH00001', -- MaKH - varchar(10)
-          N'trọng sơn', -- TenKH - nvarchar(50)
-          N'hà nội', -- Diachi - nvarchar(100)
-          '01293847', -- Sdt - varchar(15)
-          'aghs@gmail.com'  -- Email - varchar(30)
+
+
+SELECT  *
+FROM    dbo.Phieumua
+SELECT  *
+FROM    dbo.Hanghoa
+SELECT  *
+FROM    dbo.CTPhieumua
+SELECT  *
+FROM    dbo.Khachhang
+
+
+SELECT  *
+FROM    dbo.Phieuxuat
+SELECT  *
+FROM    dbo.Hanghoa
+SELECT  *
+FROM    dbo.Nhakho
+INSERT  INTO dbo.Nhakho
+        ( MaNK, TenNK, Diachi )
+VALUES  ( 'NK0000', -- MaNK - varchar(10)
+          N'Tất cả nhà kho', -- TenNK - nvarchar(30)
+          N' '  -- Diachi - nvarchar(100)
           )
 
-INSERT INTO dbo.Phieumua
-        ( MaPM ,
-          MaKH ,
-          MaNV ,
-          Ngaymua ,
-          Thanhtoan ,
-          Ghichu
+SELECT  TenNCC
+FROM    dbo.Nhacungcap
+WHERE   MaNCC = 'NCC00000'
+
+SELECT  *
+FROM    dbo.Nhacungcap
+WHERE   MaNCC != 'NCC00000'
+INSERT  INTO dbo.Nhacungcap
+        ( MaNCC ,
+          TenNCC ,
+          Diachi ,
+          Sdt ,
+          Email
         )
-VALUES  ( 'PM00001' , -- MaPM - varchar(10)
-          'KH00001' , -- MaKH - varchar(10)
-          'NV00000003' , -- MaNV - varchar(10)
-          GETDATE() , -- Ngaymua - date
-          '500000' , -- Thanhtoan - varchar(20)
-          N'Đã thanh toán'  -- Ghichu - nvarchar(100)
+VALUES  ( 'NCC00000' , -- MaNCC - varchar(10)
+          N'Tất cả nhà cung cấp' , -- TenNCC - nvarchar(50)
+          N' ' , -- Diachi - nvarchar(100)
+          ' ' , -- Sdt - varchar(15)
+          ' '  -- Email - varchar(30)
+							
         )
 
-		SELECT * FROM dbo.Phieumua
-		SELECT * FROM dbo.Hanghoa
-		SELECT * FROM dbo.CTPhieumua
-		SELECT * FROM dbo.Khachhang
+SELECT  *
+FROM    dbo.Nhakho
+WHERE   dbo.Nhakho.MaNK != 'NK0000'
+SELECT  *
+FROM    dbo.Phieuxuat
+        INNER JOIN dbo.CTPhieuxuat ON CTPhieuxuat.MaPX = Phieuxuat.MaPX
+        INNER JOIN dbo.Hanghoa ON Hanghoa.MaHH = CTPhieuxuat.MaHH 
 
-		INSERT INTO dbo.CTPhieumua
-		        ( MaPM, MaHH, Soluong, Giavon )
-		VALUES  ( 'PM00001', -- MaPM - varchar(10)
-		          'HH00001', -- MaHH - varchar(10)
-		          '2', -- Soluong - varchar(20)
-		          '250000'  -- Giavon - varchar(20)
-		          )
-				  		INSERT INTO dbo.CTPhieumua
-		        ( MaPM, MaHH, Soluong, Giavon )
-		VALUES  ( 'PM00001', -- MaPM - varchar(10)
-		          'HH00003', -- MaHH - varchar(10)
-		          '2', -- Soluong - varchar(20)
-		          '250000'  -- Giavon - varchar(20)
-		          )
-				  SELECT * FROM dbo.Phieuxuat
-				  SELECT * FROM dbo.Hanghoa
-				  SELECT * FROM dbo.Nhakho
-				  INSERT INTO dbo.Nhakho 
-				          ( MaNK, TenNK, Diachi )
-				  VALUES  ( 'NK0000', -- MaNK - varchar(10)
-				            N'Tất cả nhà kho', -- TenNK - nvarchar(30)
-				            N' '  -- Diachi - nvarchar(100)
-				            )
-
-							SELECT TenNCC FROM dbo.Nhacungcap WHERE MaNCC = 'NCC00000'
-
-							SELECT * FROM dbo.Nhacungcap WHERE MaNCC != 'NCC00000'
-							INSERT INTO dbo.Nhacungcap
-							        ( MaNCC, TenNCC, Diachi, Sdt, Email )
-							VALUES  ( 'NCC00000', -- MaNCC - varchar(10)
-							          N'Tất cả nhà cung cấp', -- TenNCC - nvarchar(50)
-							          N' ', -- Diachi - nvarchar(100)
-							          ' ', -- Sdt - varchar(15)
-							          ' '  -- Email - varchar(30)
-							          )
-
-				SELECT * FROM dbo.Nhakho WHERE dbo.Nhakho.MaNK != 'NK0000'
-SELECT *  FROM dbo.Phieuxuat INNER JOIN dbo.CTPhieuxuat ON CTPhieuxuat.MaPX = Phieuxuat.MaPX INNER JOIN dbo.Hanghoa ON Hanghoa.MaHH = CTPhieuxuat.MaHH 
-
-SELECT dbo.Phieuxuat.MaPX, dbo.Phieuxuat.Ngayxuat, dbo.Phieuxuat.Ghichu, dbo.CTPhieuxuat.MaHH, dbo.Hanghoa.TenHH, dbo.Hanghoa.Dvt, dbo.CTPhieuxuat.Soluong, dbo.CTPhieuxuat.Giavon, (CAST(dbo.CTPhieuxuat.Soluong as float) * CAST(dbo.CTPhieuxuat.Giavon as float) ) AS 'ThanhTien' FROM dbo.Phieuxuat INNER JOIN dbo.CTPhieuxuat ON CTPhieuxuat.MaPX = Phieuxuat.MaPX INNER JOIN dbo.Hanghoa ON Hanghoa.MaHH = CTPhieuxuat.MaHH WHERE dbo.Phieuxuat.MaNK = 'NK0001' AND dbo.Hanghoa.MaNCC = 'NCC00001' AND dbo.Phieuxuat.Ngayxuat BETWEEN '2019-06-01' AND '2019-06-30'
+-- Báo cáo phiếu xuất theo tháng, kho, nhà cung cấp
+SELECT  dbo.Phieuxuat.MaPX ,
+        dbo.Phieuxuat.Ngayxuat ,
+        dbo.Phieuxuat.Ghichu ,
+        dbo.CTPhieuxuat.MaHH ,
+        dbo.Hanghoa.TenHH ,
+        dbo.Hanghoa.Dvt ,
+        dbo.CTPhieuxuat.Soluong ,
+        dbo.CTPhieuxuat.Giavon ,
+        ( CAST(dbo.CTPhieuxuat.Soluong AS FLOAT)
+          * CAST(dbo.CTPhieuxuat.Giavon AS FLOAT) ) AS 'ThanhTien'
+FROM    dbo.Phieuxuat
+        INNER JOIN dbo.CTPhieuxuat ON CTPhieuxuat.MaPX = Phieuxuat.MaPX
+        INNER JOIN dbo.Hanghoa ON Hanghoa.MaHH = CTPhieuxuat.MaHH
+WHERE   dbo.Phieuxuat.MaNK = 'NK0001'
+        AND dbo.Hanghoa.MaNCC = 'NCC00001'
+        AND dbo.Phieuxuat.Ngayxuat BETWEEN '2019-06-01'
+                                   AND     '2019-06-30'
 
 
 
-SELECT * FROM dbo.Phieunhap
-SELECT * FROM dbo.CTPhieunhap
+SELECT  *
+FROM    dbo.Phieunhap
+SELECT  *
+FROM    dbo.CTPhieunhap
 
 
-SELECT dbo.Phieunhap.MaPN, dbo.Phieunhap.Ngaynhap, dbo.Phieunhap.Ghichu, dbo.CTPhieunhap.MaHH, dbo.Hanghoa.TenHH, dbo.Hanghoa.Dvt, dbo.CTPhieunhap.Soluong, dbo.CTPhieunhap.Giavon, (CAST(dbo.CTPhieunhap.Soluong as float) * CAST(dbo.CTPhieunhap.Giavon as float) ) AS 'ThanhTien' FROM dbo.Phieunhap INNER JOIN dbo.CTPhieunhap ON CTPhieunhap.MaPN = Phieunhap.MaPN INNER JOIN dbo.Hanghoa ON Hanghoa.MaHH = CTPhieunhap.MaHH WHERE dbo.Phieunhap.Ngaynhap BETWEEN '2019-06-2' AND '2019-07-12'
+
+-- Báo cáo phiếu nhập theo tháng, nhà kho, nhà cung cấp
+SELECT  dbo.Phieunhap.MaPN ,
+        dbo.Phieunhap.Ngaynhap ,
+        dbo.Phieunhap.Ghichu ,
+        dbo.CTPhieunhap.MaHH ,
+        dbo.Hanghoa.TenHH ,
+        dbo.Hanghoa.Dvt ,
+        dbo.CTPhieunhap.Soluong ,
+        dbo.CTPhieunhap.Giavon ,
+        ( CAST(dbo.CTPhieunhap.Soluong AS FLOAT)
+          * CAST(dbo.CTPhieunhap.Giavon AS FLOAT) ) AS 'ThanhTien'
+FROM    dbo.Phieunhap
+        INNER JOIN dbo.CTPhieunhap ON CTPhieunhap.MaPN = Phieunhap.MaPN
+        INNER JOIN dbo.Hanghoa ON Hanghoa.MaHH = CTPhieunhap.MaHH
+WHERE   dbo.Phieunhap.Ngaynhap BETWEEN '2019-06-2'
+                               AND     '2019-07-12'
+
+
+
+-- Báo cáo tồn kho
+
+SELECT  dbo.Hanghoa.MaHH, dbo.Hanghoa.TenHH, dbo.Hanghoa.Dvt, dbo.Hanghoa.Soluong AS 'toncuoiky', ( CAST(dbo.Hanghoa.Soluong AS FLOAT) * CAST(dbo.Hanghoa.Giavon AS FLOAT) )  AS 'thanhtiencuoiky', dbo.TonDauKy.Soluong AS 'tondauky',( CAST(dbo.TonDauKy.Soluong AS FLOAT) * CAST(dbo.TonDauKy.GiaVP AS FLOAT) ) AS 'giatritondauky' , dbo.CTPhieunhap.Soluong AS 'slnhap', ( CAST(dbo.CTPhieunhap.Soluong AS FLOAT) * CAST(dbo.CTPhieunhap.Giavon AS FLOAT) ) AS 'thanhtiengianhap'
+, dbo.CTPhieuxuat.Soluong AS 'slxuat', ( CAST(dbo.CTPhieuxuat.Soluong AS FLOAT) * CAST(dbo.CTPhieuxuat.Giavon AS FLOAT) )  AS'thanhtiengiaxuat', dbo.CTPhieumua.Soluong AS 'slmua', ( CAST(dbo.CTPhieumua.Soluong AS FLOAT) * CAST(dbo.CTPhieumua.Giavon AS FLOAT) )  AS 'thanhtiengiamua'
+, dbo.Phieunhap.MaNK, dbo.Phieuxuat.MaNK
+FROM    dbo.Hanghoa FULL OUTER JOIN dbo.TonDauKy ON TonDauKy.MaHH = Hanghoa.MaHH FULL OUTER JOIN dbo.CTPhieumua ON CTPhieumua.MaHH = Hanghoa.MaHH FULL
+ OUTER JOIN dbo.CTPhieunhap ON CTPhieunhap.MaHH = Hanghoa.MaHH FULL OUTER JOIN dbo.CTPhieuxuat ON CTPhieuxuat.MaHH = Hanghoa.MaHH FULL OUTER JOIN dbo.Phieuxuat ON Phieuxuat.MaPX = CTPhieuxuat.MaPX
+ FULL OUTER JOIN dbo.Phieunhap ON Phieunhap.MaPN = CTPhieunhap.MaPN FULL OUTER JOIN dbo.Phieumua ON Phieumua.MaPM = CTPhieumua.MaPM
+ WHERE (MONTH(dbo.Phieunhap.Ngaynhap) = 6 AND YEAR(dbo.Phieunhap.Ngaynhap) = 2019)  Or (MONTH(dbo.Phieuxuat.Ngayxuat) = 6 AND YEAR(dbo.Phieuxuat.Ngayxuat) = 2019) or  (MONTH(dbo.Phieumua.Ngaymua) = 6 AND YEAR(dbo.Phieumua.Ngaymua) = 2019) 
+
 
 
 

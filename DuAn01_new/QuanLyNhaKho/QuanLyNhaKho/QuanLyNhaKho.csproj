@@ -209,6 +209,12 @@
     <Compile Include="ThemMoiPhieuXuat.Designer.cs">
       <DependentUpon>ThemMoiPhieuXuat.cs</DependentUpon>
     </Compile>
+    <Compile Include="TinhGiaVon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TinhGiaVon.Designer.cs">
+      <DependentUpon>TinhGiaVon.cs</DependentUpon>
+    </Compile>
     <Compile Include="XtraReportBaoCaoNhapKho.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -330,6 +336,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ThemMoiPhieuXuat.resx">
       <DependentUpon>ThemMoiPhieuXuat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TinhGiaVon.resx">
+      <DependentUpon>TinhGiaVon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="XtraReportBaoCaoNhapKho.resx">
       <DependentUpon>XtraReportBaoCaoNhapKho.cs</DependentUpon>

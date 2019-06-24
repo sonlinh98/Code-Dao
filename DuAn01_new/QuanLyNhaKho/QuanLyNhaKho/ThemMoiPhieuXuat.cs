@@ -152,7 +152,7 @@ namespace QuanLyNhaKho
                             {
 
                                 // Lấy dữ liệu số lượng nhập, giá nhập, thành tiền vào danh sách
-                                double giaXuatCuaSPThem = Math.Round((((double.Parse(chiTietMotSanPham.DonGia) * 2) / int.Parse(chiTietMotSanPham.SoLuong)) * int.Parse(chiTietMotSanPham.DonGia))/10000, 1)*10000;
+                                double giaXuatCuaSPThem = Math.Round((double.Parse(chiTietMotSanPham.DonGia) * 2)/10000, 1)*10000;
 
 
                                 chiTietMotSanPham.DonGia = giaXuatCuaSPThem.ToString();

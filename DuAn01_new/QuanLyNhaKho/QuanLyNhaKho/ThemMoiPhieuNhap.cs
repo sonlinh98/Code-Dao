@@ -315,7 +315,7 @@ namespace QuanLyNhaKho
 
         private void lbTaoMoiHangHoa_Click(object sender, EventArgs e)
         {
-            TaoHangHoa taoMoiHH = new TaoHangHoa();
+            TaoHangHoa taoMoiHH = new TaoHangHoa(cboTenHangHoa);
             taoMoiHH.ShowDialog();
         }
 

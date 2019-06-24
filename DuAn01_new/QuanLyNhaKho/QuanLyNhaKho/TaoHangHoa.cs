@@ -15,10 +15,12 @@ namespace QuanLyNhaKho
     {
 
         BLLayer02 layer02 = new BLLayer02();
+        ComboBox hanghoa = new ComboBox();
 
-        public TaoHangHoa()
+        public TaoHangHoa(ComboBox hanghoa)
         {
             InitializeComponent();
+            this.hanghoa = hanghoa;
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -28,6 +30,11 @@ namespace QuanLyNhaKho
             layer02.ThemMoiHangHoa(txtMaHH.Text, txtTenHH.Text, txtDVT.Text, dtpHanSuDung.Value, "0", "0", maDM, txtMoTa.Text, NCC);
             MessageBox.Show("Thêm mới thành công 1 hàng hóa.");
             ResetTaoHangHoaKhiLuuThanhCong();
+            hanghoa.DataSource = layer02.LayDanhSachHangHoa();
+            hanghoa.DisplayMember = "TenHH";
+            hanghoa.ValueMember = "MaHH";
+            hanghoa.SelectedItem = null;
+            hanghoa.SelectedText = "--Chọn mặt hàng--";
         }
 
         private void TaoHangHoa_Load(object sender, EventArgs e)

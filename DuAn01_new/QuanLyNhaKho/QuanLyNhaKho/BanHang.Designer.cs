@@ -53,11 +53,11 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cboTenHangHoa = new System.Windows.Forms.ComboBox();
             this.btnThemMatHang = new System.Windows.Forms.Button();
             this.btnThanhToan = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cboTenHangHoa = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachHangMua)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -78,7 +78,7 @@
             // 
             this.dtpNgayMua.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpNgayMua.Location = new System.Drawing.Point(100, 46);
-            this.dtpNgayMua.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpNgayMua.Margin = new System.Windows.Forms.Padding(2);
             this.dtpNgayMua.Name = "dtpNgayMua";
             this.dtpNgayMua.Size = new System.Drawing.Size(120, 20);
             this.dtpNgayMua.TabIndex = 1;
@@ -87,7 +87,7 @@
             // 
             this.txtTongTien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTongTien.Location = new System.Drawing.Point(244, 16);
-            this.txtTongTien.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTongTien.Margin = new System.Windows.Forms.Padding(2);
             this.txtTongTien.Name = "txtTongTien";
             this.txtTongTien.ReadOnly = true;
             this.txtTongTien.Size = new System.Drawing.Size(133, 20);
@@ -98,7 +98,7 @@
             // txtNhanVien
             // 
             this.txtNhanVien.Location = new System.Drawing.Point(100, 67);
-            this.txtNhanVien.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNhanVien.Margin = new System.Windows.Forms.Padding(2);
             this.txtNhanVien.Name = "txtNhanVien";
             this.txtNhanVien.ReadOnly = true;
             this.txtNhanVien.Size = new System.Drawing.Size(133, 20);
@@ -107,7 +107,7 @@
             // txtGhiChu
             // 
             this.txtGhiChu.Location = new System.Drawing.Point(100, 90);
-            this.txtGhiChu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtGhiChu.Margin = new System.Windows.Forms.Padding(2);
             this.txtGhiChu.Multiline = true;
             this.txtGhiChu.Name = "txtGhiChu";
             this.txtGhiChu.Size = new System.Drawing.Size(224, 63);
@@ -126,7 +126,7 @@
             // txtTenKH
             // 
             this.txtTenKH.Location = new System.Drawing.Point(532, 25);
-            this.txtTenKH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTenKH.Margin = new System.Windows.Forms.Padding(2);
             this.txtTenKH.Name = "txtTenKH";
             this.txtTenKH.Size = new System.Drawing.Size(120, 20);
             this.txtTenKH.TabIndex = 4;
@@ -172,7 +172,7 @@
             this.dgvDanhSachHangMua.BackgroundColor = System.Drawing.Color.LightGray;
             this.dgvDanhSachHangMua.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDanhSachHangMua.Location = new System.Drawing.Point(5, 58);
-            this.dgvDanhSachHangMua.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvDanhSachHangMua.Margin = new System.Windows.Forms.Padding(2);
             this.dgvDanhSachHangMua.Name = "dgvDanhSachHangMua";
             this.dgvDanhSachHangMua.RowTemplate.Height = 24;
             this.dgvDanhSachHangMua.Size = new System.Drawing.Size(734, 232);
@@ -183,7 +183,7 @@
             // txtSoLuongMua
             // 
             this.txtSoLuongMua.Location = new System.Drawing.Point(446, 28);
-            this.txtSoLuongMua.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSoLuongMua.Margin = new System.Windows.Forms.Padding(2);
             this.txtSoLuongMua.Name = "txtSoLuongMua";
             this.txtSoLuongMua.Size = new System.Drawing.Size(102, 20);
             this.txtSoLuongMua.TabIndex = 1;
@@ -192,7 +192,7 @@
             // txtMaHD
             // 
             this.txtMaHD.Location = new System.Drawing.Point(100, 25);
-            this.txtMaHD.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMaHD.Margin = new System.Windows.Forms.Padding(2);
             this.txtMaHD.Name = "txtMaHD";
             this.txtMaHD.Size = new System.Drawing.Size(120, 20);
             this.txtMaHD.TabIndex = 0;
@@ -270,9 +270,9 @@
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Location = new System.Drawing.Point(9, 10);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(739, 156);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
@@ -281,7 +281,7 @@
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(532, 106);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(120, 20);
             this.txtEmail.TabIndex = 7;
@@ -289,7 +289,7 @@
             // txtSDT
             // 
             this.txtSDT.Location = new System.Drawing.Point(532, 79);
-            this.txtSDT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSDT.Margin = new System.Windows.Forms.Padding(2);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(120, 20);
             this.txtSDT.TabIndex = 6;
@@ -297,7 +297,7 @@
             // txtDiaChi
             // 
             this.txtDiaChi.Location = new System.Drawing.Point(532, 50);
-            this.txtDiaChi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDiaChi.Margin = new System.Windows.Forms.Padding(2);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(120, 20);
             this.txtDiaChi.TabIndex = 5;
@@ -334,24 +334,32 @@
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.txtSoLuongMua);
             this.groupBox2.Location = new System.Drawing.Point(9, 171);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(739, 296);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chi tiết đơn hàng";
+            // 
+            // cboTenHangHoa
+            // 
+            this.cboTenHangHoa.FormattingEnabled = true;
+            this.cboTenHangHoa.Location = new System.Drawing.Point(92, 28);
+            this.cboTenHangHoa.Name = "cboTenHangHoa";
+            this.cboTenHangHoa.Size = new System.Drawing.Size(160, 21);
+            this.cboTenHangHoa.TabIndex = 4;
             // 
             // btnThemMatHang
             // 
             this.btnThemMatHang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnThemMatHang.Image = global::QuanLyNhaKho.Properties.Resources.icons8_plus_24;
             this.btnThemMatHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemMatHang.Location = new System.Drawing.Point(621, 24);
-            this.btnThemMatHang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnThemMatHang.Location = new System.Drawing.Point(617, 17);
+            this.btnThemMatHang.Margin = new System.Windows.Forms.Padding(2);
             this.btnThemMatHang.Name = "btnThemMatHang";
             this.btnThemMatHang.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.btnThemMatHang.Size = new System.Drawing.Size(113, 26);
+            this.btnThemMatHang.Size = new System.Drawing.Size(117, 33);
             this.btnThemMatHang.TabIndex = 3;
             this.btnThemMatHang.Text = "Thêm mặt hàng";
             this.btnThemMatHang.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -363,11 +371,11 @@
             this.btnThanhToan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnThanhToan.Image = global::QuanLyNhaKho.Properties.Resources.icons8_pay_24;
             this.btnThanhToan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThanhToan.Location = new System.Drawing.Point(406, 12);
-            this.btnThanhToan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnThanhToan.Location = new System.Drawing.Point(409, 7);
+            this.btnThanhToan.Margin = new System.Windows.Forms.Padding(2);
             this.btnThanhToan.Name = "btnThanhToan";
             this.btnThanhToan.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.btnThanhToan.Size = new System.Drawing.Size(103, 26);
+            this.btnThanhToan.Size = new System.Drawing.Size(100, 36);
             this.btnThanhToan.TabIndex = 0;
             this.btnThanhToan.Text = "Thanh toán";
             this.btnThanhToan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -379,10 +387,10 @@
             this.btnHuy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnHuy.Image = global::QuanLyNhaKho.Properties.Resources.icons8_synchronize_24;
             this.btnHuy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHuy.Location = new System.Drawing.Point(513, 12);
-            this.btnHuy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnHuy.Location = new System.Drawing.Point(513, 7);
+            this.btnHuy.Margin = new System.Windows.Forms.Padding(2);
             this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(76, 26);
+            this.btnHuy.Size = new System.Drawing.Size(80, 36);
             this.btnHuy.TabIndex = 1;
             this.btnHuy.Text = "Quay lại";
             this.btnHuy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -398,18 +406,10 @@
             this.panel1.Controls.Add(this.btnHuy);
             this.panel1.Controls.Add(this.btnThanhToan);
             this.panel1.Location = new System.Drawing.Point(16, 481);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(732, 50);
             this.panel1.TabIndex = 15;
-            // 
-            // cboTenHangHoa
-            // 
-            this.cboTenHangHoa.FormattingEnabled = true;
-            this.cboTenHangHoa.Location = new System.Drawing.Point(92, 28);
-            this.cboTenHangHoa.Name = "cboTenHangHoa";
-            this.cboTenHangHoa.Size = new System.Drawing.Size(160, 21);
-            this.cboTenHangHoa.TabIndex = 4;
             // 
             // BanHang
             // 
@@ -421,7 +421,7 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "BanHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bán hàng";

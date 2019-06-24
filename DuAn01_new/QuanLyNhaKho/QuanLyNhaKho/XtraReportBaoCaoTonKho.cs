@@ -15,9 +15,15 @@ namespace QuanLyNhaKho
             InitializeComponent();
         }
 
-        public void InitData(List<BaoCaoNhapXuatTonDAO> dataBaoCao)
+        public void InitData(List<BaoCaoNhapXuatTonDAO> dataBaoCao, int nam, int thang, string makho, string tenkho)
         {
-            objectDataSource1.DataSource = dataBaoCao;
+            pNamBaoCao.Value = nam;
+            pThangBaoCao.Value = thang;
+
+            pMaKho.Value = makho;
+            PTenKho.Value = tenkho;
+
+            objectDataSource2.DataSource = dataBaoCao;
         }
 
     }
